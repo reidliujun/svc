@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/pixelflinger
+END
+ggl_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/pixelflinger/ggl_context.h
+END
+ggl_fixed.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/pixelflinger/ggl_fixed.h
+END

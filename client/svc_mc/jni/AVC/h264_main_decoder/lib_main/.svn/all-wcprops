@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main
+END
+slice_data_B.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/slice_data_B.h
+END
+SetImage4x4.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/SetImage4x4.c
+END
+cabac.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/cabac.h
+END
+FinishFrameMain.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/FinishFrameMain.c
+END
+interpolation_main_8x8.c
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/interpolation_main_8x8.c
+END
+vlc_cabac.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/vlc_cabac.h
+END
+Fill_caches_cabac.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/Fill_caches_cabac.c
+END
+SetImage8x8.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/SetImage8x8.c
+END
+interpolation_main_8x8.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/interpolation_main_8x8.h
+END
+mb_cabac_partionning.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/mb_cabac_partionning.c
+END
+residual_cabac.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/residual_cabac.c
+END
+main_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/main_data.h
+END
+CabacMbPred.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/CabacMbPred.c
+END
+mb_cabac_partionning.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/mb_cabac_partionning.h
+END
+macroblock_cabac.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/macroblock_cabac.c
+END
+CabacMbPred.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/CabacMbPred.h
+END
+macroblock_cabac.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/macroblock_cabac.h
+END
+Direct_prediction.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/Direct_prediction.c
+END
+interpolation_main.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/interpolation_main.c
+END
+cavlc_main.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/cavlc_main.c
+END
+Direct_prediction.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/Direct_prediction.h
+END
+interpolation_main.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/interpolation_main.h
+END
+slice_data_cabac.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/slice_data_cabac.c
+END
+cavlc_main.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/cavlc_main.h
+END
+cabac_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/cabac_table.h
+END
+slice_data_cabac.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/slice_data_cabac.h
+END
+slice_cabac.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/slice_cabac.c
+END
+neighbourhood_cabac.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/neighbourhood_cabac.h
+END
+fill_caches_cabac.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/fill_caches_cabac.h
+END
+CabacMvAndRef.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/CabacMvAndRef.c
+END
+macroblock_layer_main.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/macroblock_layer_main.c
+END
+mb_pred_main.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/mb_pred_main.c
+END
+Loop_Filter_B.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/Loop_Filter_B.c
+END
+CabacMvAndRef.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/CabacMvAndRef.h
+END
+macroblock_layer_main.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/macroblock_layer_main.h
+END
+mb_pred_main.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/mb_pred_main.h
+END
+BitstreamSkipB.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/BitstreamSkipB.c
+END
+Loop_Filter_B.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/Loop_Filter_B.h
+END
+BitstreamSkipB.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/BitstreamSkipB.h
+END
+slice_data_B.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/slice_data_B.c
+END
+cabac.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/cabac.c
+END
+vlc_cabac.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/AVC/h264_main_decoder/lib_main/vlc_cabac.c
+END

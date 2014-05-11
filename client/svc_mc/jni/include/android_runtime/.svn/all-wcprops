@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android_runtime
+END
+android_content_res_Configuration.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android_runtime/android_content_res_Configuration.h
+END
+android_view_Surface.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android_runtime/android_view_Surface.h
+END
+android_app_NativeActivity.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android_runtime/android_app_NativeActivity.h
+END
+AndroidRuntime.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android_runtime/AndroidRuntime.h
+END
+ActivityManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android_runtime/ActivityManager.h
+END
+android_util_AssetManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android_runtime/android_util_AssetManager.h
+END

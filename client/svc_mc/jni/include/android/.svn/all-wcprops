@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android
+END
+rect.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/rect.h
+END
+storage_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/storage_manager.h
+END
+input.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/input.h
+END
+looper.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/looper.h
+END
+obb.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/obb.h
+END
+native_activity.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/native_activity.h
+END
+keycodes.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/keycodes.h
+END
+window.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/window.h
+END
+configuration.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/configuration.h
+END
+sensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/sensor.h
+END
+asset_manager_jni.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/asset_manager_jni.h
+END
+asset_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/asset_manager.h
+END
+bitmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/bitmap.h
+END
+native_window_jni.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/native_window_jni.h
+END
+native_window.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/native_window.h
+END
+log.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/android/log.h
+END

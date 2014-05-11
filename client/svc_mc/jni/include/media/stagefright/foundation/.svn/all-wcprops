@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation
+END
+ABuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/ABuffer.h
+END
+hexdump.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/hexdump.h
+END
+AAtomizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/AAtomizer.h
+END
+ABase.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/ABase.h
+END
+AHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/AHandler.h
+END
+ALooperRoster.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/ALooperRoster.h
+END
+ALooper.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/ALooper.h
+END
+ABitReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/ABitReader.h
+END
+AHandlerReflector.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/AHandlerReflector.h
+END
+base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/base64.h
+END
+AMessage.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/AMessage.h
+END
+ADebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/ADebug.h
+END
+AString.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/foundation/AString.h
+END

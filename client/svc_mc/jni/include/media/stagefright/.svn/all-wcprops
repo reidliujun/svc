@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright
+END
+DataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/DataSource.h
+END
+VideoRenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/VideoRenderer.h
+END
+ShoutcastSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/ShoutcastSource.h
+END
+FileSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/FileSource.h
+END
+MediaSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MediaSource.h
+END
+Utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/Utils.h
+END
+OMXCodec.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/OMXCodec.h
+END
+OMXClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/OMXClient.h
+END
+JPEGSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/JPEGSource.h
+END
+ColorConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/ColorConverter.h
+END
+MediaBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MediaBuffer.h
+END
+MPEG4Writer.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MPEG4Writer.h
+END
+CameraSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/CameraSource.h
+END
+MediaExtractor.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MediaExtractor.h
+END
+AMRWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/AMRWriter.h
+END
+MediaErrors.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MediaErrors.h
+END
+MediaWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MediaWriter.h
+END
+OMXPluginBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/OMXPluginBase.h
+END
+MPEG2TSWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MPEG2TSWriter.h
+END
+AudioPlayer.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/AudioPlayer.h
+END
+TimeSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/TimeSource.h
+END
+MetaData.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MetaData.h
+END
+MediaDefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MediaDefs.h
+END
+StagefrightMediaScanner.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/StagefrightMediaScanner.h
+END
+AudioSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/AudioSource.h
+END
+MediaBufferGroup.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MediaBufferGroup.h
+END
+MediaDebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/MediaDebug.h
+END
+HardwareAPI.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/stagefright/HardwareAPI.h
+END

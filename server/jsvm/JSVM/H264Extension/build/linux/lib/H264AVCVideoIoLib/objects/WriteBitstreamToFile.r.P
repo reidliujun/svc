@@ -1,0 +1,25 @@
+./objects/WriteBitstreamToFile.r.o: \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../src/lib/H264AVCVideoIoLib/WriteBitstreamToFile.cpp \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/H264AVCVideoIoLib.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/H264AVCCommonIf.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/Typedefs.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/Macros.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/MemList.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/MemIf.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/MemCont.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/MemAccessor.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/WriteBitstreamToFile.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/LargeFile.h \
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/WriteBitstreamIf.h
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../src/lib/H264AVCVideoIoLib/WriteBitstreamToFile.cpp :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/H264AVCVideoIoLib.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/H264AVCCommonIf.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/Typedefs.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/Macros.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/MemList.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/MemIf.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/MemCont.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/MemAccessor.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/WriteBitstreamToFile.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/LargeFile.h :
+  /Users/liujun/Desktop/svc/server/jsvm/JSVM/H264Extension/build/linux/lib/H264AVCVideoIoLib/../../../../include/WriteBitstreamIf.h :

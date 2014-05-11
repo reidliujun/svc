@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/pixelflinger
+END
+format.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/pixelflinger/format.h
+END
+pixelflinger.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/pixelflinger/pixelflinger.h
+END

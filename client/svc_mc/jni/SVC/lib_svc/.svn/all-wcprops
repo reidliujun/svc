@@ -1,0 +1,665 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc
+END
+B_BL.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/B_BL.c
+END
+cavlc_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/cavlc_svc.c
+END
+B_BL.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/B_BL.h
+END
+slice_data_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_data_svc.c
+END
+egde_boundary.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/egde_boundary.c
+END
+svc_neighbourhood.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/svc_neighbourhood.c
+END
+cavlc_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/cavlc_svc.h
+END
+slice_data_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_data_svc.h
+END
+slice_data_B_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_data_B_svc.h
+END
+fill_caches_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/fill_caches_svc.h
+END
+svc_neighbourhood.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/svc_neighbourhood.h
+END
+blk4x4.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/blk4x4.h
+END
+macroblock_filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/macroblock_filter.c
+END
+slice_header_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_header_svc.c
+END
+slice_data_P_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_data_P_svc.c
+END
+macroblock_filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/macroblock_filter.h
+END
+slice_data_P_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_data_P_svc.h
+END
+WriteBackSVC.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/WriteBackSVC.c
+END
+CabacBMacroblock.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/CabacBMacroblock.c
+END
+svc_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/svc_data.h
+END
+slice_layer_in_scalable_extension_rbsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_layer_in_scalable_extension_rbsp.c
+END
+Slice_data_I_avc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Slice_data_I_avc.c
+END
+CoeffLevelPrediction.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/CoeffLevelPrediction.c
+END
+WriteBackSVC.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/WriteBackSVC.h
+END
+set_layer.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/set_layer.h
+END
+BL.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/BL.c
+END
+CabacBMacroblock.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/CabacBMacroblock.h
+END
+Loop_filter_ext.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Loop_filter_ext.c
+END
+InterLayerPrediction.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/InterLayerPrediction.c
+END
+CoeffLevelPrediction.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/CoeffLevelPrediction.h
+END
+slice_data_cabac.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_data_cabac.c
+END
+BL.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/BL.h
+END
+Loop_filter_ext.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Loop_filter_ext.h
+END
+CabacIMacroblock.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/CabacIMacroblock.h
+END
+InterLayerPrediction.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/InterLayerPrediction.h
+END
+CabacPMacroblock.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/CabacPMacroblock.c
+END
+seq_parameter_set_svc_extension.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/seq_parameter_set_svc_extension.c
+END
+CabacPMacroblock.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/CabacPMacroblock.h
+END
+edge_boundary.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/edge_boundary.h
+END
+ChooseLayer.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/ChooseLayer.c
+END
+pic_list_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/pic_list_svc.c
+END
+Mb_I_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Mb_I_svc.c
+END
+ParseAUDecoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/ParseAUDecoder.c
+END
+pic_list_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/pic_list_svc.h
+END
+Mb_I_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Mb_I_svc.h
+END
+nal_unit_header_svc_extension.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/nal_unit_header_svc_extension.c
+END
+ErrorDetection.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/ErrorDetection.c
+END
+nal_unit_header_svc_extension.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/nal_unit_header_svc_extension.h
+END
+ErrorDetection.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/ErrorDetection.h
+END
+ict_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/ict_svc.h
+END
+upsample_residu.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/upsample_residu.c
+END
+svc_type.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/svc_type.h
+END
+SwitchAdress.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/SwitchAdress.c
+END
+cabac_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/cabac_svc.c
+END
+ResidualProcessing.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/ResidualProcessing.c
+END
+upsample_residu.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/upsample_residu.h
+END
+residual_4x4.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/residual_4x4.c
+END
+SwitchAdress.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/SwitchAdress.h
+END
+cabac_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/cabac_svc.h
+END
+ResidualProcessing.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/ResidualProcessing.h
+END
+CabacIPartionning.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/CabacIPartionning.c
+END
+slice_data_I_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_data_I_svc.c
+END
+residual_4x4.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/residual_4x4.h
+END
+P_BL.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/P_BL.c
+END
+residual_8x8.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/residual_8x8.c
+END
+Coordonates.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Coordonates.c
+END
+slice_data_I_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_data_I_svc.h
+END
+P_BL.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/P_BL.h
+END
+Slice_data_B_avc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Slice_data_B_avc.c
+END
+residual_8x8.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/residual_8x8.h
+END
+Coordonates.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Coordonates.h
+END
+BL_residual.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/BL_residual.c
+END
+BackEdge.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/BackEdge.c
+END
+Slice_data_avc.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Slice_data_avc.h
+END
+SVCDisplay.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/SVCDisplay.h
+END
+BackEdge.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/BackEdge.h
+END
+BL_residual.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/BL_residual.h
+END
+slice_data_cavlc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/slice_data_cavlc.c
+END
+Slice_data_P_avc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Slice_data_P_avc.c
+END
+residual_chroma.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/residual_chroma.c
+END
+ErrorConcealment.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/ErrorConcealment.c
+END
+SliceHeaderAnnex.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/SliceHeaderAnnex.c
+END
+motion_vector_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/motion_vector_svc.c
+END
+Slice_data_B_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Slice_data_B_svc.c
+END
+I_BL.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/I_BL.c
+END
+MemoryManagement.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/MemoryManagement.c
+END
+SliceHeaderExtension.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/SliceHeaderExtension.c
+END
+residual_chroma.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/residual_chroma.h
+END
+FinishFrameSVC.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/FinishFrameSVC.c
+END
+ErrorConcealment.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/ErrorConcealment.h
+END
+MergeMvIdx.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/MergeMvIdx.c
+END
+Fill_caches_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Fill_caches_svc.c
+END
+motion_vector_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/motion_vector_svc.h
+END
+mb_upsample_filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/mb_upsample_filter.c
+END
+I_BL.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/I_BL.h
+END
+Mb_B_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Mb_B_svc.c
+END
+SliceHeaderExtension.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/SliceHeaderExtension.h
+END
+VlcCabacSvc.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/VlcCabacSvc.c
+END
+PartitionType.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/PartitionType.c
+END
+FinishFrameSVC.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/FinishFrameSVC.h
+END
+MergeMvIdx.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/MergeMvIdx.h
+END
+mb_upsample_filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/mb_upsample_filter.h
+END
+Mb_B_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Mb_B_svc.h
+END
+VlcCabacSvc.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/VlcCabacSvc.h
+END
+PartitionType.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/PartitionType.h
+END
+SVCdisplay.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/SVCdisplay.c
+END
+mb_padding.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/mb_padding.c
+END
+Mb_P_svc.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Mb_P_svc.c
+END
+mb_padding.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/mb_padding.h
+END
+Mb_P_svc.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/lib_svc/Mb_P_svc.h
+END

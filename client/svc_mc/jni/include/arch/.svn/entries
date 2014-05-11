@@ -1,0 +1,49 @@
+10
+
+dir
+66
+https://nmsl.cs.nthu.edu.tw/svn/svcdecoder/src/android/li/svc_mc/jni/include/arch
+https://nmsl.cs.nthu.edu.tw/svn/svcdecoder
+
+
+
+2012-04-19T05:24:02.063087Z
+55
+masnec
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0edb9127-af04-46d3-b423-8afdbb9a1142
+
+linux-x86
+dir
+
+darwin-x86
+dir
+
+linux-sh
+dir
+
+target_linux-x86
+dir
+
+windows
+dir
+
+linux-arm
+dir
+
+freebsd-x86
+dir
+

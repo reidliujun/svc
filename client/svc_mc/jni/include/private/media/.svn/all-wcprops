@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/media
+END
+AudioTrackShared.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/media/AudioTrackShared.h
+END
+VideoFrame.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/media/VideoFrame.h
+END
+AudioEffectShared.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/media/AudioEffectShared.h
+END

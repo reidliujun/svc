@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder
+END
+MemoryHeapBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/MemoryHeapBase.h
+END
+MemoryBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/MemoryBase.h
+END
+Binder.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/Binder.h
+END
+IServiceManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/IServiceManager.h
+END
+IPCThreadState.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/IPCThreadState.h
+END
+IPermissionController.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/IPermissionController.h
+END
+Parcel.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/Parcel.h
+END
+IInterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/IInterface.h
+END
+IBinder.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/IBinder.h
+END
+ProcessState.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/ProcessState.h
+END
+IMemory.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/IMemory.h
+END
+BinderService.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/BinderService.h
+END
+MemoryHeapPmem.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/MemoryHeapPmem.h
+END
+MemoryDealer.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/MemoryDealer.h
+END
+BpBinder.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/BpBinder.h
+END
+Permission.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/binder/Permission.h
+END

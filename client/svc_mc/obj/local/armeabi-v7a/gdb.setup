@@ -1,0 +1,4 @@
+set solib-search-path ./obj/local/armeabi-v7a
+directory /home/jargo/ndk/android-ndk-r8b/platforms/android-14/arch-arm/usr/include /home/jargo/ndk/android-ndk-r8b/sources//android/cpufeatures /home/jargo/ndk/android-ndk-r8b/sources/cxx-stl/system jni
+file ./obj/local/armeabi-v7a/app_process
+target remote :5039

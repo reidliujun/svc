@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware
+END
+copybit.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware/copybit.h
+END
+gps.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware/gps.h
+END
+lights.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware/lights.h
+END
+qemud.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware/qemud.h
+END
+sensors.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware/sensors.h
+END
+sensors_deprecated.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware/sensors_deprecated.h
+END
+hardware.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware/hardware.h
+END
+overlay.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware/overlay.h
+END
+gralloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/hardware/gralloc.h
+END

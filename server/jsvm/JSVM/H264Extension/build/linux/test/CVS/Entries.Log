@@ -1,0 +1,9 @@
+A D/AvcRewriter////
+A D/BitStreamExtractor////
+A D/EncoderBitstreamMerger////
+A D/FixedQPEncoder////
+A D/H264AVCDecoderLibTest////
+A D/H264AVCEncoderLibTest////
+A D/MCTFPreProcessor////
+A D/QualityLevelAssigner////
+A D/SIPAnalyser////

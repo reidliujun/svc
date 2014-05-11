@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/ui
+END
+android_natives_priv.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/ui/android_natives_priv.h
+END
+RegionHelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/ui/RegionHelper.h
+END
+sw_gralloc_handle.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/private/ui/sw_gralloc_handle.h
+END

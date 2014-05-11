@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/mincrypt
+END
+sha.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/mincrypt/sha.h
+END
+rsa.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/mincrypt/rsa.h
+END

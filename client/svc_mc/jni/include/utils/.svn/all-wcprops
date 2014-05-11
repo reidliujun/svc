@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils
+END
+BitSet.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/BitSet.h
+END
+misc.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/misc.h
+END
+String8.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/String8.h
+END
+ByteOrder.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/ByteOrder.h
+END
+Looper.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Looper.h
+END
+SharedBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/SharedBuffer.h
+END
+CallStack.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/CallStack.h
+END
+Singleton.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Singleton.h
+END
+Vector.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Vector.h
+END
+ZipFileRO.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/ZipFileRO.h
+END
+TextOutput.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/TextOutput.h
+END
+Pool.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Pool.h
+END
+ashmem.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/ashmem.h
+END
+List.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/List.h
+END
+Atomic.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Atomic.h
+END
+ResourceTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/ResourceTypes.h
+END
+FileMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/FileMap.h
+END
+AssetDir.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/AssetDir.h
+END
+Asset.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Asset.h
+END
+Log.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Log.h
+END
+ZipUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/ZipUtils.h
+END
+BackupHelpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/BackupHelpers.h
+END
+threads.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/threads.h
+END
+Endian.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Endian.h
+END
+SystemClock.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/SystemClock.h
+END
+StreamingZipInflater.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/StreamingZipInflater.h
+END
+ObbFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/ObbFile.h
+END
+Timers.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Timers.h
+END
+TypeHelpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/TypeHelpers.h
+END
+StringArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/StringArray.h
+END
+ZipFileCRO.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/ZipFileCRO.h
+END
+RefBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/RefBase.h
+END
+BufferedTextOutput.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/BufferedTextOutput.h
+END
+AssetManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/AssetManager.h
+END
+Errors.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Errors.h
+END
+StopWatch.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/StopWatch.h
+END
+String16.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/String16.h
+END
+Flattenable.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Flattenable.h
+END
+SortedVector.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/SortedVector.h
+END
+VectorImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/VectorImpl.h
+END
+KeyedVector.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/KeyedVector.h
+END
+Debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/utils/Debug.h
+END

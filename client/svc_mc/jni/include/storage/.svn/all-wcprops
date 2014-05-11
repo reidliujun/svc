@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/storage
+END
+IMountService.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/storage/IMountService.h
+END
+IMountShutdownObserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/storage/IMountShutdownObserver.h
+END
+IObbActionListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/storage/IObbActionListener.h
+END
+IMountServiceListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/storage/IMountServiceListener.h
+END

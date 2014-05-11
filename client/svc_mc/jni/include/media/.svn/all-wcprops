@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media
+END
+mediascanner.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/mediascanner.h
+END
+thread_init.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/thread_init.h
+END
+Visualizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/Visualizer.h
+END
+EffectEnvironmentalReverbApi.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/EffectEnvironmentalReverbApi.h
+END
+JetPlayer.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/JetPlayer.h
+END
+MediaRecorderBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/MediaRecorderBase.h
+END
+AudioRecord.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/AudioRecord.h
+END
+EffectsFactoryApi.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/EffectsFactoryApi.h
+END
+IEffectClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IEffectClient.h
+END
+EffectVisualizerApi.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/EffectVisualizerApi.h
+END
+IMediaPlayer.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IMediaPlayer.h
+END
+EffectBassBoostApi.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/EffectBassBoostApi.h
+END
+mediametadataretriever.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/mediametadataretriever.h
+END
+PVMediaRecorder.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/PVMediaRecorder.h
+END
+ToneGenerator.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/ToneGenerator.h
+END
+IOMX.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IOMX.h
+END
+MediaPlayerInterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/MediaPlayerInterface.h
+END
+AudioEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/AudioEffect.h
+END
+IMediaRecorder.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IMediaRecorder.h
+END
+EffectPresetReverbApi.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/EffectPresetReverbApi.h
+END
+IAudioFlingerClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IAudioFlingerClient.h
+END
+Metadata.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/Metadata.h
+END
+MediaProfiles.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/MediaProfiles.h
+END
+EffectApi.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/EffectApi.h
+END
+IMediaPlayerService.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IMediaPlayerService.h
+END
+AudioTrack.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/AudioTrack.h
+END
+MediaMetadataRetrieverInterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/MediaMetadataRetrieverInterface.h
+END
+mediaplayer.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/mediaplayer.h
+END
+IMediaDeathNotifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IMediaDeathNotifier.h
+END
+IAudioTrack.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IAudioTrack.h
+END
+PVPlayer.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/PVPlayer.h
+END
+IMediaPlayerClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IMediaPlayerClient.h
+END
+IEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IEffect.h
+END
+mediarecorder.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/mediarecorder.h
+END
+AudioSystem.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/AudioSystem.h
+END
+EffectEqualizerApi.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/EffectEqualizerApi.h
+END
+IAudioRecord.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IAudioRecord.h
+END
+IAudioPolicyService.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IAudioPolicyService.h
+END
+IMediaRecorderClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IMediaRecorderClient.h
+END
+PVMetadataRetriever.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/PVMetadataRetriever.h
+END
+IAudioFlinger.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IAudioFlinger.h
+END
+IMediaMetadataRetriever.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/IMediaMetadataRetriever.h
+END
+EffectVirtualizerApi.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/media/EffectVirtualizerApi.h
+END

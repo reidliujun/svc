@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils
+END
+atomic-arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/atomic-arm.h
+END
+record_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/record_stream.h
+END
+misc.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/misc.h
+END
+uio.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/uio.h
+END
+properties.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/properties.h
+END
+iosched_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/iosched_policy.h
+END
+native_handle.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/native_handle.h
+END
+cpu_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/cpu_info.h
+END
+sched_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/sched_policy.h
+END
+mspace.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/mspace.h
+END
+ashmem.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/ashmem.h
+END
+sockets.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/sockets.h
+END
+tztime.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/tztime.h
+END
+mq.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/mq.h
+END
+array.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/array.h
+END
+process_name.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/process_name.h
+END
+logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/logger.h
+END
+selector.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/selector.h
+END
+zygote.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/zygote.h
+END
+logd.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/logd.h
+END
+atomic-inline.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/atomic-inline.h
+END
+threads.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/threads.h
+END
+logprint.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/logprint.h
+END
+atomic-x86.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/atomic-x86.h
+END
+memory.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/memory.h
+END
+event_tag_map.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/event_tag_map.h
+END
+compiler.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/compiler.h
+END
+open_memstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/open_memstream.h
+END
+atomic.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/atomic.h
+END
+abort_socket.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/abort_socket.h
+END
+jstring.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/jstring.h
+END
+log.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/log.h
+END
+hashmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/hashmap.h
+END
+dir_hash.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/dir_hash.h
+END
+config_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/cutils/config_utils.h
+END

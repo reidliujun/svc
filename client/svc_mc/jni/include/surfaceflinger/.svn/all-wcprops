@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/surfaceflinger
+END
+ISurfaceComposer.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/surfaceflinger/ISurfaceComposer.h
+END
+SurfaceComposerClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/surfaceflinger/SurfaceComposerClient.h
+END
+ISurface.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/surfaceflinger/ISurface.h
+END
+ISurfaceComposerClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/surfaceflinger/ISurfaceComposerClient.h
+END
+Surface.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/surfaceflinger/Surface.h
+END

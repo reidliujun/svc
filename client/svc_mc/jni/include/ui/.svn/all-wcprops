@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui
+END
+Point.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/Point.h
+END
+InputManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/InputManager.h
+END
+IOverlay.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/IOverlay.h
+END
+PixelFormat.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/PixelFormat.h
+END
+Rect.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/Rect.h
+END
+Input.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/Input.h
+END
+KeyCharacterMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/KeyCharacterMap.h
+END
+KeycodeLabels.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/KeycodeLabels.h
+END
+InputDispatcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/InputDispatcher.h
+END
+GraphicBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/GraphicBuffer.h
+END
+GraphicBufferAllocator.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/GraphicBufferAllocator.h
+END
+InputTransport.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/InputTransport.h
+END
+GraphicBufferMapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/GraphicBufferMapper.h
+END
+GraphicLog.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/GraphicLog.h
+END
+android_native_buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/android_native_buffer.h
+END
+EventHub.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/EventHub.h
+END
+DisplayInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/DisplayInfo.h
+END
+Overlay.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/Overlay.h
+END
+InputReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/InputReader.h
+END
+FramebufferNativeWindow.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/FramebufferNativeWindow.h
+END
+Region.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/Region.h
+END
+PowerManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/PowerManager.h
+END
+EGLNativeSurface.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/EGLNativeSurface.h
+END
+EGLUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/ui/EGLUtils.h
+END

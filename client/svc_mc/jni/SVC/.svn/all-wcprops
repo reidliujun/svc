@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC
+END
+PC.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/PC.c
+END
+yuv2rgb_arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/yuv2rgb_arm.h
+END
+yu2rgb_arm.s
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/yu2rgb_arm.s
+END
+yuv2rgb_tables.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/SVC/yuv2rgb_tables.c
+END

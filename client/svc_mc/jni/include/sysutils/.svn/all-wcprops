@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/sysutils
+END
+NetlinkListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/sysutils/NetlinkListener.h
+END
+ServiceManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/sysutils/ServiceManager.h
+END
+FrameworkClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/sysutils/FrameworkClient.h
+END
+FrameworkCommand.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/sysutils/FrameworkCommand.h
+END
+SocketListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/sysutils/SocketListener.h
+END
+FrameworkListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/sysutils/FrameworkListener.h
+END
+NetlinkEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/sysutils/NetlinkEvent.h
+END
+SocketClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/svcdecoder/!svn/ver/55/src/android/li/svc_mc/jni/include/sysutils/SocketClient.h
+END
