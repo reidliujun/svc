@@ -26,14 +26,15 @@ Client uses the [Multi-Core SVC Decoder on Android](http://nmsl.cs.nthu.edu.tw/i
 
 #Mplayer install
 Inside of [Open SVC Decoder](http://sourceforge.net/projects/opensvcdecoder/), there is a mplayer which can be installed to play the bit stream files (such as y4m and yuv format files). The step of install is as follows:
-###a. run: 
+run: 
+	
 	./configure
-###b. run:
 	make install
-###c. play the source file, for example to play a video file named "a.y4m", run:
+To play the source file, for example to play a video file named "a.y4m", run:
+
 	mplayer a.y4m
 
-to play the yuv source file, the codec parameters have to be defined, for example to run a video file (176*144) named "akiyo_qcif.yuv", run:
+To play the yuv source file, the codec parameters have to be defined, for example to run a video file (176*144) named "akiyo_qcif.yuv", run:
 
 	mplayer -demuxer rawvideo -rawvideo w=176:h=144:format=i420 akiyo_qcif.yuv -loop 1
 
@@ -44,4 +45,4 @@ Video resources is y4m Video Sequences and some source files are in folder "/svc
 The y4m format files can be converted to yuv format by using "ffmpeg" package, for example to convert a "akiyo_qcif.y4m" to "akiyo_qcif.yuv" can simply run:
 
     ffmpeg -i akiyo_qcif.y4m akiyo_qcif.yuv
-    
+
