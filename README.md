@@ -35,6 +35,7 @@ Client uses the [Multi-Core SVC Decoder on Android](http://nmsl.cs.nthu.edu.tw/i
 	
 	cd to /svc/client/svc_mc
 	<NDK path>/ndk-build
+Inside of the applicaiton code, it uses hard code method now. Therefore, the path of the video file to be played has to be defined inside of PC.c --> streamFromHttp, and Main.java --> curFilePath.
 
 
 #Mplayer
