@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MPD xmlns="urn:mpeg:DASH:schema:MPD:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="static" profiles="urn:mpeg:dash:profile:isoff-main:2011" mediaPresentationDuration="PT20.000S" minBufferTime="PT10.000S">
+    <BaseURL>./</BaseURL>
+    <Period start="PT0S">
+        <AdaptationSet bitstreamSwitching="true">
+            <Representation id="0"  codecs="svc" mimeType="video/H264-SVC" width="352" height="288" frameRate="25" startWithSAP="1" bandwidth="198257">
+                <SegmentBase>
+                    <Initialization sourceURL="video_1.264.init.svc"/>
+                </SegmentBase>
+                <SegmentList duration="250" timescale="25">
+                    <SegmentURL media="video_1.264.seg0-L0.svc"/>
+                    <SegmentURL media="video_1.264.seg1-L0.svc"/>
+                </SegmentList>
+            </Representation>
+            <Representation id="16" dependencyId="0" codecs="svc" mimeType="video/H264-SVC" width="352" height="288" frameRate="25" startWithSAP="1" bandwidth="1470580">
+                <SegmentBase>
+                    <Initialization sourceURL="video_1.264.init.svc"/>
+                </SegmentBase>
+                <SegmentList duration="250" timescale="25">
+                    <SegmentURL media="video_1.264.seg0-L16.svc"/>
+                    <SegmentURL media="video_1.264.seg1-L16.svc"/>
+                </SegmentList>
+            </Representation>
+            <Representation id="32" dependencyId="16" codecs="svc" mimeType="video/H264-SVC" width="352" height="288" frameRate="25" startWithSAP="1" bandwidth="3101624">
+                <SegmentBase>
+                    <Initialization sourceURL="video_1.264.init.svc"/>
+                </SegmentBase>
+                <SegmentList duration="250" timescale="25">
+                    <SegmentURL media="video_1.264.seg0-L32.svc"/>
+                    <SegmentURL media="video_1.264.seg1-L32.svc"/>
+                </SegmentList>
+            </Representation>
+        </AdaptationSet>
+    </Period>
+</MPD>
