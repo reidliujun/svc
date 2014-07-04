@@ -31,12 +31,15 @@ for example:
 
 
 # Client 
+###svc_mc
 Client uses the [Multi-Core SVC Decoder on Android](http://nmsl.cs.nthu.edu.tw/index.php/component/content/article/81-projects/101-multi-core-svc-decoder-on-android) project which based on Android NDK. After test, the project requries the linux gcc compiler, and I recommend to use linux as the development system. Run the following command to build the project:
 	
 	cd to /svc/client/svc_mc
 	<NDK path>/ndk-build
 Inside of the applicaiton code, it uses hard code method now. Therefore, the path of the video file to be played has to be defined inside of PC.c --> streamFromHttp, and Main.java --> curFilePath.
 
+###svc_dash
+Client is based on python script running on Linux system. Details of the usage of the client is described in 'client/svc_dash/README.md'
 
 #Mplayer
 ###Install
