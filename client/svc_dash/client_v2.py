@@ -6,6 +6,7 @@ Email: jun.liu@aalto.fi
 
 Version2 info: download the segment according to the speed of the network, 
 			   downloaded file saved in .cache folder
+
 '''
 
 from xml.dom.minidom import parseString
@@ -19,6 +20,7 @@ from time import sleep
 from pykeyboard import PyKeyboard
 import time
 import glob
+from multiprocessing import Process
 
 if(len(sys.argv)<2):
 	print("Input argv for this client!")
@@ -37,17 +39,10 @@ videoName = mpdName.split('.264.mpd')[0]
 folderUrlPath = re.sub('\/'+mpdName+'$', '', mpdUrl)	#http://localhost/video
 cacheMatch = folderUrlPath.split("//")[-1]
 cacheMatch = cacheMatch.replace("/", ",")
-# layerToPlayList = [0, 32]
-'''http://localhost/video5_seg5/video_5.264.mpd '''
-# layerToPlayList = [0, 16, 16 ,0, 16]
-'''python client.py http://localhost/video1_seg5/video_1.264.mpd'''
-# layerToPlayList = [0, 32, 16, 16, 32]  ##layToPlayList is the layer id to be played for each segment
-'''python client.py http://localhost/video/video_1.264.mpd'''
-# layerToPlayList = [0,32]
-# segCheckList = [None]*(len(layerToPlayList)-1)
+stepList = []
 
-def getXML():
-	file= urllib2.urlopen(mpdUrl)
+def getXML(url):
+	file= urllib2.urlopen(url)
 	data = file.read()
 	file.close()
 	dom = parseString(data)
@@ -91,36 +86,57 @@ def check_files(fileList):
 def play_video(videoName, width, height):
 	# subprocess.call(["mplayer", "-fps", "25", videoName, "-x", "640", "-y", "352"])
 	print "mplayer open"
-	subprocess.call(["mplayer", "-fps", "25", videoName, "-x", width, "-y", height])
-	# subprocess.call(["mplayer", "-fps", "25", videoName])
+	logName = videoName + ".log"
+	f = open(logName, "wb")
+	p = subprocess.Popen(["mplayer", "-fps", "25", videoName, "-x", width, "-y", height], stdout=f, 
+						stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+	i = 0
+	while p.poll()==None:
+		sleep(1)
+	p.communicate(input="q")
 
-stepList = []
+def parse_frame_idx(text):
+	tmp1 = text.split("/")[-2]
+	tmp = tmp1.split(" ")
+	currentFrame = tmp[-1]
+	# print "currentFrame is: "+currentFrame+".\n"
+	return int(currentFrame)
 
-def switch_to_highlayer(totalFrame):
-	time = int(totalFrame/25)
-	k = PyKeyboard()
-	# if bool(stepList):
-	# if value is "start":
-	while bool(stepList):
-		tmp = stepList.pop(0) 
-		# print "switch times is:"
-		# print tmp
-		for j in range(time):
-			sleep(1)
-		if  tmp >0:
-			for t in range(tmp):
-				k.tap_key('b')
-				print "press b "
-				sleep(0.1)
-	# if not stepList:
-	# for i in range(len(inputList)):
-	# for j in range(time):
-	# 	sleep(1)
-	# 	if inputList[i] >0:
-	# 		for t in range(inputList[i]):
-	# 			k.tap_key('b')
-	# 			print "press b"
-	# 			sleep(0.1)
+def switch_to_highlayer(outName, frameNumber, segNumber):
+	#totalIdx = len(inputList)
+	'''
+	timeInterval defines the print frequency of the frame number in the terminal. 
+	'''
+	timeInterval = 0.4
+	frameStep = timeInterval*25
+	k = PyKeyboard()	
+	logName = outName + ".log"
+	tmpIdx = 1
+	while True:
+		text = subprocess.check_output(["tail", "-1", logName])
+		#tmpIdx = totalIdx - len(inputList)+1
+		if "PAUSE" in text and "=====  PAUSE  =====\rV:" not in text:
+			sleep(timeInterval)
+			continue
+		elif "Exiting" in text:
+			break 
+		else:
+			print text
+			sleep(timeInterval)
+			frameIdx = parse_frame_idx(text) 
+			if frameIdx >= frameNumber*tmpIdx and frameIdx < frameNumber*tmpIdx + frameStep:
+				print "======================================"
+				print "currentFrame is: "+str(frameIdx)+".\n"
+				if bool(stepList):
+					tmpIdx = tmpIdx +1
+					value = stepList.pop(0)
+					if value >0:
+						for t in range(value):
+							k.tap_key('b')
+							print "switch to higher layer"
+							sleep(0.1)
+				else:
+					break
 
 def step_map(input):
 	return {
@@ -132,11 +148,11 @@ def step_map(input):
 
 ''' Parse MPD file 
 '''
-def parse_mpd():
+def parse_mpd(url):
 	layerID = []
 	layerBW = []
 	layerList = ""
-	data = getXML()
+	data = getXML(url)
 	layRepresentTag = data.getElementsByTagName('Representation')
 	width = layRepresentTag[0].attributes['width'].value
 	height = layRepresentTag[0].attributes['height'].value
@@ -153,12 +169,12 @@ def parse_mpd():
 			"numberofSeg":numberofSeg, "duration":duration, "width":width, 
 			"height":height, "layerBW":layerBW}
 
-if(sys.argv[2]=="-play" and sys.argv[3] !=""):
+if(sys.argv[2]=="-play"):
 	'''
 	Read and parse information in mpd file 
 	'''
 	print "start processing!"
-	parseResult = parse_mpd()
+	parseResult = parse_mpd(mpdUrl)
 	print "========================================================"
 	print "video information:"
 	print "video resolution is:" + parseResult["width"] + "x" + parseResult["height"]
@@ -168,27 +184,21 @@ if(sys.argv[2]=="-play" and sys.argv[3] !=""):
 	print "Duration of each segment is: " + parseResult["duration"] + " frames"
 	print "========================================================"
 
-
-	'''
-	Dumux the segment file and use mplay to play the output file with specific layer
-	'''
-	layerToPlay = sys.argv[3]
-	if not layerToPlay in parseResult["layerID"]:
-		print "Use the -detail to check the input layerID again!"
-		quit()
-
-	'''Define segCheckList (layerID) to be downloaded for each segment'''
-	# for j in range(len(layerToPlayList)-1):
-	# 	tmp = layerToPlayList[j+1]-layerToPlayList[j]
-	# 	segCheckList[j] = step_map(tmp)
+	# '''
+	# Dumux the segment file and use mplay to play the output file with specific layer
+	# '''
+	# layerToPlay = sys.argv[3]
+	# if not layerToPlay in parseResult["layerID"]:
+	# 	print "Use the -detail to check the input layerID again!"
+	# 	quit()
 
 	'''Download each segment according to segCheckList'''
-	speed = 2080000 #initiate the speed of the first segment
+	speed = 10000 #initiate the speed of the first segment
 	layerID = parseResult["layerID"]
-
 	layerBWList = parseResult["layerBW"]
+	segNumber = parseResult["numberofSeg"]
 
-	for i in range(0, parseResult["numberofSeg"]):
+	for i in range(0, segNumber):
 		command = ["python", "svc_mux.py"]
 		outputSegName = videoName+ "/" + "out_" + videoName + "_seg" + str(i) + ".264"
 		# print outputName
@@ -208,8 +218,6 @@ if(sys.argv[2]=="-play" and sys.argv[3] !=""):
 			else:
 				break
 		print "selectedLayer is: " + str(selectedLayer)
-		# fileList = download_seg(layerToPblay, data, i)
-		# fileList, speed = download_seg(videoName, layerToPlayList[i], parseResult["data"], i)
 		fileList, speed = download_seg(videoName, selectedLayer, parseResult["data"], i)
 		print "finish download segment " + str(i) + "\n"
 		print "=================================================="
@@ -254,7 +262,7 @@ if(sys.argv[2]=="-play" and sys.argv[3] !=""):
 			#start timer for the switch layer controler
 			print "before thread2, stepList is equal to:"
 			print stepList
-			thread2 = Thread(target = switch_to_highlayer, args = (int(parseResult["duration"]), ))
+			thread2 = Thread(target = switch_to_highlayer, args = (outName, int(parseResult["duration"]), segNumber))
 			thread2.start()
 		elif i ==1:
 			continue
@@ -262,9 +270,6 @@ if(sys.argv[2]=="-play" and sys.argv[3] !=""):
 			stepValue = step_map(selectedLayer-preSelectedLayer)
 			stepList.append(stepValue)
 			preSelectedLayer = selectedLayer
-		'''Generate stepmap value'''
-		# stepValue = step_map(selectedLayer-preSelectedLayer)
-		# stepList.append(stepValue)
 
 if(sys.argv[2]=="-detail"):
 	'''
