@@ -22,6 +22,7 @@ import time
 import glob
 from multiprocessing import Process
 
+
 if(len(sys.argv)<2):
 	print("Input argv for this client!")
 	print("Usage")
@@ -40,6 +41,7 @@ folderUrlPath = re.sub('\/'+mpdName+'$', '', mpdUrl)	#http://localhost/video
 cacheMatch = folderUrlPath.split("//")[-1]
 cacheMatch = cacheMatch.replace("/", ",")
 stepList = []
+stopDownload = []
 
 def getXML(url):
 	file= urllib2.urlopen(url)
@@ -119,6 +121,12 @@ def switch_to_highlayer(outName, frameNumber, segNumber):
 			sleep(timeInterval)
 			continue
 		elif "Exiting" in text:
+			print text
+			print "Exit mplayer"
+			print "=================================="
+			stopDownload.append("stop")
+			# print "stopDownload"
+			# print stopDownload
 			break 
 		else:
 			print text
@@ -184,14 +192,6 @@ if(sys.argv[2]=="-play"):
 	print "Duration of each segment is: " + parseResult["duration"] + " frames"
 	print "========================================================"
 
-	# '''
-	# Dumux the segment file and use mplay to play the output file with specific layer
-	# '''
-	# layerToPlay = sys.argv[3]
-	# if not layerToPlay in parseResult["layerID"]:
-	# 	print "Use the -detail to check the input layerID again!"
-	# 	quit()
-
 	'''Download each segment according to segCheckList'''
 	speed = 10000 #initiate the speed of the first segment
 	layerID = parseResult["layerID"]
@@ -218,14 +218,19 @@ if(sys.argv[2]=="-play"):
 			else:
 				break
 		print "selectedLayer is: " + str(selectedLayer)
-		fileList, speed = download_seg(videoName, selectedLayer, parseResult["data"], i)
-		print "finish download segment " + str(i) + "\n"
-		print "=================================================="
+		if not bool(stopDownload):
+			fileList, speed = download_seg(videoName, selectedLayer, parseResult["data"], i)
+		else:
+			print "Stop downloading"
+			break
+		print "Finish download segment " + str(i)
 
 		'''Mux the downloaded files with differnt layers'''
 		for j in fileList:
 			command.append(j)
+		print "start mux video file"
 		subprocess.call(command)
+		print "Mux finished"
 		outName = videoName+ "/" + "out_" + videoName + ".264"
 		'''
 		check outName state for the 1st segment (status initiate)
@@ -242,6 +247,8 @@ if(sys.argv[2]=="-play"):
 		content = f2.read()
 		f1.write(content)
 		f1.close()
+		print "Finish handling segment" + str(i) + "\n"
+		print "=================================================="
 		if i == 0:
 			threshold1 = 0
 			for j in range(0,len(layerID)):
