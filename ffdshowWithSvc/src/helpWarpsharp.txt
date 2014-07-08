@@ -1,0 +1,2 @@
+aWarpSharp implements high-quality original warpsharping. "Original" means the algo used differs on several points to other warpsharping filters. The code is fully iSSE optimised with high accuracy. aWarpSharp is very optmised for Athlon XP.
+By Marc Fauconneau

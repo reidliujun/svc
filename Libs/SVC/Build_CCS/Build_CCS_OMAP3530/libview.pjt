@@ -1,0 +1,29 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\openSVC_07_09_10\SVC\Build_CCS\Build_CCS_OMAP3530\"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\libview\extract_picture.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o".\Debug\libview.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\Release\libview.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-pdsw225 -o3 -fr"$(Proj_dir)\Debug" -d"_DEBUG" -d"_VERBOSE" -d"CHIP_OMAP3530" -d"TI_OPTIM" -mf5 -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-pi -pdsw225 -oi0 -o3 -fr"$(Proj_dir)\Release" -d"TI_OPTIM" -d"CHIP_DM6437" -mf5 -mv6400+
+

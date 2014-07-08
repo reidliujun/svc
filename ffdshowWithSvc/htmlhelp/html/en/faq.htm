@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ffdshow tryouts | FAQ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="ffdshow tryouts FAQ" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../de/faq.htm" title="German FAQ"><img src="../images/germany.png" alt="German FAQ" width="27" height="17" />&nbsp;German</a>
+    &nbsp;<a class="links" href="../jp/faq.htm" title="Japanese FAQ"><img src="../images/japan.png" alt="Japanese FAQ" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">FAQ</a>
+  </h1>
+
+  <ul class="links">
+    <li><a class="nav" href="#difference">What is the difference between generic and ICL10 builds?</a></li>
+    <li><a class="nav" href="#performance">Which build has the best decoding performance?</a></li>
+    <li><a class="nav" href="#perf_filters">Which build has the best decoding performance when using filters?</a></li>
+    <li><a class="nav" href="#stable">Which build is the most stable?</a></li>
+    <li><a class="nav" href="#multithreaded">Is ffdshow multithreaded?</a></li>
+  </ul>
+
+  <h2>
+    <a name="difference" id="difference">What is the difference between generic and ICL10 builds?</a>
+  </h2>
+
+  <p>
+    The main difference is the compiler that is used for compiling <em>ffdshow.ax</em>. There are four different compilers being used: <em>MSVC71</em>, <em>MSVC80</em>, <em>GCC</em> and <em>ICL10</em>.<br />
+    The CPU requirements for the builds are as follows:
+  </p>
+
+  <ul>
+    <li>Generic builds work on Pentium-MMX/AMD K6 or later.</li>
+    <li>ICL10 builds work on Pentium III/Athlon XP or later (SSE required).</li>
+    <li>Experimental x64 builds work on Windows XP/Vista x64 Edition in 64bit media players. Install the regular 32bit builds on these 64bit systems for use with 32bit media players.</li>
+  </ul>
+
+  <h2>
+    <a name="performance" id="performance">Which build has the best decoding performance?</a>
+  </h2>
+
+  <p>
+    All builders use the GCC compiler to build <em>libavcodec</em>, which is ffdshow's main library for decoding. This library contains a lot of hand-optimized assembly code (which auto-detects the CPU's supported feature and instruction sets). Using additional compiler optimizations or advanced instruction sets (such as SSE/SSE2) doesn't result in any significant or noticeable performance increases. So when comparing pure decoding performance, there is almost <strong>no difference</strong> between the builds.
+  </p>
+
+  <h2>
+    <a name="perf_filters" id="perf_filters">Which build has the best decoding performance when using filters?</a>
+  </h2>
+
+  <p>
+    Optimized builds of <em>ffdshow.ax</em> have an impact on performance when certain filters are used in ffdshow.<br />
+    Below is a list of - so far tested - filters that benefit from optimizations:
+  </p>
+
+  <ul>
+    <li>xsharpen</li>
+    <li>denoise3d</li>
+  </ul>
+
+  <p>
+    The following chart illustrates the possible increase in decoding performance when using optimized builds <strong>and</strong> filters:<br /><br />
+    <img src="images/benchmark.png" width="498" height="600" title="ffdshow build 802 benchmark" alt="ffdshow build 802 benchmark" /><br />
+    <span style="font-size:0.8em">
+      Test setup: Pentium 4 2.8GHz (Northwood), Windows XP SP2, using null renderer<br />
+      Test sample: <a class="links" href="http://trailers.divx.com/Dreamworks/Madagascar_HD.zip">Madagascar.avi</a> (DX50)
+    </span>
+  </p>
+
+  <p>
+    To sum it up:
+  </p>
+
+  <ul>
+    <li>The results when decoding without any filters applied are <strong>indistinguishable</strong>. All builds perform within 2% of each other.</li>
+    <li>The ICL9 (SSE) build proved to be the fastest when using the <em>xsharpen</em> filter. The decoding speed increased by 88% over generic MSVC builds.</li>
+    <li>SSE2-optimized builds showed no improvement over SSE builds.</li>
+    <li>GCC SSE builds (not shown in chart) also provide a nice performance boost.</li>
+    <li>The improvements over the generic builds differ from system to system though. It is recommended to test the provided builds on your own particular system.<br />
+      For benchmarking purposes, you will need Haali's <a class="links" href="http://haali.cs.msu.ru/mkv/timeCodec.exe">timeCodec.exe</a> [96KB]. For <em>timeCodec.exe</em> to work, <a class="links" href="http://haali.cs.msu.ru/mkv/">Haali Media Splitter</a> is needed.</li>
+  </ul>
+
+  <h2>
+    <a name="stable" id="stable">Which build is the most stable?</a>
+  </h2>
+
+  <p>
+    MSVC builds of <em>ffdshow.ax</em> are probably the most stable. However, there are no known issues with GCC builds either. So from a stability point of view, the build doesn't matter.
+  </p>
+
+  <h2>
+    <a name="multithreaded" id="multithreaded">Is ffdshow multithreaded?</a>
+  </h2>
+
+  <p>
+    The following list gives an overview of parts in ffdshow that are multithreaded and thus show an improvement when run on a multi-core CPU:
+  </p>
+
+  <ul>
+    <li>The <em>resize</em> filter is fully multithreaded. It is faster on a dual-core CPU. No configuration is needed. It is not effective on Pentium 4 HT CPUs.</li>
+    <li>Xvid encoder is multithreaded.</li>
+    <li>x264 encoder is multithreaded.</li>
+    <li>With "Queue &amp; misc" -> "Queue output samples" checked, acceleration using multithreading is enabled. You may see some benefit even on a single-core CPU.</li>
+    <li>libavcodec's MPEG1/2 decoders are multithreaded. It becomes effective when setting "Decoder options" -> "Number of decoding threads" to the number of supported cores. The setting has no effect on Pentium 4 HT CPUs.</li>
+    <li>libavcodec's MPEG4/MPEG2/MPEG1 encoders are multithreaded.</li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

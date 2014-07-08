@@ -1,0 +1,44 @@
+#ifdef APSTUDIO_INVOKED
+#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include "version.h"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION VERSION_NUMBER
+ PRODUCTVERSION VERSION_NUMBER
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "FileDescription", "DirectShow and VFW video and audio decoding/encoding/processing filter"
+            VALUE "FileVersion", VERSION_STRING "\0"
+            VALUE "InternalName", "ffdshow"
+            VALUE "LegalCopyright", VERSION_COPYRIGHT "\0"
+            VALUE "LegalTrademarks", VERSION_TRADEMARK "\0"
+            VALUE "OriginalFilename", "ffdshow.ax"
+            VALUE "ProductName", "ffdshow"
+            VALUE "ProductVersion", VERSION_STRING "\0"
+            VALUE "Build Date", VERSION_BUILD_DATE_TIME "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END

@@ -1,0 +1,65 @@
+<html><head><title>From sources</title><link rel='StyleSheet' href='styles/geo-light.css' type='text/css'></head><body><a class='wiki' href='HomePage.html'>home</a><br/><h1>From sources</h1><div class='wikitext'><ol><li><b>Prerequisites</b>
+<ul><li>Latest packages from <a class='wiki'  href='http://sourceforge.net/projetcs/mingw'>mingw</a> project. You'll need gcc, binutils, mingw-runtime, w32api and mingw32-make.
+</li><li>DirectX SDK or Microsoft Platform SDK. Can be downloaded from <a class='wiki'  href='http://msdn.microsoft.com/library/default.asp?url=/downloads/list/directx.asp'>here</a>.
+</li><li>Optionally <a class='wiki'  href='http://www.stlport.org/'>STLPort</a>. It's a STL replacement. If you'll install it to C:/Program Files/STLport, ffdshow Visual Studio projects will automatically use it. If you'd install it to other directory, just change the include path for ffdshow.ax and ff_wmv9.dll projects.
+</li></ul></li><li><b>Dynamic libraries</b>
+<ol><li><b>libmplayer.dll</b>
+<ul><li>Go to ffdshow/src/mplayer directory
+</li><li>If compiling using GNU tools (mingw, cygwin) run <b>make</b> command. This is recommended, because hand-optimized assembler code will be used.
+</li><li>If using Visual Studio 6 open libmplayer.dsw workspace file, select target and build project
+</li><li>If using Visual Studio .NET 2003 open libmplayer.sln solution file, select target and build solution
+</li><li>In ffdshow/bin directory libmplayer.dll file will be created
+</li></ul></li><li><b>libavcodec.dll</b>
+<ul><li>Go to ffdshow/src/ffmpeg directory
+</li><li>If compiling using GNU tools (mingw, cygwin) run <b>make</b> command. This way hand-optimized assembly code will be used.
+</li><li>If using Visual Studio 6 open libavcodec.dsw workspace file, select target and build project. Additional two targets are present: <b>Release ICL</b> and <b>Debug ICL</b>. If you have Intel C++ Compiler installed and selected and also GCC is preset, it will build libavcodec with C portions optimized by Intel C++ Compiler and hand-optimized assembler code compile by gcc. This could produce quite well optimized result, but I've never did any speed comparison of such build against simple GCC compiled one.
+</li><li>If using Visual Studio .NET 2003 open libavcodec.sln solution file, select target and build solution
+</li><li>In ffdshow/bin directory libavcodec.dll file will be created
+</li></ul></li><li><b>ff_libmad.dll</b>
+<ul><li>Go to ffdshow/src/codecs/libmad directory
+</li><li>If compiling using GNU tools (mingw, cygwin) run <b>make</b> command
+</li><li>If using Visual Studio 6 open ff_libmad.dsw workspace file, select target and build project
+</li><li>If using Visual Studio .NET 2003 open ff_libmad.sln solution file, select target and build solution
+</li><li>In ffdshow/bin directory ff_libmad.dll file will be created
+</li></ul></li><li><b>libmpeg2_ff.dll</b>
+<ul><li>Go to ffdshow/src/codecs/libmad directory
+</li><li>If compiling using GNU tools (mingw, cygwin) run <b>make</b> command. This is recommended, because hand-optimized assembler code will be used.
+</li><li>If using Visual Studio .NET 2003 open libmpeg2_ff.sln solution file, select target and build solution
+</li><li>In ffdshow/bin directory libmpeg2_ff.dll file will be created
+</li></ul></li><li><b>ff_mpeg2enc.dll</b>
+<ul><li>Go to ffdshow/src/codecs/mpeg2enc directory
+</li><li>If compiling using GNU tools (mingw, cygwin) run <b>make</b> command. This is recommended, because hand-optimized assembler code will be used.
+</li><li>If using Visual Studio 6 open ff_mpeg2enc.dsw workspace file, select target and build project
+</li><li>If using Visual Studio .NET 2003 open ff_mpeg2enc.sln solution file, select target and build solution
+</li><li>In ffdshow/bin directory ff_mpeg2enc.dll file will be created
+</li></ul></li><li><b>ff_theora.dll</b>
+<ul><li>Go to ffdshow/src/codecs/theora directory
+</li><li>If compiling using GNU tools (mingw, cygwin) run <b>make</b> command
+</li><li>If using Visual Studio 6 open ff_theora.dsw workspace file, select target and build project
+</li><li>If using Visual Studio .NET 2003 open ff_theora.sln solution file, select target and build solution
+</li><li>In ffdshow/bin directory ff_theora.dll file will be created
+</li></ul></li><li><b>ff_wmv9.dll</b>
+<ul><li>Go to ffdshow/src/codecs/wmv9 directory
+</li><li>If using Visual Studio 6 open ff_wmv9.dsw workspace file, select target and build project
+</li><li>If using Visual Studio .NET 2003 open ff_wmv9.sln solution file, select target and build solution
+</li><li>In ffdshow/bin directory ff_wmv9.dll file will be created
+</li></ul></li><li><b>ff_x264.dll</b>
+<ul><li>Go to ffdshow/src/codecs/x264 directory
+</li><li>Run <b>make</b> command to compile library using GNU tools
+</li><li>In ffdshow/bin directory ff_x264.dll file will be created
+</li></ul></li><li><b>TomsMoComp_ff.dll</b>
+<ul><li>Go to ffdshow/src/imgFilters/TomsMoComp directory
+</li><li>If using Visual Studio 6 open TomsMoComp_ff<a href='' class='wiki'>?</a>.dsw workspace file, select target and build project
+</li><li>If using Visual Studio .NET 2003 open TomsMoComp_ff<a href='' class='wiki'>?</a>.sln solution file, select target and build solution
+</li><li>In ffdshow/bin directory TomsMoComp_ff<a href='' class='wiki'>?</a>.dll file will be created
+</li></ul></li></ol></li><li><b>ffdshow.ax</b>
+<ul><li><b><a title="no description" href='Prepare+baseclasses+library.html' class='wiki'>Prepare baseclasses library</a></b>
+</li><li>If compiling using GNU tools (mingw, cygwin), go to ffdshow/src directory and run <b>make</b> command. This will take a long time, because current GCC windows port can't use precompiled headers.
+</li><li>If using Visual Studio 6 go to ffdshow directory, open ffdshow.dsw workspace file, select ffdshow as active project, choose target and build project
+</li><li>If using Visual Studio .NET 2003 go to ffdshow directory, open ffdshow.sln solution file, set ffdshow as startup project, select target and build solution.
+</li><li>Visual Studio workspace/solution contains ff_libmad, ff_theora, ff_wmv9 and TomsMoComp_ff<a href='' class='wiki'>?</a> projects, so you don't need to build them separately as described above.
+</li><li>Intel C++ Compiler is unable to compile TomsMoComp_ff<a href='' class='wiki'>?</a>. You have to use Microsoft C Compiler.
+</li><li>Makefile builds all dynamic libraries except for ff_wmv9.dll and TomsMoComp_ff<a href='' class='wiki'>?</a>.dll.
+</li></ul></li><li><b>Creating installer package</b>
+<ul><li>Download <a class='wiki'  href='http://nsis.sourceforge.net/'>NSIS 2</a>.
+</li><li>NSIS associates nsi extension, but for historical reasons ffdshow uses nsis2 extension for file describing the installer package. Go to ffdshow/bin/distrib directory, associate nsis2 extension with nsis and build the installer. <a class='wiki'  href='http://upx.sourceforge.net/'>UPX</a> executalbe compressor is used to get slightly smaller installer packages.</li></ul></li></ol></div></body></html>

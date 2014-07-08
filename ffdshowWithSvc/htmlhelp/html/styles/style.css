@@ -1,0 +1,64 @@
+body {
+	color: rgb(0,0,0); background-color: rgb(255,255,255); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 82%
+}
+img {
+	border: none
+}
+div.translation {
+	text-align: right; font-size: 0.9em; font-weight: bold
+}
+div.footer table {
+  margin-left: auto; margin-right: auto
+}
+div.footer td {
+  padding-top: 12px; text-align: center
+}
+h1 {
+  font-size: 1.8em
+}
+h2 {
+  font-size: 1.5em
+}
+h3 {
+  font-size: 1.3em
+}
+h4 {
+  font-size: 1.1em
+}
+/* For lists in the FAQ */
+ul.added {
+  color: rgb(0,0,128); list-style-type: disc
+}
+ul.fixed {
+  color: rgb(128,0,0); list-style-type: circle
+}
+ul.download {
+  list-style-type: square
+}
+/* For list of links */
+ul.links {
+  list-style-image: url(../images/arrow.png)
+}
+ul.radio {
+  list-style-image: url(../images/radio.png)
+}
+/* For navigation and download links inside <ul> elements as well as "Top" anchor */
+a.nav:link {
+	color: rgb(0,0,0); text-decoration: none; font-weight: bold
+}
+a.nav:visited {
+	color: rgb(100,100,100); text-decoration: none; font-weight: bold
+}
+a.nav:hover {
+	color: rgb(75,75,75); text-decoration: underline; font-weight: bold
+}
+/* For external and internal links (between ffdshow pages) */
+a.links:link {
+	color: rgb(40,40,40); text-decoration: none;	border-bottom: solid 1px rgb(40,40,40)
+}
+a.links:visited {
+	color: rgb(120,120,120); text-decoration: none; border-bottom: solid 1px rgb(120,120,120)
+}
+a.links:hover {
+	color: rgb(80,80,80); text-decoration: none; border-bottom: dotted 1px rgb(80,80,80)
+}

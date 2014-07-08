@@ -1,0 +1,9 @@
+LIBRARY "OpenSVCDecoder.plg"
+EXPORTS
+ SVCDecoder_init
+ SVCDecoder_close
+ decodeNAL
+ ParseAuPlayers
+ GetDqIdMax
+ SetCommandLayer
+ UpdateLayer

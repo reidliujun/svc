@@ -1,0 +1,2 @@
+For better performance on slower computer or in case of drivers incompatibility uncheck everything except for 16 bit integer.
+LPCM output is intended for connecting to DVD audio decoder filters like one from Cyberlink.

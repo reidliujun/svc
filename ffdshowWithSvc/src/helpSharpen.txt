@@ -1,0 +1,10 @@
+xsharpen
+This filter performs a subtle but useful sharpening effect. It operates by running a small window over the frame and each center pixel is either passed through untouched (depending upon a threshold setting), or mapped to either the brightest or dimmest pixel in the window, depending upon which is nearest to the center pixel. If the center pixel is mapped, it is also alpha-blended with the original pixel value using a configurable strength setting. The result is a sharpening effect that not only avoids amplifying noise, but also tends to reduce it.
+
+Unsharp mask
+This filter implements a well-known contrast enhancement/sharpening technique called unsharp masking. The basic idea is that a blurred version of the original image is created and then subtracted from the original image. The resulting image will have contrast boosts around features in the image. The result is a very pleasing sharpening that is superior to simple sharpening with a convolution kernel or high-pass boost.
+
+msharpen
+Sharpens important edges in the image without amplifying noise. The filter operates by detecting edges and then applying a sharpening kernel only in the edge areas.
+
+Descriptions are copied from original AviSynth and VirtualDub filters documentation (C) Donald Graft

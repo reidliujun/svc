@@ -1,0 +1,108 @@
+Credits:
+
+ffdshow tryouts is a fork project based on ffdshow written by Milan Cutka.
+
+The ffdshow tryouts project is maintained by the following Doom9 forum members:
+
+    * _xxl < xxlfree at yahoo dot com > from Romania
+    * albain
+    * clsid
+    * fastplayer < fastplayer at users dot sourceforge dot net > from Croatia
+    * foxyshadis
+    * h.yamagata < h_yamagata at users dot sourceforge dot net > from Japan
+    * igor1st
+    * Kurt 'Leak' Prünner < leak at gmx dot at > from Austria
+    * LaughingMan aka Eragon4ever < eragon4ever at users dot sourceforge dot net > from Germany
+    * MatMaul
+    * pizza_phd
+    * videomixer9
+
+Thanks to the GPL we use code from quite a few sources ;-)
+Here's a list of individuals that contributed to the ffdshow tryouts and
+projects/libraries that the tryouts depend resp. build upon:
+
+    * Video decoder based on Xvid DirectShow filter by Peter Ross
+    * Audio decoder based on:
+          o MPA Decoder, which is part of the guliverkli project by Gabest
+          o AC3Filter by Vigovsky Alexander
+          o CoreAAC by Robert Cioch
+          o CoreVorbis by Christophe Paris
+    * Using video and audio routines from:
+          o FFmpeg (libavcodec)
+          o liba52
+          o libdca
+          o libFAAD2
+          o libmad
+          o libmpeg2
+          o MPlayer
+          o libtheora
+          o Tremor
+    * "realaac" is an AAC decoder from Helix DNA Technology
+    * msvidc and msrle decoders by Mike Melanson
+    * Resizing and various audio/image filters from:
+          o MPlayer
+          o FFmpeg (libswscale)
+    * Colorspace conversions from:
+          o Xvid
+          o FFmpeg (libswscale)
+          o AviSynth
+    * Various filters based on code or ideas by:
+          o Avery Lee
+          o avih
+          o Ben Rudiak-Gould
+          o Daniel Moreno
+          o Didée
+          o Donald A. Graft
+          o Gabest
+          o Jezar
+          o Kurt 'Leak' Prünner
+          o Krzysztof Wojdon
+          o Lindsey Dubb
+          o Marc Fauconneau
+          o Nic
+          o Seb.26
+          o Tom Barry
+    * A part of DirectShow reconnecting code from DScaler
+    * C++ string class by Douglas W. Sauder
+    * C++ standard library uClibc++ by Garrett A. Kajmowicz
+    * Fast IDCT routines by Pascal Massimino
+    * zlib library by Jean-loup Gailly and Mark Adler
+    * libpng by Glenn Randers-Pehrson
+    * AMR audio decoding using 3GPP AMR Floating-point Speech Codec
+    * H.264 encoding using x264 library by Laurent Aimar
+    * Using code from XMMS DSP plugins:
+          o Crystality by Rafal Bosak
+          o Dynamic noise filtering by Rowland
+    * High quality audio resampling using libsamplerate by Erik de Castro Lopo
+    * Headphone virtual spatialization channel mixer from VLC by Boris Dorcs
+    * Floating point to interger dithered conversion derived from work by Frank Klemm
+    * Subtitles in RAR decompressed by modified unrar.dll library by Alexander L. Roshal
+    * Closed caption decoder from:
+          o Closed Caption Decoder by Mike Baker
+          o xine project
+    * Binary distributions created using:
+          o MinGW / GCC (compiled by CC979)
+          o yasm
+          o Inno Setup
+    * Special thanks to:
+          o Fabrice Bellard
+          o Michael Niedermayer
+          o and of course to all other libavcodec developers!
+    * Translations provided by:
+          o Amour
+          o CCTAHEB
+          o Daniel Bergholm
+          o Eduardo Martins
+          o Eugene Kirpa <xkirpa@yandex.ru>
+          o Fizick
+          o Gianluigi Tiesi
+          o khagaroth
+          o leolo
+          o majie
+          o Martin Skvrne
+          o Radzio
+          o Shiimera
+          o Sunny SO
+          o tnetsixenon
+
+Please let us know if we've forgotten anyone!

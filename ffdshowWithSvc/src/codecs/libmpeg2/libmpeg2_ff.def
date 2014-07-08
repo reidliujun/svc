@@ -1,0 +1,11 @@
+EXPORTS
+  mpeg2_set_accel
+  mpeg2_accel
+  mpeg2_init
+  mpeg2_info
+  mpeg2_parse
+  mpeg2_buffer
+  mpeg2_close
+  mpeg2_reset
+  mpeg2_set_rtStart
+  getVersion

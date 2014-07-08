@@ -1,0 +1,28 @@
+<html><head><title>Video encoder features</title><link rel='StyleSheet' href='styles/geo-light.css' type='text/css'></head><body><a class='wiki' href='HomePage.html'>home</a><br/><h1>Video encoder features</h1><div class='wikitext'><ul><li> various compression methods:
+<ul><li>MPEG 4 compatible (Xvid, DivX 4, DivX 5) using <a title="no description" href='libavcodec.html' class='wiki'>libavcodec</a> or <a title="no description" href='XviD.html' class='wiki'>XviD</a>
+</li><li>Divx 3 compatible, MSMPEG4v2
+</li><li>WMV1/7, WMV2/8
+</li><li>H263, H263+
+</li><li>HuffYUV in YV12 colorspace
+</li><li>MJPEG
+</li><li>MPEG 1
+</li><li><a title="no description" href="Encoding+library.html" class="wiki">Theora</a>
+</li><li>MPEG 2 by using mpeg2enc code from <a title="no description" href="Encoding+library.html" class="wiki">MJPEGtools</a> project and libavcodec
+</li><li>all Windows Media Video 9 supported encoders with output to asf/wmv file or AVI
+</li><li>H.264 using <a title="no description" href='x264.html' class='wiki'>x264</a> library
+</li></ul></li><li> all common encoding modes: constant bitrate, fixed quantizer, fixed quality, two pass encoding (depends on compressor features)
+</li><li> for libavcodec and Xvid detailed selection of motion estimation method
+</li><li> minimum and maximum I frames interval
+</li><li> minimum and maximum quantizer selection, quantizer type and trellis quantization selection for libavcodec
+</li><li> adaptive quantization (aka. masking) for libavcodec and Xvid, single coefficient elimination
+</li><li> selectable compression of starting and ending credits
+</li><li> two curve compression algorithms for second pass of two pass encoding - thanks to Xvid developers
+</li><li> second pass simulation: although not very precise, still helpful for tweaking advanced curve compression parameters
+</li><li> ability to use libavcodec internal two pass code
+</li><li> image preprocessing with ffdshow image filters (latest ffdshow version must be installed)
+</li><li> graph during encoding: if your encoding program doesn't provide one
+</li><li> B frames support: from one to eight consecutive B frames
+</li><li> support for MPEG 4 quarterpel and GMC
+</li><li> selectable interlaced encoding
+</li><li> decompression
+</li></ul><br/></div></body></html>

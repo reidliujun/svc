@@ -1,0 +1,64 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="D:\Projets\SVC\OpenSVCDecoder\Libs\SVC\Build_CCS\Build_CCS_C6416\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Project Dependencies]
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\lib_baseline.pjt"
+Source="..\..\..\AVC\h264_main_decoder\lib_main\lib_main.pjt"
+Source="..\..\lib_svc\lib_svc.pjt"
+
+["..\..\..\AVC\h264_baseline_decoder\lib_baseline\lib_baseline.pjt" Settings]
+MatchConfigName=true
+
+["..\..\..\AVC\h264_main_decoder\lib_main\lib_main.pjt" Settings]
+MatchConfigName=true
+
+["..\..\lib_svc\lib_svc.pjt" Settings]
+MatchConfigName=true
+
+[Source Files]
+Source="..\H264_plg.c"
+Source="smt.tcf"
+Source="mysect_DSP_BIOS.cmd"
+Source="smtcfg.cmd"
+
+[Generated Files]
+Source="smtcfg.s62"
+Source="smtcfg_c.c"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"../../CommonFiles\src" -i"../../AVC\h264_baseline_decoder\lib_baseline\" -i"../../AVC\h264_main_decoder\lib_main\" -i"../lib_svc" -d"_DEBUG" -d"CHIP_6416" -d"TI_OPTIM" -mv6400
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"%AVC_DEC_DIR%\h264_baseline_decoder\lib_baseline\" -i"%AVC_DEC_DIR%\h264_main_decoder\lib_main\" -d"CHIP_6416" -d"TI_OPTIM" -mv6400
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\libOnDsp.map" -o"..\bin\libOnDsp.out" -w -x -i"../../SVC/lib_svc/" -i"../../AVC\h264_baseline_decoder\CCS\lib_baseline\" -i"../../AVC\h264_main_decoder\CCS\lib_main\" -i"%BIB_m4%\AAA\Librairies\C64x\lib_SMT_C64\" -i"%BIOS_INSTALL_DIR%/packages/ti/rtdx/lib/C6000"
+
+["Linker" Settings: "Release"]
+Options=-c -o".\Release\LibOnDsp.out" -w -x -i"%AVC_DEC_DIR%\h264_baseline_decoder\CCS\lib_baseline\" -i"%AVC_DEC_DIR%\h264_main_decoder\CCS\lib_main\" -i"%BIB_m4%\AAA\Librairies\C64x\lib_SMT_C64\" -i"%BIOS_INSTALL_DIR%/packages/ti/rtdx/lib/C6000" --m".\Release\LibOnDsp.map"
+
+["mysect_DSP_BIOS.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["mysect_DSP_BIOS.cmd" Settings: "Release"]
+LinkOrder=1
+
+["smtcfg.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["smtcfg.cmd" Settings: "Release"]
+LinkOrder=1
+
+
+[Tools]
+ToolDeleteList 

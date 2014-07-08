@@ -1,0 +1,13 @@
+EXPORTS
+  DllGetClassObject
+  DllCanUnloadNow
+  DllRegisterServer
+  DllUnregisterServer
+  configure
+  configureRaw
+  configureAudio
+  configureAudioRaw
+  configureEnc
+  configureDec
+  ffacm2creator
+  configureSubtitles

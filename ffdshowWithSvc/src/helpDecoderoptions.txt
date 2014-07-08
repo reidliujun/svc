@@ -1,0 +1,10 @@
+Flip video - if the movie is displayed upside-down, check this
+
+IDCT
+If you see periodically appearing faint horizontal lines in the movie or colors are slightly changing, try to select different IDCT routine
+Following descriptions are based only on some users experiences, you may obtain different results.
+Simple 16383 - this is preferred routine, it's fast and quite accurate, but may produce some artifacts with Divx 4,5 and Xvid movies
+Normal - slightly slower than above and may produce horizontal stripes with Divx 3
+Reference - most precise, but very slow - it is usable only for testing
+Simple 16384  - older version of Simple 16383, it's deprecated now
+Xvid - IDCT routine from Xvid decoder, good for Divx 4, Divx 5 and Xvid movies

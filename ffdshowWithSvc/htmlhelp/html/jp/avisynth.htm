@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- In sync with revision 1194. -->
+
+<head>
+  <title>ffdshow tryouts | AviSynth filter</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+  <meta name="description" content="ffdshow tryouts AviSynth filter" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translation available in:
+    &nbsp;<a class="links" href="../en/avisynth.htm" title="English AviSynth documentation"><img src="../images/england.png" alt="English AviSynth documentation" width="27" height="17" />&nbsp;English</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">AviSynth フィルタ</a>
+  </h1>
+
+  <img src="images/avisynth.png" title="AviSynth dialog" alt="AviSynth dialog" width="649" height="384" />
+
+  <p>
+    このドキュメントは rev 1194以降に対応しています。
+  </p>
+
+  <h2><a name="About_AviSynth">AviSynthについて</a></h2>
+
+  <p>
+    AviSynthはスクリプト言語の一種でノンリニア編集のための画像フィルタを集めたものです。詳しくは<a class="links" href="http://www.avisynth.info/?AviSynth" target="_blank">AviSynth Wiki</a>を参照して下さい。
+    ffdshowの画像フィルタ設定で可能であるのと同様、AviSynthの画像フィルタを組み合わせてフィルタ・チェーンを作ることができます。
+    それはffdshowの画像フィルタ群よりさらに強力で魅力的なものですが、GUIが付属しておらずメディア・プレーヤーで動画を見るのにあまり適しているとは言えません。
+  </p>
+
+  <p>
+    ffdshowのAviSynthフィルタはほとんどのAviSynth内蔵フィルタと外部プラグインをリアルタイムでビデオ再生に用いることができます。しかしもちろんいくらかの制限があり、それについてはこのページの下のほう
+    <a class="links" href="#Compatibility">"互換性"</a>をお読みください。
+  </p>
+
+  <h2><a name="Prerequisites">準備</a></h2>
+
+  <p>
+    まず最初にAviSynthをインストールしておく必要があります。まだお済でなければ<a class="links" href="http://www.avisynth.org/" target="_blank">AviSynthのホームページ、英語</a>
+    または直接<a class="links" href="http://sourceforge.net/project/showfiles.php?group_id=57023&amp;package_id=72557" target="_blank">AviSynth 2.5 ダウンロードページ（SourceForge）</a>
+    から最新版をダウンロードしてインストールしてください。
+  </p>
+
+  <p>
+    他のフィルタやスクリプトが必要になることもあります。<a class="links" href="http://www.avisynth.info/?AviSynth" target="_blank">AviSynth Wiki</a>とAviSynthと同時にインストールされたドキュメントをご一読されることをおすすめします。
+    内蔵フィルタと外部プラグインの包括的なリストと説明があります。スクリプト、フィルタ、AviSynth全般についてさらに情報をお求めなら、
+    <a class="links" href="http://forum.doom9.org/forumdisplay.php?f=33" target="_blank">Doom9.orgのAviSynthユーザー・フォーラム・英語</a>
+    または
+    <a class="links" href="http://forum.doom9.org/forumdisplay.php?f=69" target="_blank">Doom9.orgのAviSynth開発フォーラム・英語</a>
+    をお読みください。
+  </p>
+
+  <h2><a name="Configuration">設定</a></h2>
+
+  <p>
+    ffdshowのAviSynthフィルタ設定のページはビデオに対して適用されるAviSynthスクリプトを記載するための大きなテキストボックスといくつかの追加のオプションから成り立っています。
+  </p>
+
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" /> ffdshowのビデオソースを追加する
+  </h3>
+
+  <p>
+    チェックするとffdshowからの入力画像をAviSynthに取り入れる"ffdshow_source"というソースフィルタへの呼び出しがスクリプトの先頭に自動的に追加されます。<br />
+    チェックしない場合、"ffdshow_source()"をスクリプト中のどこかに記載する必要があります。
+  </p>
+
+  <h3>3:2 プルダウン</h3>
+
+  <p>
+    DVDのようにインターレース(NTSC)のテレビで見ることを前提に作られたビデオは約30フレーム/秒（以下FPS）になっています。しかし、映画は通常約24フレームですから30フレームにするためには何か細工が必要です。
+    通常この目的で使用される方法は「3:2 プルダウン」または「テレシネ」と呼ばれ、4フレームに対して1フレーム（より正確には2つのフィールド、1フィールドは0.5フレーム）をオリジナルのフレームのフィールドを結合したり複製したりすることで作り上げて追加します。
+    PCのモニタ（プログレッシブ）で見た場合何の対策もとらなければくし状のアーチファクトがみられます（最近のビデオカードではたいていの場合これをうまく処理してくれます、しかしサンプルによってはうまくいかないケースもあります）。
+  </p>
+
+  <h4>プルダウンを行わない</h4>
+
+  <p>
+    ビデオ・ストリームのインターレースとフィールドリピートに関するフラグは無視されます。インターレース関連フラグとタイムスタンプを変更したくないときに、このオプションを選択してください。
+    主としてAviSynthでフレームを追加したり削除したりしない、または100%プログレッシブの場合になります。
+  </p>
+
+  <p>
+    ビデオ･ストリームがインターレースやフィールドリピートに関するフラグを持っているかはそのビデオ次第ですが、DVDや他のMPEG2ビデオは大抵持っています。
+  </p>
+
+  <h4>プルダウンを適用する</h4>
+
+  <p>
+    24FPSの素材をフレームを追加したり削除したりするスクリプトで扱うには、このオプションを使用してください。
+    ビデオ･ストリームのインターレース関連フラグに基づいて3:2 プルダウンを再現します。
+    これによりAviSynthはテレビと同じように確実に30FPSを等間隔のタイムスタンプで受け取ることができます。
+    というのは24FPS素材のDVDではフレームの持続時間が交互に変化する（33/50ms）のですが、AviSynthはフレームレートが一定でないとうまく処理することができません。
+    プルダウンを適用した後、元々の24FPSに戻すためにインターレース除去フィルタ、より望ましくはTIVTCかDecombのような逆テレシネ(IVTC)フィルタを使用することになります。
+  </p>
+
+  <p>
+    これはフラグが狂っていて（このフィルタなしには）ひどいくし状アーチファクトやぎこちない動きのためまともに見られないDVDを修正して見るのにも使えます。
+    また24/30FPSのハイブリッド素材を見るときにも大変有用です。
+    このオプションはインターレース関連フラグの存在下で作用しますのでプログレッシブの素材に対してそのままにしておいてかまいません。
+  </p>
+
+  <h4>タイムスタンプを平滑化する</h4>
+
+  <p>
+    このオプションは交互に変化するフレームの持続時間（24FPS素材のDVDでは33と50msの交互）を現在のフレームと一つ前のフレームの持続時間の平均とすることで平滑化します。
+    これにより、ハイブリッド素材でタイムスタンプを狂わせることなく（たとえばbobフィルタで）フレームを追加したり削除したりすることが出来ます（bobフィルタなどはフレームの持続時間が等間隔でないと動作しません）。
+    （フレームの持続時間が最初から等間隔である場合には当然そのままになります。）
+  </p>
+
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" /> 入力色空間
+  </h3>
+
+  <p>
+    スクリプトで使用するAviSynthフィルタのすべてがここに挙げられた色空間をすべて受け入れられるとは限らないので、
+    使用できない色空間のチェックを外しffdshowが必要に応じてチェックされた色空間のうちのどれかに変換するように指定することが出来ます。
+    もちろん、４つともチェックしておき色空間変換をスクリプトの中で行うことも出来ます。
+    色空間の変換は少々時間がかかり、画質も低下させますので最低限にしたいところです。
+  </p>
+
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" /> バッファー 後方/前方
+  </h3>
+
+  <p>
+    AviSynthのフィルタはその直前のフィルタに対しどのフレームを要求しても良いことになっています。すなわちランダム、ノンリニア・アクセスが許されています。
+    しかしffdshowでは上流のDirectShowフィルタやアプリケーションがffdshowに渡すフレームを決定するためランダム・アクセスは不可能です。
+  </p>
+
+  <p>
+    この問題にどうにか対処するためffdshowのAviSynthフィルタは前方および後方のフレームをユーザーが指定した枚数だけメモリに記憶（バッファ）しておくことができます。
+    AviSynthスクリプトがその範囲内でフレームを要求すれば正しく機能します。
+    もし要求されたフレームがバッファになければそれに最も近いフレームを返しますが、少なくともIVTCかインターレース解除フィルタにおいてはぎこちない動きになります。
+  </p>
+
+  <p>
+    もしうまくいかないときはバッファの数を調節する必要があります。
+    必要なバッファの数を調べるにはffdshowのオンスクリーンディスプレイ(OSD)を有効にし「AviSynthの情報」にチェックするか、「現在の値を使う」ボタンを押して2つの数字を直接設定してください。
+  </p>
+
+  <p>
+    もし反対にバッファ機能を完全に止めたいときは2つの数字に0を設定するか「バッファー 後方/前方」のチェックを外してください。
+  </p>
+
+  <p>
+    （AviSynthのフィルタがどのくらいの範囲のフレームを要求するかはしばしば自明でないことがあります。それは入力ビデオによっても変化します。
+    ですから<b>あるスクリプトに対して</b>最適な値が決まるまでには微調整が必要かもしれません。
+    最適な値はスクリプトによって異なります。）
+  </p>
+
+  <h3>スクリプト記載欄</h3>
+
+  <p>
+    大きなテキストボックスはAviSynthスクリプトを書くところです。saveボタンを使ってファイルに保存したり、loadボタンを使ってファイルから読み込むことが可能です。
+  </p>
+
+  <p>
+    このダイアログに大きなスクリプトを書くのはあまり快適ではありませんのでスクリプトを関数として記載しAVSIファイルとして保存して（またはImport()を使って手動でインポートして）その関数をffdshowから呼び出すだけにすることも出来ます。
+  </p>
+
+  <h4>アスペクト比関連変数</h4>
+
+  <p>
+    グローバル変数 ffdshow_dar_x と ffdshow_dar_y は入力ビデオのDAR (display aspect ratio)に設定されます（すなわち4:3のビデオなら4と3）。
+    また出力の新しいアスペクト比を設定するのに用いることもできます。
+    ただしDVD再生時にはMedia Player Classicなどいくつかのメディアプレイヤーはこれらの値を無視しDVD navigator (DirectShowフィルタ)にアスペクト比を問い合わせるため、おかしな結果になることがあります。
+  </p>
+
+  <h4>サンプル・スクリプト</h4>
+
+  <p>
+    AviSynthのインストールが成功したかを確かめるための非常に簡単なスクリプトは単に：
+  </p>
+
+  <pre style="border: 1px solid Gray; margin-left: 2ex; padding-left: 0.5ex;">
+Info()</pre>
+
+  <p>
+    現在のフレームについての基本的なデータをビデオに重ねて表示します。
+  </p>
+
+  <p>
+    TIVTCを使ったプルダウン除去のサンプル：
+  </p>
+
+  <pre style="border: 1px solid Gray; margin-left: 2ex; padding-left: 0.5ex;">
+TFM(order=1,chroma=false)
+TDecimate(mode=1,hybrid=1,conCycle=1,chroma=false)</pre>
+
+  <p>
+    (必ず「プルダウンを適用する」を選択し「バッファー 後方/前方」を0と12にそれぞれ設定してください。AviSynthのプラグインフォルダにTIVTCを解凍しておく必要があります。）
+  </p>
+
+  <p>
+    上のスクリプトを拡張し800x600の領域に4:3または16:9（左右を少し切ります）でリサイズして出力するようにしたサンプル：
+  </p>
+
+  <pre style="border: 1px solid Gray; margin-left: 2ex; padding-left: 0.5ex;">
+function Resize_16_9(v)
+{
+  return v.LanczosResize(800,480,22,0,676,480).AddBorders(0,60,0,60)
+}
+
+function Resize_4_3(v)
+{
+  return v.LanczosResize(800,600)
+}
+
+TFM(order=1,chroma=false)
+TDecimate(mode=1,hybrid=1,conCycle=1,chroma=false)
+
+ar=float(ffdshow_dar_x)/float(ffdshow_dar_y)
+diff=ar-1.5555
+
+abs(abs(diff)-0.2222) > 0.05 ? last : \
+(diff >= 0 \
+? last.Resize_16_9 \
+: last.Resize_4_3)
+
+ffdshow_dar_x=4 ffdshow_dar_Y=3</pre>
+
+  <h2><a name="Compatibility">互換性</a></h2>
+
+  <p>
+    ほとんどのAviSynthフィルタをffdshowで使えるはずです。
+    ffdshowで使えないことが分かっているものはビデオの中で大きく順番を入れ替えるもの（Trimとか(Un-)AlignedSpliceを数フレーム以上にわたって適用する、またはReverse）です。
+    他のビデオファイルをロードするのもあまり使い物にならないでしょう。
+  </p>
+
+  <p>
+    もし意図せずにスクリプトでフレーム数をわずかに増減してしまった場合（例えばFadeIn()は末尾に1フレームを追加します）、多分シーク時におかしなことがおこります。
+    これを避けるためには5:4とか1:2のような（小さな分子と分母の）普通の比率になるようにフレームを追加したり削除したりすることです。
+  </p>
+
+  <p>
+    バッファーを無効にし、「3:2 プルダウン」を「プルダウンを行わない」に設定することにより以前のffdshowの動作をさせることが出来ます。
+    これは中間バッファへのフレーム転送を避けることになり多少パフォーマンスが良くなります。
+    しかし当然TIVTCのような現在のフレーム以外のフレームを要求するスクリプトは動作しなくなります。
+  </p>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

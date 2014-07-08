@@ -1,0 +1,11 @@
+<html><head><title>Decoder options</title><link rel='StyleSheet' href='styles/geo-light.css' type='text/css'></head><body><a class='wiki' href='HomePage.html'>home</a><br/><h1>Decoder options</h1><div class='wikitext'><b>Libavcodec options</b>
+<br/><ul><li><a title="no description" href='IDCT.html' class='wiki'>IDCT</a> function
+<ul><li>auto - chooses best suited algorithm according to video <a title="no description" href='FOURCC.html' class='wiki'>FOURCC</a>
+</li><li>simple MMX - fast and accurate implementation, works well for DivX 3, produces color shift for Xvid
+</li><li>libmpeg2 (Xvid) - IDCT function from <a title="no description" href='libmpeg2.html' class='wiki'>libmpeg2</a>
+</li><li>Skal's IDCT - very fast function from Skal's sklmp4<a href='' class='wiki'>?</a>
+</li><li>simple - slower version of simple MMX
+</li><li>integer - from libjpeg by Independent JPEG Group
+</li><li>reference - floating point implementation, <b>very</b> slow, useful only for testing
+</li></ul></li><li>Workaround encoder bugs - when default Autodetect option is checked libavcodec tried to set suitable options for decoded video to fix various encoder bugs. However this is not always possible and therefore it's possible to specify bugs workaround methods manually. Detailed description of these options, unfortunatelly, isn't available.
+</li><li>Error concealment and error resilience - libavcodec is capable of recover from corrupted files. These options control how strong libavcodec should try to eliminate visual bugs when it finds a corruption.</li></ul></div></body></html>

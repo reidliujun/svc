@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Please update the revision number when changes to the markup code
+have been made, which were ported to this translation (even if nothing
+was changed here). This is to know which revisions are not ported yet.
+If you skip to port a revision please note that revision for later porting. -->
+
+<!-- In sync with revision 1411 except for revision(s) -none-. -->
+
+<head>
+  <title>ffdshow tryouts | FAQ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="ffdshow tryouts FAQ" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" width="200" height="91" title="ffdshow tryouts" alt="ffdshow tryouts" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../en/faq.htm" title="English FAQ"><img src="../images/england.png"  alt="English FAQ" width="27" height="17" />&nbsp;English</a>
+    &nbsp;<a class="links" href="../jp/faq.htm" title="Japanese FAQ"><img src="../images/japan.png" alt="Japanese FAQ" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">FAQ</a>
+  </h1>
+
+  <ul class="links">
+    <li><a class="nav" href="#difference">Was ist der Unterschied zwischen generischen und ICL10-Builds?</a></li>
+    <li><a class="nav" href="#performance">Welches Build hat die beste Dekodierleistung?</a></li>
+    <li><a class="nav" href="#perf_filters">Welches Build hat die beste Dekodierleistung, wenn Filter verwendet werden?</a></li>
+    <li><a class="nav" href="#stable">Welches Build ist das stabilste?</a></li>
+    <li><a class="nav" href="#multithreaded">Ist ffdshow multithreaded?</a></li>
+  </ul>
+
+  <h2>
+    <a name="difference" id="difference">Was ist der Unterschied zwischen generischen und ICL10-Builds?</a>
+  </h2>
+
+  <p>
+    Der Hauptunterschied ist der Compiler, der zum Kompilieren von <em>ffdshow.ax</em> verwendet wird. Es werden vier verschiedene Compiler verwendet: <em>MSVC71</em>, <em>MSVC80</em>, <em>GCC</em> und <em>ICL10</em>.<br />
+    Die CPU-Anforderungen f&uuml;r die Builds sind wie folgt:
+  </p>
+
+  <ul>
+    <li>Generische Builds ben&ouml;tigen einen Pentium-MMX/AMD K6 oder neuer.</li>
+    <li>ICL10-Builds ben&ouml;tigen einen Pentium III/Athlon XP oder neuer (SSE erforderlich).</li>
+    <li>Experimentelle x64-Builds funktionieren unter Windows XP/Vista x64 Edition in 64bit-Mediaplayern. Installieren Sie die regul&auml;ren 32bit-Builds unter diesen 64bit-Systemen um es mit 32bit-Mediaplayern zu verwenden.</li>
+  </ul>
+
+  <h2>
+    <a name="performance" id="performance">Welches Build hat die beste Dekodierleistung?</a>
+  </h2>
+
+  <p>
+    Alle Builder verwenden den GCC-Compiler um <em>libavcodec</em>, welches ffdshows Hauptbibliothek zum Dekodieren ist, zu erstellen. Diese Bibliothek enth&auml;lt eine Menge handoptimierten Assembler-Codes, welcher automatisch die von der CPU unterst&uuml;tzten Eigenschaften und Befehlss&auml;tze erkennt. Die Verwendung zus&auml;tzlicher Compileroptimierungen oder erweiterter Befehlss&auml;tze (wie SSE/SSE2) resultiert in keinem signifikanten oder sp&uuml;rbaren Geschwindigkeitszuwachs. Wenn also die reine Dekodiergeschwindigkeit verglichen wird, gibt es nahezu <strong>keinen Unterschied</strong> zwischen den Builds.
+  </p>
+
+  <h2>
+    <a name="perf_filters" id="perf_filters">Welches Build hat die beste Dekodierleistung, wenn Filter verwendet werden?</a>
+  </h2>
+
+  <p>
+    Optimierte Builds von <em>ffdshow.ax</em> haben Auswirkungen auf die Geschwindigkeit, wenn bestimmte Filter in ffdshow verwendet werden.<br />
+    Unterhalb befindet sich eine Liste von - bis jetzt getesteten - Filtern, die von Optimierungen profitieren:
+  </p>
+
+  <ul>
+    <li>xsharpen</li>
+    <li>denoise3d</li>
+  </ul>
+
+  <p>
+    Das folgende Diagramm stellt die m&ouml;glichen Zuw&auml;chse in der Dekodiergeschwindigkeit, wenn optimierte Builds <strong>und</strong> Filter verwendet werden, dar:<br /><br />
+    <img src="images/benchmark.png" width="498" height="600" title="ffdshow-Build-802-Test" alt="ffdshow-Build-802-Test" /><br />
+    <span style="font-size:0.8em">
+      Testsystem: Pentium 4 2.8GHz (Northwood), Windows XP SP2, Null Renderer verwendet<br />
+      Testbeispiel: <a class="links" href="http://trailers.divx.com/Dreamworks/Madagascar_HD.zip">Madagascar.avi</a> (DX50)
+    </span>
+  </p>
+
+  <p>
+    Zusammenfassend:
+  </p>
+
+  <ul>
+    <li>Wird ohne Filter anzuwenden dekodiert, sind die Ergebnisse <strong>nicht zu unterscheiden</strong>. Alle Builds bewegen sich innerhalb von 2%.</li>
+    <li>Das ICL9-(SSE)-Build zeigte sich als das Schnellste, wenn der <em>xsharpen</em>-Filter verwendet wird. Die Dekodierleistung liegt 88% &uuml;ber den generischen MSVC-Builds.</li>
+    <li>SSE2-optimierte Builds zeigten keinerlei Verbesserung gegen&uuml;ber SSE-Builds.</li>
+    <li>GCC-SSE-Builds (nicht im Diagramm dargestellt) geben ebenfalls einen ansehnlichen Geschwindigkeitszuwachs.</li>
+    <li>Allerdings unterscheiden sich die Zuw&auml;chse gegen&uuml;ber den generischen Builds von System zu System. Es wird empfohlen die Builds auf dem eigenen System zu testen.<br />
+      Zu Testzwecken wird Haalis <a class="links" href="http://haali.cs.msu.ru/mkv/timeCodec.exe">timeCodec.exe</a> [96KB] ben&ouml;tigt. Damit <em>timeCodec.exe</em> funktioniert, ist <a class="links" href="http://haali.cs.msu.ru/mkv/">Haali Media Splitter</a> Voraussetzung.</li>
+  </ul>
+
+  <h2>
+    <a name="stable" id="stable">Welches Build ist das stabilste?</a>
+  </h2>
+
+  <p>
+    MSVC-Builds von <em>ffdshow.ax</em> sind vermutlich die stabilsten, allerdings sind auch keine Fehler in GCC-Builds bekannt. Von der Stabilit&auml;t betrachtet, spielt das Build also keine Rolle.
+  </p>
+
+  <h2>
+    <a name="multithreaded" id="multithreaded">Ist ffdshow multithreaded?</a>
+  </h2>
+
+  <p>
+    Die folgende Liste gibt eine &Uuml;bersicht der Teile ffdshows, die multithreaded sind und somit Verbesserungen zeigen, wenn sie auf einem Multicore-System ausgef&uuml;hrt werden:
+  </p>
+
+  <ul>
+    <li>Der <em>Gr&ouml;&szlig;en&auml;nderungsfilter</em> ist vollst&auml;ndig multithreaded. Er ist auf Dualcore-Systemen schneller (auf Pentium 4 HT-CPUs ineffektiv) und ben&ouml;tigt hierf&uuml;r keinerlei Konfiguration.</li>
+	  <li>Der Xvid-Enkoder ist multithreaded.</li>
+	  <li>Der x264-Enkoder ist multithreaded.</li>
+    <li>Ist "Queue &amp; misc" -> "Queue output samples" markiert, wird Beschleunigung durch Multicoreunterst&uuml;tzung aktiviert, von dessen positivem Effekt man unter Umst&auml;nden selbst auf einem Singlecore-CPU profitieren kann.</li>
+    <li>libavcodecs MPEG1/2-Dekoder sind multithreaded. Es wird effektiv, wenn "Decoder options" -> "Number of decoding threads" auf die Zahl der vorhandenen Prozessorkerne gesetzt wird. Diese Einstellung hat keinen Effekt auf Pentium-4-HT-CPUs.</li>
+    <li>libavcodecs MPEG4/MPEG2/MPEG1-Encoder sind multithreaded.</li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Zum Anfang&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+EXPORTS
+  dca_init
+  dca_syncinfo
+  dca_frame
+  dca_dynrng
+  dca_blocks_num
+  dca_block
+  dca_samples
+  dca_free
+  getVersion

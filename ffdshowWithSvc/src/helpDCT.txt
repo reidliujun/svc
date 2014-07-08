@@ -1,0 +1,3 @@
+DctFilter is an experimental filter that, for each 8x8 block, will do a Discrete Cosine Transform (DCT), scale down the selected frequency values, and then reverse the process with an Inverse Discrete Cosine Transform (IDCT).
+
+Copyright (C) 2002 Tom Barry  - trbarry@trbarry.com

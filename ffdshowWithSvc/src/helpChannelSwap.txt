@@ -1,0 +1,1 @@
+Channels can be swapped using the Mixer filter too, but this is faster.

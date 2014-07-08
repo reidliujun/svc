@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ffdshow tryouts | Changelog</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="ffdshow tryouts changelog" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../de/index.htm" title="German changelog"><img src="../images/germany.png" alt="German changelog" width="27" height="17" />&nbsp;German</a>
+    &nbsp;<a class="links" href="../jp/index.htm" title="Japanese changelog"><img src="../images/japan.png" alt="Japanese changelog" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">Changelog</a>
+  </h1>
+
+  <p>
+    This list is based on the latest revision of the original project except the multithreading patch.<br />
+    Navigate to:
+  </p>
+
+  <ul class="links">
+    <li><a class="nav" href="#fixes">Bug fixes</a></li>
+    <li><a class="nav" href="#features">New features</a></li>
+    <li><a class="nav" href="#download">Download</a></li>
+    <li><a class="nav" href="faq.htm">FAQ</a></li>
+  </ul>
+
+  <!-- old table navigation version -->
+  <!--
+  <table summary="Links to different sections of changelog">
+    <tr><td>Navigate to:</td><td><a class="nav" href="#fixes">Bug fixes</a></td></tr>
+    <tr><td></td><td><a class="nav" href="#features">New features</a></td></tr>
+    <tr><td></td><td><a class="nav" href="#download">Download</a></td></tr>
+    <tr><td></td><td><a class="nav" href="faq.htm">FAQ</a></td></tr>
+  </table>
+  -->
+
+  <h2>
+    <a name="fixes" id="fixes">Bug fixes</a><br />
+  </h2>
+
+  <h3>Fixed after beta4</h3>
+
+  <ul class="fixed">
+    <li>In Windows Media Center on Vista, AVI files that have non-square aspect ratio could not be played properly due to a bug in Windows Media Center. Now, if you check both "Allow output format changes during playback" and "Connect to compatible filters only", these files play with correct aspect ratio.</li>
+    <li>If ffdshow was inputting NV12/NV21 as raw video and resize was enabled, ffdshow crashed.</li>
+    <li>"Bitmap overlay" crashed.</li>
+    <li>DCT image filter for playback was not working.</li>
+    <li>In subtitle filter, if "Overlap subtitles with same time" was checked, ffdshow sometimes crashed.</li>
+    <li>The subtitles letterbox erroneously applied cropping instead of letterboxing if the specified AR was wider than the AR of the given video.</li>
+    <li>Windows Media Center crashed on creating thumbnails.</li>
+  </ul>
+
+  <h3>Fixed before beta4</h3>
+
+  <ul class="fixed">
+    <li>In FLAC and TTA, A/V synch was lost.</li>
+    <li>Closed caption decoder produced garbled characters.</li>
+    <li>Crashes in Windows Movie Maker have been fixed.</li>
+    <li>Subtitles that contain an "&amp;" as part of the filename were displayed incorrectly inside ffdshow's context menu.</li>
+    <li>MakeAVIS.exe in "Store uncompressed audio" mode produced noisy audio if the input audio was not 16bit integer.</li>
+    <li>If the AviSynth script had multiple lines, the script was not saved by using "Export all settings" or "Save to file..." in Presets page.</li>
+    <li>DTS S/PDIF pass-through sometimes had terrible noise.</li>
+    <li>Compatibility problem with VFW encoder applications such as HyperCam has been fixed.</li>
+    <li>If ConvertToRGB was used in AviSynth script, the video was flipped.</li>
+    <li>If "Swap channels" was used, audio was lost if the number of channels of the input stream changed.</li>
+    <li>DVD menu was sometimes not highlighted.</li>
+    <li>"Preset autoload conditions" -> "on movie file name match (with wildcards)" did not work.</li>
+    <li>If the input color space was NV12 or NV21, ffdshow could not render properly.</li>
+    <li>If crop was used after letterbox subtitling, the bottom of the image was cropped too much.</li>
+  </ul>
+
+  <h3>Fixed before beta3</h3>
+
+  <ul class="fixed">
+    <li>Black borders were not painted black in AviSynth filter and deinterlacers.</li>
+    <li>libavcodec encoders did not accept frame rates except 25fps. Other encoders sometimes had inaccurate frame rates.</li>
+    <li>If ffdshowaudio() was used in AviSynth script, an error occurred.</li>
+    <li>If a Unicode subtitle file contained 0x1a, the rendering failed.</li>
+    <li>The image got mirrored if AviSynth filter output in RGB color space.</li>
+    <li>If "RAW video" -> "YV12" in VFW decoder was enabled, the image got mirrored when VFW codec was used via DirectShow.</li>
+    <li>Improved stability of Winamp plugin handling.</li>
+    <li>On the fly resize: If you entered 8 (as the first digit of 800) for the vertical size, it crashed depending on the used method (lanczos tap>=4, spline, etc).</li>
+    <li>If resize was being used, changes to the pixel aspect ratio (SAR) of the video were ignored.</li>
+    <li>If "Resize &amp; aspect" -> "Borders" -> "Inside" was used, "Keep original aspect ratio" calculated wrong size.</li>
+    <li>AviSynth script could not be saved (Unicode builds only).</li>
+  </ul>
+
+  <h3>Fixed before beta2</h3>
+
+  <ul class="fixed">
+    <li>After changing aspect ratio, the height of the picture halved, if you used overlay mixer and YUY2. It was common on DVD playback.</li>
+    <li>FFV1 decoder crashed on seeks or delay.</li>
+    <li>FFV1 encoder: default key frame distance value was 250, which was too high and could not be configured independently. New default is 10.</li>
+    <li>When NV12 was the only available output color space for DirectShow decoder and "Raw video" was enabled for VFW decoder, Windows Media Player 11 thumbnailer crashed.</li>
+    <li>Subtitle was gray, even if you selected white.</li>
+    <li>Deleting the active and default preset settings caused a crash.</li>
+    <li>Flipped NV12 caused either crash or corrupt image.</li>
+    <li>Using Media Player Classic's internal Matroska splitter, the aspect ratio was always 1.</li>
+    <li>When you opened audio configuration dialog during playback, the CPU usage was abnormally high and it sometimes freezed especially on ADPCM audio.</li>
+    <li>When ffdshow connected to VobSub (VSFilter), ffdshow tried to use YV12 plus width of non-multiple of 8 and ended in crash.</li>
+    <li>When you configured "Resize &amp; aspect" -> "Borders" -> "Inside" -> "100%", ffdshow ended in crash.</li>
+    <li>Reconnecting to VMR9 (after resizing) sometimes failed.</li>
+    <li>PowerDVD7 produced a black screen because of a bug in DirectShow filter's connecting code (please remove PowerDVD.exe from "DirectShow control" -> "Don't use ffdshow in:").</li>
+    <li>If a subtitle unit contained too many lines for the specified space, lines were being dropped.</li>
+    <li>The right edges of italic subtitles were cut off. If "fast rendering" was enabled, italic text was sometimes shown as non-italic and vice versa.</li>
+    <li>Some SVQ3 videos caused freeze.</li>
+    <li>Changing Matroska subtitles track ended in a crash.</li>
+    <li>Multibyte characters in Matroska-embedded subtitles were garbled.</li>
+    <li>If noise and resize filters were applied, chroma became green.</li>
+    <li>Explorer.exe crashed on Windows Vista when accessing a folder that contains AVI files.</li>
+    <li>Playing or seeking in MPEG1/2 videos using libmpeg2, sometimes produced ugly green artifacts or ended with a crash (libmpeg2).</li>
+    <li>Fixed OGG &amp; OGM muxers. Removed FLV &amp; MPEG muxers.</li>
+    <li>When you played a video which height was not a multiple of four, it crashed or artifacts were seen depending on the output color space.</li>
+    <li>When you played a video which width was over 1024, it crashed when using RGB to YUY2 conversion.</li>
+    <li>When you played a video which height was an odd number and YV12 was enabled, the video became distorted.</li>
+    <li>If ffdshow was connected to Haali's video renderer, seeking sometimes failed.</li>
+    <li>The next internal filter of Kernel deinterlace was skipped on every other frame. If the next internal filter was "Resize", the video size changed on every frame.</li>
+  </ul>
+
+  <h3>Fixed before beta1</h3>
+
+  <ul class="fixed">
+    <li>When you tried to re-encode using Windows Media Encoder, ffdshow audio decoder would cause WME to crash.</li>
+    <li>Hardware deinterlacing did not work, when using libmpeg2.</li>
+    <li>AAC was played back too fast so that it was not audible. A/V synch was lost.</li>
+    <li>When you played a video which height was an odd number, it often freezed.</li>
+    <li>If "Mixer" -> "headphone virtual spatialization" was enabled, it crashed on playback of mono sources.</li>
+    <li>When you played an Xvid stream with many consecutive N-VOPs, subtitles were not shown when no new frames were actually being displayed. If there were long consecutive N-VOPs at the end of the file, it closed too early.</li>
+    <li>"Video decoder configuration" -> "Output" -> "DV" couldn't be unchecked.</li>
+    <li>If one of the files that needed updating was locked, the installer stopped with an error message.</li>
+    <li>Didee's YlevelsG/S/C was not implemented correctly. It was the bright parts of the pictures that saw the most effect of the gamma.</li>
+    <li>ffdshow could not connect to uncompressed audio input.</li>
+    <li>LPCM output was broken.</li>
+    <li>AC3 output was broken.</li>
+    <li>DTS was broken with large noise.</li>
+    <li>Perspective correction with cubic interpolation crashed if the width of the video was over 768.</li>
+    <li>5.1ch Vorbis (libavcodec) was broken.</li>
+    <li>When you tried to use ffdshow DirectShow decoder in PowerDVD, the video was black.</li>
+    <li>If ffdshow got DVD decoder's output input as RAW video, the subtitle file was valid and MPEG2 was disabled, subtitles that were not related to the DVD were shown.</li>
+    <li>If subtitles including video image such as IDX+SUB (VobSub) format were enabled, it crashed where the height of the subtitles was an odd number.</li>
+    <li>Convolver, one of the audio filters, crashed when you tried to load impulse file.</li>
+    <li>When you used resize, horizontal lines were sometimes seen ("Resize" -> "Settings" -> "Accurate rounding").</li>
+    <li>If you used resize after xsharpen, the video was green.</li>
+    <li>Stereoscopic subtitle crashed.</li>
+    <li>OSD item "CPU Load" did not show correct value in multiprocessor system.</li>
+    <li>Postprocessing automatic quality control did not work in multiprocessor systems.</li>
+    <li>Volume normalization did not work properly.</li>
+    <li>DScaler: Video (TomsMoComp) crashed depending on the compiler used for building.</li>
+    <li>Overlay control could not load initial value properly.</li>
+    <li>Oblivion and Morrowind (both are games) crashed.</li>
+    <li>On Windows Vista, codec configuration dialog was broken.</li>
+    <li>If there was an error in AviSynth script in ffdshow, the error message was displayed on top of video. The error message still remained after the whole AviSynth page was unchecked.</li>
+    <li>The dialog was garbled, if "Tray, dialog &amp; paths" -> "Japanese (Unicode)" was selected (ANSI builds). The problem was that the installer set it by default for Japanese version of Windows.</li>
+    <li>ANSI/MBCS was not processed properly. For example, OSD item "Source file" couldn't show last few characters if MBCS was used in the path. It was a security concern.</li>
+    <li>If you used translation of the dialog, content of the dialog was scaled about 130% but the size of the window was not. As a result, you couldn't see the right, hidden part of the dialog (depending on the way to launch the dialog).</li>
+    <li>Subtitles were garbled if "Subtitles" -> "Font" -> "Fast rendering" was enabled and you used MBCS on ANSI builds.</li>
+  </ul>
+
+  <h2>
+    <a name="features" id="features">New features</a>
+  </h2>
+
+  <h3>Added after beta4</h3>
+
+  <ul class="added">
+    <li>Added support for the FourCCs "SP51" to "SP57".</li>
+    <li>Enabled user setting of "Correct aspect ratio automatically" for SSA/ASS too, because VSFilter and MPC's VMR9 renderless have different behavior.</li>
+  </ul>
+
+  <h3>Added after beta3</h3>
+
+  <ul class="added">
+    <li>Nellymoser audio decoder has been added. The latest FLV Splitter is required.</li>
+    <li>Seb's BTB&amp;WTW level filter: Adjust contrast only if the "dimmer than dimmest" (Y &lt; 16) and/or the "brighter than brightest" (Y &gt; 235) part exist (depending on the configuration).</li>
+    <li>H.264-PAFF interlacing is now supported.</li>
+    <li>H.264 decoder has been multithreaded. It is only effective if the video is encoded using multiple slices.</li>
+    <li>Added reset button to overlay control.</li>
+    <li>You no longer have to use LoadCPlugin / Load_Stdcall_Plugin for loading ffavisynth.dll (ffdshow() and ffdshowAudio() function). It is automatically loaded on AviSynth start-up.</li>
+    <li>In "YCbCr &lt;-&gt; RGB conversion", ITU-R BT.601/709 standard selection and contrast configuration (standard, full range, custom) has been added.</li>
+    <li>7.1ch audio processing has been added.</li>
+    <li>In "Crop &amp; zoom", "Auto crop" has been added. Black borders can be removed automatically.</li>
+    <li>Preset auto loading: Now you can select either "On one of the conditions match (OR)" or "On all conditions match (AND)".</li>
+    <li>In preset auto loading, "on FOURCC from previous filter match" has been added. It is useful when ffdshow is used in RAW mode to affect a condition on the original video FOURCC.</li>
+    <li>For Windows Media Player 11 and Windows Media Center on Vista, a new option for RAW video processing has been added.</li>
+    <li>In "Resize &amp; aspect", "Resize to screen resolution" has been added.</li>
+    <li>In "Resize &amp; aspect" -> "Process pixel aspect ratio internally", PAR of output device can be configured now.</li>
+    <li>In "Resize &amp; aspect" -> "Borders", the way of dividing borders can be configured now. It's useful when you use subtitles.</li>
+    <li>Vertical scaling of text subtitles. ASS subtitles can also be scaled with a new option called "Override ASS/ASS2 scaling".</li>
+    <li>Added text subtitle blur. Better blend in with the video.</li>
+    <li>New OSD item "Active preset name".</li>
+    <li>Subtitle word wrapping: Three modes are available. "Smart wrapping, lines are evenly broken", "End-of-line word wrapping" and "Smart wrapping, lower line gets wider".</li>
+    <li>Experimental x64 builds are <a class="links" href="http://sourceforge.net/project/showfiles.php?group_id=173941&amp;package_id=214245&amp;release_id=523000">available</a>.</li>
+    <li>Faster RGB &lt;-&gt; YV12 conversion for x64.</li>
+    <li>Improved text subtitles and OSD rendering. Body, outline and shadow options have separately adjustable color and alpha settings. If the output color space is RGB and no other image filter (except resize) is used in the downstream, subtitles and OSD are rendered in RGB mode and the quality is improved further.</li>
+    <li>Multiple languages support: A horizontal scaling ratio for the config dialogs can be configured from language files. To scale them to 125% horizontally add the two lines "horizontalScale9x=125" and "horizontalScaleNT=125" in the "[Font]" section of the language file.</li>
+    <li>Improved German translation (making use of the extra space gained by scaling horizontally).</li>
+  </ul>
+
+  <h3>Added before beta3</h3>
+
+  <ul class="added">
+    <li>Deinterlacing support (set interlace flag) for MPEG4-ASP through Xvidcore decoder.</li>
+    <li>A dialog is shown when an unknown application (which is neither listed in the blacklist nor in the whitelist) tries to load ffdshow.</li>
+    <li>libavcodec encoders pop up error messages.</li>
+    <li>The AviSynth filter was updated to give scripts access to more frames than just the current one. Together with the added "3:2 pulldown" settings this allows many of the IVTC, deinterlacing and temporal filters for AviSynth to work properly in ffdshow.</li>
+    <li>Updated icons ( <img style="vertical-align:middle" src="../images/modern_icon_xp.png" width="60" height="23" title="New ffdshow icons" alt="New ffdshow icons" /> ). Classic icons are still available.</li>
+    <li>ATRAC3 (Adaptive TRansform Acoustic Coding, compressed audio format) has been added.</li>
+    <li>Xvid encoder has been multithreaded.</li>
+    <li>Support for SPDIF on Windows Vista has been added ("Audio decoder configuration" -> "Output" -> "Connect to:").</li>
+    <li>Multichannel audio processing by Winamp plugins has been added.</li>
+    <li>In "Resize &amp; aspect" dialog, a new check box "Process pixel aspect ratio internally" has been added.</li>
+    <li>Resize GUI: "Specify horizontal size" instead of "Specify vertical size 0 for auto".</li>
+    <li>Audio decoder AC3 output: the new check box "Encode only multichannel streams" allows sending multichannel audio (which otherwise cannot be digitally sent) to AV-amp in AC3-SPDIF.</li>
+  </ul>
+
+  <h3>Added before beta2</h3>
+
+  <ul class="added">
+    <li>Improved subtitle shadow. 3 shadow modes are available: classic, glowing and gradient.</li>
+    <li>Management of compatibility issues: "Use ffdshow only in:" option ensures that ffdshow only runs in supported applications.</li>
+    <li>Hardware deinterlacing support for RAW video (interlacing-related information which was input as RAW video is being sent to downstream filters).</li>
+    <li>New OSD item "IDCT(libavcodec)" displays which IDCT method is used.</li>
+    <li>In "Subtitles" -> "Search in", extensions priority can be specified.</li>
+    <li>VC-1 Advanced Profile support (libavcodec can work without external codecs).</li>
+    <li>Various WMV and VC-1 content can be played using Microsoft's codec (VC-1 needs external codec or WMP11 installed).</li>
+    <li>x264 encoder re-added and updated.</li>
+    <li>Deinterlacing support (set interlace flag) for H.264 MBAFF.</li>
+    <li>Corrections and new features of the Remote API: presets, subtitles, fast forward/backward etc.</li>
+    <li>Polish Inno Setup translation</li>
+    <li>Queue: ffdshow now uses VMR9's internal queue.</li>
+  </ul>
+
+  <h3>Added before beta1</h3>
+
+  <ul class="added">
+    <li>H.264 MBAFF (interlaced format) support.</li>
+    <li>VP6 and several other codecs have been added.</li>
+    <li>VC-1 Advanced Profile support for wmv9lib. You need WMP11 or Microsoft's VC-1 codec.</li>
+    <li>The installer can set speaker configuration. It loads the setting of the OS (control panel) as default.</li>
+    <li>Queue: Accelerator. It deposits the time when CPU has finished work early and uses the time when delayed.</li>
+    <li>Multithreaded resize: Faster resize on multi-core CPUs.</li>
+    <li>Calculates the vertical size automatically when you enter 0 for vertical size ("Resize" -> "Specify size" -> "New size").</li>
+    <li>Vorbis: High accuracy mode is enabled for tremor.</li>
+    <li>Quality control is now configurable ("Decoder options" -> "Quality control").</li>
+    <li>Show error message if the splitter failed to provide necessary information to decode SVQ3.</li>
+    <li>Improved translations.</li>
+  </ul>
+
+  <h2>
+    <a name="download" id="download">Download</a>
+  </h2>
+
+  <ul class="download">
+    <li><a class="nav" href="http://downloads.sourceforge.net/ffdshow-tryout/ffdshow_beta4_rev1685_20071206_clsid.exe">Download beta4 (stable)</a></li>
+    <li><a class="nav" href="http://downloads.sourceforge.net/ffdshow-tryout/ffdshow_beta3_rev1324_20070701_clsid.exe">Download beta3</a></li>
+    <li><a class="nav" href="http://downloads.sourceforge.net/ffdshow-tryout/ffdshow_beta2a_20070322_clsid.exe">Download beta2</a></li>
+    <li><a class="nav" href="http://downloads.sourceforge.net/ffdshow-tryout/ffdshow_beta1_20061211_clsid.exe">Download beta1</a></li>
+    <li><a class="nav" href="http://sourceforge.net/project/showfiles.php?group_id=173941">Download nightly builds (latest)</a></li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

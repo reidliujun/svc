@@ -1,0 +1,102 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="W:\SVC\openSVC\Para Fernando de Ernesto\Copia (2) de 100801_Opensvcdecoder04_r188_work\Libs\SVC\Build_CCS\Build_CCS_DM6437\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Project Dependencies]
+Source="lib_baseline.pjt"
+Source="lib_main.pjt"
+Source="lib_svc.pjt"
+Source="libview.pjt"
+
+["lib_baseline.pjt" Settings]
+MatchConfigName=true
+
+["lib_main.pjt" Settings]
+MatchConfigName=true
+
+["lib_svc.pjt" Settings]
+MatchConfigName=true
+
+["libview.pjt" Settings]
+MatchConfigName=true
+
+[Source Files]
+Source="..\argvParser.c"
+Source="..\preinclude-GDEM.h"
+Source="..\TI_dsp.c"
+Source="dm6437.tcf"
+Source="input\argv1.txt"
+Source="input\argv3.txt"
+Source="input\argv5.txt"
+Source="input\argv7.txt"
+Source="dm6437cfg.cmd"
+Source="LibOnDsp_cmd.cmd"
+
+[Generated Files]
+Source="dm6437cfg.s62"
+Source="dm6437cfg_c.c"
+
+["Compiler" Settings: "Debug"]
+Options=-g -o3 -fr"$(Proj_dir)\Debug" -i"../../AVC\h264_baseline_decoder\lib_baseline\" -i"../../AVC\h264_main_decoder\lib_main\" -i"../lib_svc" -d"_DEBUG" -d"CHIP_DM6437" -d"VERBOSE" -d"TI_OPTIM" -mf5 -mv6400+ --preinclude="$(Proj_dir)\..\preinclude-GDEM.h"
+
+["Compiler" Settings: "Release"]
+Options=-pi -oi0 -o3 -fr"$(Proj_dir)\Release" -i"../../AVC\h264_baseline_decoder\lib_baseline\" -i"../../AVC\h264_main_decoder\lib_main\" -i"../lib_svc" -d"CHIP_DM6437" -d"TI_OPTIM" -d"VERBOSE" -mf5 -mv6400+ --preinclude="$(Proj_dir)\preinclude_6437.h"
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\libOnDsp.map" -o".\Debug\libOnDsp.out" -w -x -i"../../AVC\h264_baseline_decoder\CCS\lib_baseline\" -i"../../AVC\h264_main_decoder\CCS\lib_main\" -i"%BIB_m4%\AAA\Librairies\C64x\lib_SMT_C64\" -i"%BIOS_INSTALL_DIR%/packages/ti/rtdx/lib/C6000"
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\LibOnDsp.map" -o".\Release\LibOnDsp.out" -w -x -i"%AVC_DEC_DIR%\h264_baseline_decoder\CCS\lib_baseline\" -i"%AVC_DEC_DIR%\h264_main_decoder\CCS\lib_main\" -i"%BIB_m4%\AAA\Librairies\C64x\lib_SMT_C64\" -i"%BIOS_INSTALL_DIR%/packages/ti/rtdx/lib/C6000"
+
+["..\preinclude-GDEM.h" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["..\preinclude-GDEM.h" Settings: "Release"]
+ExcludeFromBuild=true
+
+["input\argv1.txt" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["input\argv1.txt" Settings: "Release"]
+ExcludeFromBuild=true
+
+["input\argv3.txt" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["input\argv3.txt" Settings: "Release"]
+ExcludeFromBuild=true
+
+["input\argv5.txt" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["input\argv5.txt" Settings: "Release"]
+ExcludeFromBuild=true
+
+["input\argv7.txt" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["input\argv7.txt" Settings: "Release"]
+ExcludeFromBuild=true
+
+["dm6437cfg.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["dm6437cfg.cmd" Settings: "Release"]
+LinkOrder=1
+
+["LibOnDsp_cmd.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["LibOnDsp_cmd.cmd" Settings: "Release"]
+LinkOrder=1
+

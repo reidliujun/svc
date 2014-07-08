@@ -1,0 +1,7 @@
+If you have start credits in a movie from which you think you don't need the best quality, enter the first and the last frame accordingly into the starting credits edit fields after checking the "Credits at start of a movie"-box.
+The same applies to the end credits, if you think that your end credits need less bits - which you can spend better on the main movie and it's quality- then check the "Credits at end of movie"-checkbox and enter the start frame and the last frame which you want to be in lower quality.
+The % rate value means % of the bitrate spent on the movie. So if the movie has average 800kbps, the credits would get 80  kbps when set to 10%.
+If you choose to encode the credits with a fixed quantizer, make sure you set that on first pass as well! Else your desired size won't be achieved!
+If you want a fixed size for your credits, the codec will try to do it's best to achieve that size.
+
+Description by Koepi (de_koepi@lycos.de) from his help file for the Xvid codec.

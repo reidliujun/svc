@@ -1,0 +1,104 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="D:\Projets\SVC\OpenSVCDecoder\Libs\AVC\h264_baseline_decoder\lib_baseline\"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Debug_davinci"
+Config="Release"
+Config="Release_davinci"
+
+[Source Files]
+Source="AVCdisplay.c"
+Source="BitstreamSkip.c"
+Source="cavlc.c"
+Source="decode_MB_I.c"
+Source="decode_MB_P.c"
+Source="display_management.c"
+Source="edge_filter.c"
+Source="edge_filter_TI.c"
+Source="fill_caches.c"
+Source="filter.c"
+Source="FinishFrame.c"
+Source="IDR_picture.c"
+Source="Images_set_edges.c"
+Source="init_data.c"
+Source="init_Ptr_Fction.c"
+Source="interpol_0_n.c"
+Source="interpol_0_n_TI.c"
+Source="interpol_2_n.c"
+Source="interpol_2_n_TI.c"
+Source="interpol_n_0.c"
+Source="interpol_n_0_TI.c"
+Source="interpol_n_2.c"
+Source="interpol_n_2_TI.c"
+Source="interpol_n_n.c"
+Source="interpol_n_n_TI.c"
+Source="interpolation.c"
+Source="interpolation_0_n.c"
+Source="interpolation_2_n.c"
+Source="interpolation_4x4_TI.c"
+Source="interpolation_8x8.c"
+Source="interpolation_n_0.c"
+Source="interpolation_n_2.c"
+Source="interpolation_n_n.c"
+Source="macroblock_layer.c"
+Source="macroblock_partitionning.c"
+Source="mb_pred.c"
+Source="memory_management.c"
+Source="motion_vector.c"
+Source="Nal.c"
+Source="neighbourhood.c"
+Source="non_IDR_picture.c"
+Source="pic_list.c"
+Source="picture_management.c"
+Source="pps.c"
+Source="prediction_mode.c"
+Source="prediction_mode_8x8.c"
+Source="Quantization.c"
+Source="Read_H264.c"
+Source="refill.c"
+Source="scaling_matrix.c"
+Source="sei.c"
+Source="slice_data_vlc.c"
+Source="slice_group_map.c"
+Source="slice_header.c"
+Source="sps.c"
+Source="Transform.c"
+Source="write_back.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o".\lib_baseline_d.lib"
+
+["Archiver" Settings: "Debug_davinci"]
+Options=-r -o".\Debug_davinci\lib_baseline_dv_d.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\lib_baseline.lib"
+
+["Archiver" Settings: "Release_davinci"]
+Options=-r -o".\Release_davinci\lib_baseline_dv.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-fr"$(Proj_dir)\Debug" -d"_DEBUG" -d"_VERBOSE" -d"CHIP_DM648" -d"TI_OPTIM" -mv6400+
+
+["Compiler" Settings: "Debug_davinci"]
+Options=-g -fr"$(Proj_dir)\Debug" -d"_DEBUG" -d"TI_OPTIM" -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-pi -oi0 -o3 -fr"$(Proj_dir)\Release" -d"TI_OPTIM" -d"CHIP_DM6437" -mv6400+ -mf5
+
+["Compiler" Settings: "Release_davinci"]
+Options=-o3 -fr"$(Proj_dir)\Release" -d"TI_OPTIM" -mv6400+
+
+["Read_H264.c" Settings: "Debug"]
+Options="Compiler" +{-g}
+
+["Read_H264.c" Settings: "Release"]
+ExcludeFromBuild=true
+

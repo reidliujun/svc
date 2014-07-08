@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Please update the revision number when changes to the markup code
+have been made, which were ported to this translation (even if nothing
+was changed here). This is to know which revisions are not ported yet.
+If you skip to port a revision please note that revision for later porting. -->
+
+<!-- In sync with revision 1760 except for revision(s) -none-. -->
+
+<head>
+  <title>ffdshow tryouts | Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="ffdshow tryouts resize aspect" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../en/resize.htm" title="English resize documentation"><img src="../images/england.png" alt="English resize documentation" width="27" height="17" />&nbsp;English</a>
+    &nbsp;<a class="links" href="../jp/resize.htm" title="Japanese resize documentation"><img src="../images/japan.png" alt="Japanese resize documentation" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis</a>
+  </h1>
+
+  <img src="images/resize.png" title="Gr&ouml;&szlig;endialog" alt="Gr&ouml;&szlig;endialog" width="695" height="473" />
+
+  <p>
+    Dieses Dokument basiert auf Revision 1103 oder neuer. Beta2a hat andere Spezifikationen.
+  </p>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Horizontale und vertikale Gr&ouml;&szlig;e angeben
+  </h2>
+
+  <ul>
+    <li>"Keine Korrektur des Seitenverh&auml;ltnisses" ausgew&auml;hlt: Bild wird zur angegebenen Gr&ouml;&szlig;e auseinandergezogen oder zusammengeschrumpft.</li>
+    <li>"Urspr&uuml;ngliches Seitenverh&auml;ltnis beibehalten" ausgew&auml;hlt: Bild wird auseinandergezogen oder zusammengeschrumpft, bis entweder Breite oder H&ouml;he, <em>unter Verwendung des urspr&uuml;nglichen Seitenverh&auml;ltnisses</em>, die angegebene Gr&ouml;&szlig;e erreichen. Wenn n&ouml;tig, werden schwarze Balken hinzugef&uuml;gt.</li>
+    <li>Manuell konfiguriert: Bild wird auseinandergezogen oder zusammengeschrumpft, bis entweder Breite oder H&ouml;he, <em>unter Verwendung des angegebenen Seitenverh&auml;ltnisses</em>, die angegebene Gr&ouml;&szlig;e erreichen. Wenn n&ouml;tig, werden schwarze Balken hinzugef&uuml;gt.</li>
+  </ul>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Horizontale Gr&ouml;&szlig;e angeben
+  </h2>
+
+  <ul>
+    <li style="list-style-type:none; position:relative; left:-20px">H&ouml;he wird automatisch so kalkuliert, dass das urspr&uuml;ngliche Seitenverh&auml;ltnis beibehalten wird.</li>
+    <li>"Keine Korrektur des Seitenverh&auml;ltnisses" und "Urspr&uuml;ngliches Seitenverh&auml;ltnis beibehalten" ergeben das Gleiche.</li>
+    <li>Manuell konfiguriert: Man kann das Seitenverh&auml;ltnis manuell einstellen.</li>
+  </ul>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Seitenverh&auml;ltnis angeben
+  </h2>
+
+  <ul>
+    <li style="list-style-type:none; position:relative; left:-20px">H&ouml;he wird basierend auf Breite kalkuliert. (Hier <em>Box</em> genannt.)</li>
+    <li>"Keine Korrektur des Seitenverh&auml;ltnisses" ausgew&auml;hlt: Bild wird auseinandergezogen um die Box zu f&uuml;llen.</li>
+    <li>"Urspr&uuml;ngliches Seitenverh&auml;ltnis beibehalten" ausgew&auml;hlt: Bild wird auseinandergezogen oder zusammengeschrumpft, bis entweder Breite oder H&ouml;he, <em>unter Verwendung des urspr&uuml;nglichen Seitenverh&auml;ltnisses</em>, die Box ber&uuml;hren. Wenn n&ouml;tig, werden schwarze Balken hinzugef&uuml;gt.</li>
+    <li>Manuell konfiguriert: Bild wird auseinandergezogen oder zusammengeschrumpft, bis entweder Breite oder H&ouml;he, <em>unter Verwendung des angegebenen Seitenverh&auml;ltnisses</em>, die Box ber&uuml;hren. Wenn n&ouml;tig, werden schwarze Balken hinzugef&uuml;gt.</li>
+  </ul>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Erweitern auf n&auml;chstes Vielfaches von
+  </h2>
+
+  <ul>
+    <li>Sowohl Breite als auch H&ouml;he werden auf das n&auml;chste Vielfache des angegebenen Wertes erweitert. Wird, zum Beispiel, 100 angegeben, wird 320x160 zu 400x200. Dieser Modus kann verwandt werden, wenn ffdshow zu einem Filter verbindet, der keine Breite oder H&ouml;he unterst&uuml;tzt, die kein Vielfaches von 16 ist.</li>
+    <li>Auch in diesem Modus funktionieren "Benutze SV des Originals" und "Manuell".</li>
+  </ul>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Multipizieren mit
+  </h2>
+
+  <ul>
+    <li>Sowohl die horizontale als auch die vertikale Gr&ouml;&szlig;e werden um den angegebenen Faktor erh&ouml;ht.</li>
+  </ul>
+
+  <h2>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    Pixelseitenverh&auml;ltnis intern verarbeiten
+  </h2>
+
+  <ul>
+    <li>Falls markiert (Standard), wird die Bildgr&ouml;&szlig;e unter Beachtung des Pixelseitenverh&auml;ltnisses (SAR) zur angegebenen Gr&ouml;&szlig;e ge&auml;ndert, und ein festes SAR von 1:1 ausgegeben.</li>
+    <li>Falls nicht markiert, entspricht das eingehende SAR dem ausgehenden und der Videorenderer (oder ein nachgeordneter Filter) verarbeitet es.</li>
+  </ul>
+
+  <h2>Beispiel</h2>
+
+  <p>
+    Folgende Situation: Man hat einen Projektor mit einer Aufl&ouml;sung von 1280x720 und will eine DVD abspielen, deren Pixelseitenverh&auml;ltnis (SAR) sich w&auml;hrend der Wiedergabe &auml;ndert.<br />
+    Wie konfiguriert man ffdshows Gr&ouml;&szlig;en&auml;nderungsoptionen richtig?
+  </p>
+
+  <ul style="list-style-type:circle">
+    <li>"Horizontale und vertikale Gr&ouml;&szlig;e angeben" -> "1280x720".</li>
+    <li>"Urspr&uuml;ngliches Seitenverh&auml;ltnis beibehalten" ausw&auml;hlen.</li>
+    <li>Sich vergewissern, dass "Pixelseitenverh&auml;ltnis intern verarbeiten" ausgew&auml;hlt ist.</li>
+    <li>Falls Media Player Classic verwendet wird, mu&szlig; die Option "Ansicht" -> "Videobild" -> "Seitenverh&auml;ltnis beibehalten" deaktiviert werden.</li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Zum Anfang&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

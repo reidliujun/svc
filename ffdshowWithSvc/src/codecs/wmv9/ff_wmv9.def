@@ -1,0 +1,4 @@
+EXPORTS
+  createWmv9
+  destroyWmv9
+  getVersion

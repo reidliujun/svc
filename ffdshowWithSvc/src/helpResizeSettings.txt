@@ -1,0 +1,19 @@
+Resize algorithms:
+  Fast bilinear - fast with acceptable quality
+  Bilinear - quality slighty better than previous, but a little bit slower
+  Bicubic - high quality, slower
+  Point - fastest, ugliest
+  Area - area averaging scaling
+  Bicublin - luminance bicubic, chroma bilinear
+  None - just adds black borders or crops the image
+Gaussian blur - during resizing, image can be slightly blurred - independend on blur filter
+Sharpen - sharpens image during resizing, independend on sharpening filters
+
+Interlaced:
+  unchecked - frames are treated as progressive
+  checked - frames are treated as interlaced
+  grayed - decide by input frame type (use when processing MPEG2 video)
+
+Accurate rounding:
+  unchecked - sometimes horizontal lines are seen
+  checked - high quality, slower in some cases

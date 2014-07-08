@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>ffdshow tryouts | 更新履歴</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+    <meta name="description" content="ffdshow tryouts 更新履歴" />
+    <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+    <a href="http://ffdshow-tryout.sourceforge.net/">
+      <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+    </a>
+
+    <div class="translation">
+      Translations available in:
+      &nbsp;<a class="links" href="../en/index.htm" title="English changelog"><img src="../images/england.png" alt="English changelog" width="27" height="17" />&nbsp;English</a>
+      &nbsp;<a class="links" href="../de/index.htm" title="German changelog"><img src="../images/germany.png" alt="German changelog" width="27" height="17" />&nbsp;German</a>
+    </div>
+
+    <h1>
+      <a name="top" id="top">更新履歴</a>
+    </h1>
+
+    <p>オリジナルのffdshow projectの最新バージョンからマルチスレッドパッチを取り除いた状態を基準としています。<br />
+      Navigate to:
+    </p>
+    <ul class="links">
+      <li><a class="nav" href="#fixes">不具合の修正</a></li>
+      <li><a class="nav" href="#features">新機能</a></li>
+      <li><a class="nav" href="#download">ダウンロード</a></li>
+      <li><a class="nav" href="faq.htm">FAQ</a></li>
+    </ul>
+
+    <h2>
+      <a name="fixes" id="fixes">
+        不具合の修正
+      </a>
+    </h2>
+
+    <h3>
+      beta4以降の修正
+    </h3>
+
+    <ul class="fixed">
+      <li>VistaのWindows Media Centerでピクセルのアスペクト比が1:1以外のAVIファイルの再生に部分的に対応。Windows Media Centerにバグがあるため「再生中の出力形式の変更を許可する」と「互換フィルターにのみ接続する」の両方にチェックを入れる必要があります。</li>
+      <li>Raw videoでNV12/NV21を入力としてリサイズを使用するとクラッシュしていた。</li>
+      <li>「ビットマップのオーバーレイ」がクラッシュしていた。</li>
+      <li>再生用画像フィルタの「離散コサイン変換」が機能していなかった。</li>
+      <li>字幕で「同時の字幕をオーバーラップする」が有効になっているとクラッシュすることがあった。</li>
+      <li>字幕のレターボックスで再生中のビデオよりワイドなアスペクト比を指定すると上下が切れていた。</li>
+      <li>Windows Media Centerでサムネイル作成時にクラッシュしていた。</li>
+    </ul>
+
+
+    <h3>
+      beta4以前の修正
+    </h3>
+
+    <ul class="fixed">
+      <li>FLACとTTAで映像との同期が乱れることがあった。</li>
+      <li>クローズドキャプションの文字化けを修正。</li>
+      <li>Windows Movie Makerでクラッシュしていたのを修正。</li>
+      <li>字幕のファイル名に &amp;が含まれているとトレイアイコン右クリック時のコンテキストメニューに正しく表示されなかった。</li>
+      <li>MakeAVIS.exeの"Store uncompressed audio"モードで16bit整数以外のフォーマットが正しく書き出せなかった。</li>
+      <li>複数行のAviSynthスクリプトを「すべての設定を書き出す」やプリセットの「ファイルに保存」ボタンで保存出来なかった。</li>
+      <li>DTSのS/PDIFパススルーでノイズなどの問題が出ることがあった。</li>
+      <li>VFWエンコーダとアプリケーション（HyperCamなど）の相性問題を修正。</li>
+      <li>AviSynthのスクリプトでConvertToRGBを使用すると画像が反転していた。</li>
+      <li>オーディオフィルタの「チャンネルの入れ替え」を使用時に、入力ストリームのチャンネル数などが変化すると無音になっていた。</li>
+      <li>DVDのメニューがハイライトされないことがあった。</li>
+      <li>プリセットの自動読み込み機能「movie file name match (with wildcards)」が機能していなかった。</li>
+      <li>入力色空間がNV12/NV21の時、正しく表示できなかった。</li>
+      <li>字幕のレターボックスの後にCropを使用すると上端を切るように設定しても下端が大きく切れていた。 </li>
+    </ul>
+
+
+    <h3>
+      beta3以前の修正
+    </h3>
+
+    <ul class="fixed">
+      <li>Avisynthとインターレース解除で本来黒い縁が黒く塗りつぶされていなかった。</li>
+      <li>漸進的ノイズ低減(Gradual denoise)を横幅が16の倍数以外のビデオで使用すると、クラッシュするか右端にグレーの帯が見えていた。</li>
+      <li>カーネルインターレース解除のメモリ・リークを修正</li>
+      <li>libavcodecのエンコーダが25fps以外のフレームレートを受け付けなかった。他のエンコーダでも微妙にフレームレートがずれるなどの不具合があった。</li>
+      <li>AviSynthのスクリプトでffdshowaudio()を使うとエラーが発生していた。</li>
+      <li>UNICODEの字幕に0x1aが含まれていると字幕が途中で切れてしまっていた。</li>
+      <li>AviSynthのフィルタがRBG色空間で出力すると画像が上下反転していた。</li>
+      <li>VFWデコーダのRaw video-YV12が有効になっている時にDirectShow経由でVFW codecが使用されると画像が上下反転していた。</li>
+      <li>Winampプラグイン安定性の改善。</li>
+      <li>再生中にリサイズのダイアログで高さに（800の最初の一文字として）8を入力するとクラッシュしていた（メソッドによる、lanczosならタップが4以上のとき）。</li>
+      <li>リサイズ使用中にビデオのピクセルのアスペクト比率（SAR）のみが変わると無視されていた。</li>
+      <li>リサイズで内側の境界線（縁）が0より大きい数字に設定されている場合、「オリジナルのアスペクト比率を維持する」が機能していなかった。</li>
+      <li>AviSynthのスクリプトが保存出来なかった（Unicode版のみ）。</li>
+    </ul>
+
+    <h3>
+      beta2以前の修正
+    </h3>
+
+    <ul class="fixed">
+      <li>DVDなどでアスペクト比が変更された後、画像の高さが半分になっていた（オーバーレイミキサとYUY2使用時）。</li>
+      <li>FFV1デコーダがシーク時、遅延時にクラッシュしていた。</li>
+      <li>FFV1エンコーダの「キーフレームの間隔」がデフォルトで250と遠すぎ、かつ独立して設定できなかった。新しいデフォルトは10。</li>
+      <li>DirectShowデコーダでNV12が唯一の出力色空間で、vfwデコーダのRaw videoが有効になっているとWindows Media Player11がサムネイル作成時にクラッシュしていた。</li>
+      <li>字幕に白を指定しても灰色だった。</li>
+      <li>現在使用中でデフォルトのプリセット設定を削除するとクラッシュしていた。</li>
+      <li>NV12で映像を反転すると画面が乱れるかクラッシュしていた。</li>
+      <li>Media Player Classicの内蔵matroskaスプリッタでアスペクト比が反映されなかった。</li>
+      <li>再生中にオーディオのダイアログを開くとCPU使用率が異常に高く、ADPCMなどではフリーズすることがあった。</li>
+      <li>Vixがサムネイル作成時にクラッシュすることがあった。</li>
+      <li>DVobSub(VSfilter)との接続時にYV12、横幅が8の倍数以外を指定してクラッシュすることがあった（リサイズ使用時）。</li>
+      <li>リサイズ、アスペクト→縁取りで内側、100％を指定するとクラッシュしていた。</li>
+      <li>VMR9との再接続（リサイズ変更時など）に失敗することがあったのを修正。</li>
+      <li>PowerDVD7でDirectShowフィルタ接続の不具合のため画面が真っ暗になっていたのを修正（情報とデバッグ→以下ではffdshowを使用しないにPowerDVD.exeが含まれていたら削除して下さい）。</li>
+      <li>字幕の行数が多くて指定位置からでは表示しきれない場合に切り捨てられていた。</li>
+      <li>イタリックの字幕で右端が切れていた。高速レンダリングがオンになっているとイタリックになるべきものがならなかったり、逆になったりしていた。</li>
+      <li>一部のSVQ3で再生開始時にフリーズしていた。</li>
+      <li>matroska(*.mkv)の埋め込み字幕を切り替えようとするとクラッシュしていた。</li>
+      <li>matroska(*.mkv)の埋め込み字幕の日本語などが文字化けしていた。</li>
+      <li>wmv9のエンコーダ設定ダイアログで間違った設定が表示されていた。</li>
+      <li>ノイズフィルターの後にリサイズを行うと緑一色になっていた。</li>
+      <li>Windows Vistaでエクスプローラーがクラッシュしていた（AVIファイルがあるフォルダにアクセスした時）。</li>
+      <li>MPEG1/2で再生開始時およびシーク時にアーチファクトが出たりクラッシュしたりすることがあった(libmpeg2)。</li>
+      <li>oggとogmのmuxerを修正（flvとmpegのmuxerは削除）。</li>
+      <li>高さが4の倍数でない動画を再生すると出力色空間によってクラッシュしたりアーチファクトが出たりすることがあった。</li>
+      <li>幅1024ピクセルを超えるRGB→YUY2変換でクラッシュしていた。</li>
+      <li>YV12が有効になっていると奇数ラインの動画再生時に画像が乱れた。</li>
+      <li>HaaliのビデオレンダラとMPCの間にffdshowが入ったときにうまくシークできないことがあった。</li>
+      <li>Kernel deinterlaceの次の内部フィルターが１フレームおきにスキップされていた。次の内部フィルターがリサイズであった場合フレーム毎にビデオサイズが変化していた。</li>
+    </ul>
+
+    <h3>
+      beta1までの修正
+    </h3>
+
+    <ul class="fixed">
+      <li>Windows Media Encoderでファイルの変換を行う時にffdshowがオーディオデコーダとして使用されクラッシュしていた。</li>
+      <li>libmpeg2でハードウエア・デインターレーシングが無効だった。</li>
+      <li>AACの再生が早すぎて聞き取れなかった、ビデオと同期しなかった。</li>
+      <li>トレイ、ダイアログとパスの設定がJapanese(UNICODE)になっていると文字化けしていた(ANSIビルド)。インストーラーがデフォルトでJapanese(UNICODE)を設定するので問題であった。</li>
+      <li>奇数ラインの動画再生時にフリーズした。</li>
+      <li>ミキサー・ヘッドフォンの仮想空間化が有効になっているとモノラルの再生時にクラッシュした。</li>
+      <li>オンスクリーンディスプレーで全角文字を含むファイル名を表示させると途中で切れるなど日本語文字列処理に問題があった（主としてセキュリティ上の問題）。</li>
+      <li>XvidのN-VOPフレームに字幕などが重なると表示できなかった。ファイルの終わりに長いN-VOPフレームの連続があると早期終了してしまった。</li>
+      <li>日本語ダイアログの右側が３０％程度切れていた（ダイアログの起動方法による）。</li>
+      <li>「ビデオデコーダーの設定」-「出力」にある"DV"のチェックが外せなかった。</li>
+      <li>インストール時に更新が必要なファイルがロックされているとインストール出来なかった。</li>
+      <li>Didee's YlevelsG/S/Cが正しく実装されておらず暗部中心の補正にならなかった。</li>
+      <li>Uncompressedオーディオの入力が無効だった。</li>
+      <li>LPCM出力が出来なかった（オーディオデコーダの設定-出力）。</li>
+      <li>AC3出力が出来なかった（オーディオデコーダの設定-出力）。</li>
+      <li>DTSで大きなノイズが発生し再生できなかった。</li>
+      <li>遠近法修正でキュービック補間を選択して幅768ピクセル以上の画像を処理させるとクラッシュしていた。</li>
+      <li>5.1ch Vorbisの再生が出来なかった（libavcodec使用時）。</li>
+      <li>ffdshowがDVDデコーダの出力をraw videoで入力する場合、字幕のファイルに何か設定されていると字幕を無効にしても映画と関係のない字幕が表示されていた（mpeg2設定が無効などの場合）。</li>
+      <li>字幕のフォント-高速レンダリングがオンになっていると日本語シフトJISが文字化けしていた。</li>
+      <li>画像形式の字幕（IDX+SUB形式など）で字幕の高さが奇数ラインのところにくるとクラッシュしていた。</li>
+      <li>Convolver（オーディオフィルターの一つ）でインパルスファイルをロードしようとするとクラッシュしていた。</li>
+      <li>リサイズで水平方向にライン（アーチファクト）がみられることがあった。</li>
+      <li>Xシャープ化とリサイズを同時に使うと緑一色になっていた。</li>
+      <li>ステレオスコーピックの字幕でクラッシュしていた。</li>
+      <li>マルチプロセッサー環境でOSD-CPU使用率が正しく表示されなかった。</li>
+      <li>マルチプロセッサー環境でポストプロセッシング-クオリティの自動コントロールが機能しなかった。</li>
+      <li>ボリュームノーマライズが正常に機能していなかった。</li>
+      <li>DScaler: Video (TomsMoComp)を使用するとクラッシュしていた（ビルドに使用したコンパイラによる）。</li>
+      <li>オーバーレイ・コントロールで初期値が正しくロードされなかった。</li>
+      <li>oblivion, morrowind（いずれもゲーム）でクラッシュしていた。</li>
+      <li>Windows Vistaのダイアログでコーデックの選択枝が上のほうに表示されていた。</li>
+      <li>AviSynthのスクリプトにエラーがあるとOSD表示されるが、そのエラーメッセージがAviSynthを無効にしても消えなかった。</li>
+    </ul>
+
+    <h2>
+      <a name="features" id="features">
+        新機能
+      </a>
+    </h2>
+
+    <h3>
+      beta4以降の追加
+    </h3>
+
+    <ul class="added">
+      <li>Four CCのSP51-SP57を追加</li>
+      <li>SSA/ASSでも「アスペクト比を自動的に補正する」の設定を有効にした。vsfilterとMPCのVMR9 renderlessモードで動作が異なるために発生している互換性問題に対応したもの。</li>
+    </ul>
+
+    <h3>
+      beta4以前の追加
+    </h3>
+
+    <ul class="added">
+      <li>Nellymoserオーディオデコーダーの追加。最新のFLV Splitterが必要です。</li>
+      <li>Seb's BTB&amp;WTWレベルフィルタ：設定により最暗部(Y &lt; 16)、最明部(Y &gt; 235)の情報がある時だけそれを生かすコントラスト調整を行います。</li>
+      <li>H.264-PAFF インターレースフォーマットのサポート。</li>
+      <li>H.264デコーダのマルチスレッド化。ただしマルチスライスでエンコードされている場合にのみ有効。</li>
+      <li>オーバーレイコントロールにリセットボタンを追加。</li>
+      <li>ffavisynth.dllがAviSynth起動時に読み込まれるようにした。LoadCPlugin / Load_Stdcall_Plugin関数を使わずに<a class="links" href="http://www.avisynth.info/?ffdshow%A4%CE%A5%D5%A5%A3%A5%EB%A5%BF%A4%F2%BB%C8%A4%A6">ffdshow()、ffdshowAudio()関数</a>を使用できます。</li>
+      <li>YCbCr&lt;-&gt;RGB変換にITU-R BT.601/709の選択、コントラスト（標準、フルレンジ、カスタム）のオプションを指定できるようにした。</li>
+      <li>7.1chオーディオのサポート（フィルタ群）。</li>
+      <li>切り出し（クロップ）フィルタに「自動切り出し」を追加。上下左右の黒い縁を自動で除去します。</li>
+      <li>プリセットの自動読み込みで「条件が一つでも一致した時（OR）」、「すべての条件が一致した時（AND）」を選択可能にした。</li>
+      <li>プリセットの自動読み込み「on FOURCC from previous filter match」を追加。Raw videoを処理する場合で元のFORCCが関係する場合に有効です。</li>
+      <li>Windows VistaのWindows Media Player 11とWindows Media CenterでRaw videの処理を有効にするオプションを追加した。</li>
+      <li>「リサイズ、アスペクト」-「スクリーンの解像度にリサイズする」の追加。</li>
+      <li>「リサイズ、アスペクト」-「ピクセルのアスペクト比率を内部的に処理する」で表示デバイスのアスペクト比率を設定できるようにした。</li>
+      <li>「リサイズ、アスペクト」-「縁」で縁の分け方を指定できるようにした。字幕を使用する場合などに便利です。</li>
+      <li>字幕の垂直方向の拡大・縮小をサポート。SSA/ASSの字幕もオプションにより拡大・縮小可能です。</li>
+      <li>字幕のぼかしをサポート。背景に良く溶け込みます。</li>
+      <li>字幕の折り返しを3モードサポート。「出来るだけ均等に分割」、「幅いっぱいになったら改行」、「出来るだけ均等に分割、下の行を広めに」。日本語禁則処理は今後の課題。</li>
+      <li>テキスト字幕とOSDのレンダリングを改善。文字、輪郭、陰影のそれぞれにサイズ、色、アルファを設定可能。RGB出力で字幕より下流にOSD、取り込み、オーバーレイ、リサイズ以外のフィルタがなければ字幕とOSDはRGB32でレンダリングされ画質がさらに改善します。</li>
+      <li>多言語対応：言語ファイルから水平方向の拡大率を設定可能にした。水平方向を125％に引き伸ばしたければ、言語ファイルの[Font]セクションにhorizontalScale9x=125、horizontalScaleNT=125の2行を追加します。</li>
+      <li>OSDに「Active preset name」を追加。</li>
+      <li>実験的ながらx64版のバイナリーをSourceforge.netの<a class="links" href="http://sourceforge.net/project/showfiles.php?group_id=173941">ダウンロード</a>ページで公開。</li>
+      <li>x64版のRGB&lt;-&gt;YV12変換を高速化。</li>
+    </ul>
+
+    <h3>
+      beta3以前の追加
+    </h3>
+
+    <ul class="added">
+      <li>Xvidデコーダ(Xvidcore)のインターレース解除をサポート（インターレース関連フラグを設定）。</li>
+      <li>互換アプリケーションリストに挙げられていないアプリケーションがffdshowをロードしようとした時、ダイアログを表示するようにした。</li>
+      <li>libavcodecのエンコーダ・エラーの原因を表示するようにした。</li>
+      <li>AviSynthフィルタのスクリプト内で現在のフレームだけでなく前後のフレームへの参照を可能にする「バッファー後方/前方」を追加。新たに追加された「3:2プルダウン」オプションとあわせてAviSynth用の高度な逆テレシネ変換やインターレース解除、時間軸(temporal)フィルタがffdshowできちんと作動するようになった。</li>
+      <li>アイコンを更新（ <img style="vertical-align:middle" src="../images/modern_icon_xp.png" alt="New ffdshow icons" width="60" height="23" /> ）。旧アイコンも選択可能。</li>
+      <li>オーディオの圧縮フォーマット、ATRAC3（アトラック、Adaptive TRansform Acoustic Coding）に対応</li>
+      <li>Xvidエンコーダのマルチスレッド対応</li>
+      <li>Windows VistaのSPDIF問題に対応（オーディオデコーダーの設定->出力->接続先）。</li>
+      <li>Winampプラグインでマルチチャンネルオーディオを扱えるようになった。</li>
+      <li>リサイズの設定で「ピクセルのアスペクト比率（SAR）を内部的に処理する」機能を追加。</li>
+      <li>リサイズのGUIに「横幅を指定する」を追加（今まで高さに0を入力するGUIだったもの）。 </li>
+      <li>オーディオデコーダーの出力形式としてマルチチャンネルストリームのみをAC3エンコードする機能を追加（直接SPDIF出力できないマルチチャンネル・オーディオを一旦AC3にエンコードしてAVアンプへ出力することを意図したもの）。</li>
+    </ul>
+
+    <h3>
+      beta2以前の追加
+    </h3>
+
+    <ul class="added">
+      <li>字幕の影の改善。3つのモードの新しい陰影が使用できます。</li>
+      <li>互換性問題の管理，「以下でのみffdshowを使用する」の追加。</li>
+      <li>Raw videoのハードウエア・デインターレーシングのサポート（Raw videoで入力されたサンプルのインターレース関連情報を次のフィルタに伝えるようにした）。</li>
+      <li>OSDアイテム"IDCT(libavcodec)"の追加。オート時に何が選択されているか表示する。</li>
+      <li>字幕ファイルの自動検索で拡張子の優先順位を指定できるようにした。</li>
+      <li>VC-1 Advanced Profileのサポートを追加（libavcodecは外部コーデックなしで動作可能）</li>
+      <li>各種WMV、VC-1をMicrosoft製コーデックを使用して再生できるようにした(VC-1はコーデックまたはWMP11のインストールが必要）。</li>
+      <li>x264エンコーダーを更新して復活させた(tryoutsで一旦削除したもの)。</li>
+      <li>H.264 MBAFFのインターレース解除をサポート（インターレース関連フラグを設定）。</li>
+      <li>外部プログラムに使用されるAPIの修正と新機能追加（プリセット、字幕、早送り・巻き戻しなど）</li>
+      <li>ポーランド語対応</li>
+      <li>キュー：VMR9に内蔵されているキューを利用できるようにした。</li>
+    </ul>
+
+    <h3>
+      beta1までの追加
+    </h3>
+
+    <ul class="added">
+      <li>H.264 MBAFF（インターレース）のサポート</li>
+      <li>VP6他、いくつかのデコーダーを追加。</li>
+      <li>ダイアログの日本語化・多言語対応の改善。</li>
+      <li>インストーラーでスピーカー構成を設定できるようにした。OS（コントロールパネル）の設定をデフォルトとして使用します。</li>
+      <li>キュー：ビデオのタイムスタンプ待ちによるCPU時間の無駄を活用することにより高速化。</li>
+      <li>リサイズのマルチスレッド化：デュアルコアCPU等でリサイズを高速化。</li>
+      <li>Vorbis高音質モードを有効にした。</li>
+      <li>画質と処理速度、同期との兼ね合いを設定できるようにした。</li>
+      <li>SVQ3のデコード時にスプリッタから十分な情報が得られなかった際エラーメッセージを表示するようにした。</li>
+    </ul>
+
+    <h2>
+      <a name="download" id="download">
+        ダウンロード
+      </a>
+    </h2>
+
+    <ul class="download">
+      <li><a class="nav" href="http://downloads.sourceforge.net/ffdshow-tryout/ffdshow_beta4_rev1685_20071206_clsid.exe">ダウンロード　beta4 (安定版)</a></li>      
+      <li><a class="nav" href="http://sourceforge.net/project/showfiles.php?group_id=173941">ダウンロード　Nightly builds(最新版)</a></li>
+    </ul>
+
+    <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "windows.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1250)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOGEX 0, 0, 266, 212
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "makeAVIS"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "AviSynth script:",IDC_LBL_AVS,7,9,52,8
+    EDITTEXT        IDC_ED_AVS,62,7,180,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BT_AVS,243,7,18,13
+    LTEXT           "Output file:",IDC_LBL_AVI,7,26,52,8
+    EDITTEXT        IDC_ED_AVI,62,24,180,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BT_AVI,243,24,18,13
+    LTEXT           "Output format:",IDC_LBL_OUTPUTFORMAT,7,41,52,8
+    CONTROL         "AVI",IDC_RBT_OUTPUTFORMAT_AVI,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,62,41,55,10
+    CONTROL         "WAV",IDC_RBT_OUTPUTFORMAT_WAV,"Button",BS_AUTORADIOBUTTON,124,41,55,10
+    GROUPBOX        "",IDC_GRP_VIDEO,6,53,126,115
+    CONTROL         "Video",IDC_CHB_VIDEO,"Button",BS_AUTOCHECKBOX | WS_GROUP |
+                    WS_TABSTOP,12,53,30,10
+    LTEXT           "Resolution:",IDC_LBL_VIDEO_RES,13,63,113,8
+    LTEXT           "Colorspace:",IDC_LBL_VIDEO_CSP,13,73,113,8
+    LTEXT           "FPS:",IDC_LBL_VIDEO_FPS,13,83,113,8
+    LTEXT           "Number of frames:",IDC_LBL_VIDEO_FRAMESNUM,13,93,113,8
+    LTEXT           "Time:",IDC_LBL_VIDEO_TIME,13,103,113,8
+    CONTROL         "Force output colorspace",IDC_CHB_FORCECSP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,113,113,11
+    COMBOBOX        IDC_CBX_FORCECSP,24,124,103,118,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    CONTROL         "Force interlacing",IDC_CHB_FORCEILACE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,139,113,11
+    COMBOBOX        IDC_CBX_FORCEILACE,24,150,103,118,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    GROUPBOX        "",IDC_GRP_AUDIO,134,53,126,115
+    CONTROL         "Audio",IDC_CHB_AUDIO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,53,30,10
+    LTEXT           "Sample rate:",IDC_LBL_AUDIO_SAMPLERATE,141,63,113,8
+    LTEXT           "Channels:",IDC_LBL_AUDIO_CHANNELS,141,73,113,8
+    LTEXT           "Bits per sample:",IDC_LBL_AUDIO_BITSPERSAMPLE,141,83,113,8
+    LTEXT           "Time:",IDC_LBL_AUDIO_TIME,141,103,113,8
+    CONTROL         "Store uncompressed audio",IDC_CHB_AUDIO_RAW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,141,113,113,11
+    CONTROL         "Store script file name in output file",IDC_RBT_STORE_FILENAME,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,170,260,10
+    CONTROL         "Store script in output file",IDC_RBT_STORE_SCRIPT,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,180,260,10
+    DEFPUSHBUTTON   "Create",IDC_BT_GO,6,191,50,14
+    CONTROL         "",IDC_PBR_GO,"msctls_progress32",WS_BORDER | 0x1,61,194,144,8
+    PUSHBUTTON      "Close",IDCLOSE,210,191,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_AVISYNTH            ICON                    "AviSynth.ico"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Englisch (USA) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Englisch (USA) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

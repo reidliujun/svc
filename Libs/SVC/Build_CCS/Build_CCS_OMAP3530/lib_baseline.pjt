@@ -1,0 +1,102 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\openSVC_07_09_10\SVC\Build_CCS\Build_CCS_OMAP3530\"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="XDC"
+Config="Debug"
+Config="Debug_davinci"
+Config="Release"
+Config="Release_davinci"
+
+[Source Files]
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\AVCdisplay.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\BitstreamSkip.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\cavlc.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\decode_MB_I.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\decode_MB_P.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\display_management.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\edge_filter.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\edge_filter_TI.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\fill_caches.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\filter.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\FinishFrame.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\IDR_picture.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\Images_set_edges.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\init_data.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\init_Ptr_Fction.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_0_n.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_0_n_TI.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_2_n.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_2_n_TI.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_n_0.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_n_0_TI.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_n_2.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_n_2_TI.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_n_n.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpol_n_n_TI.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpolation.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpolation_0_n.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpolation_2_n.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpolation_4x4_TI.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpolation_8x8.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpolation_n_0.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpolation_n_2.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\interpolation_n_n.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\macroblock_layer.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\macroblock_partitionning.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\mb_pred.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\memory_management.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\motion_vector.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\Nal.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\neighbourhood.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\non_IDR_picture.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\pic_list.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\picture_management.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\pps.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\prediction_mode.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\prediction_mode_8x8.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\Quantization.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\Read_H264.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\refill.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\scaling_matrix.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\sei.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\slice_data_vlc.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\slice_group_map.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\slice_header.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\sps.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\Transform.c"
+Source="..\..\..\AVC\h264_baseline_decoder\lib_baseline\write_back.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o".\lib_baseline_d.lib"
+
+["Archiver" Settings: "Debug_davinci"]
+Options=-r -o".\Debug_davinci\lib_baseline_dv_d.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\lib_baseline.lib"
+
+["Archiver" Settings: "Release_davinci"]
+Options=-r -o".\Release_davinci\lib_baseline_dv.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-o3 -fr"$(Proj_dir)\Debug\lib_baseline" -d"_DEBUG" -d"_VERBOSE" -d"CHIP_OMAP3530" -d"TI_OPTIM" -mf5 -mv6400+
+
+["Compiler" Settings: "Debug_davinci"]
+Options=-g -fr"$(Proj_dir)\Debug" -d"_DEBUG" -d"TI_OPTIM" -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-pi -oi0 -o3 -fr"$(Proj_dir)\Release" -d"TI_OPTIM" -d"CHIP_DM6437" -mf5 -mv6400+
+
+["Compiler" Settings: "Release_davinci"]
+Options=-o3 -fr"$(Proj_dir)\Release" -d"TI_OPTIM" -mv6400+
+
+["..\..\..\AVC\h264_baseline_decoder\lib_baseline\Read_H264.c" Settings: "Release"]
+ExcludeFromBuild=true
+

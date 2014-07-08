@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ffdshow tryouts | Resize &amp; aspect</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="ffdshow tryouts resize aspect" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../de/resize.htm" title="German resize documentation"><img src="../images/germany.png" alt="German resize documentation" width="27" height="17" />&nbsp;German</a>
+    &nbsp;<a class="links" href="../jp/resize.htm" title="Japanese resize documentation"><img src="../images/japan.png" alt="Japanese resize documentation" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">Resize &amp; aspect</a>
+  </h1>
+
+  <img src="images/resize.png" title="Resize dialog" alt="Resize dialog" width="558" height="473" />
+
+  <p>
+    This document is based on rev 1103 or later. Beta2a has different specification.
+  </p>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Specify horizontal and vertical size
+  </h2>
+
+  <ul>
+    <li>"No aspect ratio correction" selected: Stretched or shrinked to the specified size.</li>
+    <li>"Keep original aspect ratio" selected: Stretched or shrinked until either width or height touch the specified size <em>using the original aspect ratio</em>. Black borders are added, if necessary.</li>
+    <li>Manually configured: Stretched or shrinked until either width or height touch the specified size <em>using the specified aspect ratio</em>. Black borders are added, if necessary.</li>
+  </ul>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Specify horizontal size
+  </h2>
+
+  <ul>
+    <li style="list-style-type:none; position:relative; left:-20px">Height is calculated automatically to keep original aspect ratio.</li>
+    <li>"No aspect ratio correction" and "Keep original aspect ratio" give the same result.</li>
+    <li>Manually configured: You can specify aspect ratio manually.</li>
+  </ul>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Specify aspect ratio
+  </h2>
+
+  <ul>
+    <li style="list-style-type:none; position:relative; left:-20px">Height is calculated based on width. (Let's call it a <em>box</em> here.)</li>
+    <li>"No aspect ratio correction" selected: Stretched to fill the box.</li>
+    <li>"Keep original aspect ratio" selected: Stretched or shrinked until either width or height touch the box <em>using the original aspect ratio</em>. Black borders are added, if necessary.</li>
+    <li>Manually configured: Stretched or shrinked until either width or height touch the box <em>using the specified aspect ratio</em>. Black borders are added, if necessary.</li>
+  </ul>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Expand to next multiply of
+  </h2>
+
+  <ul>
+    <li>Both width and height are expanded to the next multiple of the specified value. For example, if you specify 100, 320x160 becomes 400x200. You may want to use this mode when ffdshow connects to a filter which does not work with width or height of non-multiple of 16.</li>
+    <li>"Keep original aspect ratio" and "Manual" work in this mode too.</li>
+  </ul>
+
+  <h2>
+    <img src="../images/radio.png" title="" alt="" width="13" height="13" />
+    Multiply by
+  </h2>
+
+  <ul>
+    <li>Both horizontal and vertical sizes are stretched using the specified magnification ratio.</li>
+  </ul>
+
+  <h2>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    Process pixel aspect ratio internally
+  </h2>
+
+  <ul>
+    <li>If checked (by default), resize to the size taking into account pixel aspect ratio (SAR), and fix output SAR 1:1.</li>
+    <li>If unchecked, output SAR equals input SAR and the video renderer (or any downstream filter) handles it.</li>
+  </ul>
+
+  <h2>Example</h2>
+
+  <p>
+    Following situation: You have a projector with 1280x720 resolution and you want to play a DVD whose pixel aspect ratio (SAR) changes during playback.<br />
+    How to configure ffdshow's resize options properly?
+  </p>
+
+  <ul style="list-style-type:circle">
+    <li>"Specify horizontal and vertical size" -> "1280x720".</li>
+    <li>Select "Keep original aspect ratio".</li>
+    <li>Make sure "Process pixel aspect ratio internally" is checked.</li>
+    <li>If you are using Media Player Classic, uncheck "View" -> "Video Frame" -> "Keep Aspect Ratio".</li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

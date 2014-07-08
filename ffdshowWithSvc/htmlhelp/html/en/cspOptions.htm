@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ffdshow tryouts | Advanced color space options</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="Advanced color space options" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../de/cspOptions.htm" title="German advanced color space options documentation"><img src="../images/germany.png" alt="German advanced color space options documentation" width="27" height="17" />&nbsp;German</a>
+    &nbsp;<a class="links" href="../jp/cspOptions.htm" title="Japanese advanced color space options documentation"><img src="../images/japan.png" alt="Japanese advanced color space options documentation" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">Advanced color space options</a>
+  </h1>
+
+  <img src="images/cspOptions.png" title="Advanced color space options dialog" alt="Advanced color space options dialog" width="558" height="473" />
+
+  <p>
+    The advanced color space options page gives you control over the YCbCr &lt;-&gt; RGB conversion.
+    The top half allows the selection between the <em>ITU-R BT.601</em> and <em>ITU-R BT.709</em> standards, while the lower half is used for black and white cut-off, which controls the contrast.<br />
+    These settings are used only when ffdshow is doing YCbCr &lt;-&gt; RGB conversion.
+    In other words, if you are playing MPEG video and the output color space is YV12 or YUY2, these settings will be ignored.
+  </p>
+
+  <h2>YCbCr specification</h2>
+
+  <p>
+    ITU-R BT.601 and BT.709 are both ITU-R standards for component digital video. They define how to convert YCbCr &lt;-&gt; RGB.<br />
+  </p>
+  <ul class="radio">
+    <li><em>ITU-R BT.601</em>: almost all SDTV and DVDs.</li>
+    <li><em>ITU-R BT.709</em>: almost all HDTV, HD-DVDs and Blu-Rays. Please note: some HD clips prepared for playback on computers may use the ITU-R BT.601 color space instead.</li>
+  </ul>
+
+  <h2>Contrast</h2>
+
+  <p>
+    Almost all videos are encoded using a Y-range of 16-235 (luma). YCbCr(16,128,128) is normally mapped to RGB(0,0,0).<br />
+    Some video clips have Y-values below 16 which represent "blacker" than black. If you want to take advantage of this gradation at the expense of contrast, use full range or custom mode.
+  </p>
+
+  <h2>Additional information</h2>
+
+  <h3>MJPEG</h3>
+
+  <p>
+    MJPEG and JPEG (used in grab filter) use so called <em>PC.601</em> standard in most cases. In this case, PC.601 is used and the setting in the dialog is ignored.
+  </p>
+
+  <h3>Known limitations</h3>
+
+  <ul style="list-style-type:disc">
+    <li>The settings are not reflected on-the-fly when the input color space is NV12, interlaced YV12 or planar YUV 4:2:2. You have to restart the video application in such cases.</li>
+    <li>ffdshow does not automatically find the matching color space except for MJPEG. You may want to try Seb's BTB&amp;WTW level filter which automatically detects Y-values below 16 and over 235.</li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

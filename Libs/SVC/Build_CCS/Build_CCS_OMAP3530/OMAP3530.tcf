@@ -1,0 +1,47 @@
+utils.loadPlatform("ti.platforms.evm3530");
+
+/* The following DSP/BIOS Features are enabled.  */
+bios.enableRealTimeAnalysis(prog);
+bios.enableRtdx(prog);
+bios.enableTskManager(prog);
+
+bios.MEM.NOMEMORYHEAPS = 0;
+bios.MEM.instance("DDR2").createHeap = 1;
+bios.MEM.instance("DDR2").heapSize = 0x02500000;
+bios.MEM.BIOSOBJSEG = prog.get("DDR2");
+bios.MEM.MALLOCSEG = prog.get("DDR2");
+bios.MEM.ARGSSEG = prog.get("DDR2");
+bios.MEM.STACKSEG = prog.get("DDR2");
+bios.MEM.GBLINITSEG = prog.get("DDR2");
+bios.MEM.TRCDATASEG = prog.get("DDR2");
+bios.MEM.SYSDATASEG = prog.get("DDR2");
+bios.MEM.OBJSEG = prog.get("DDR2");
+bios.MEM.BIOSSEG = prog.get("DDR2");
+bios.MEM.SYSINITSEG = prog.get("DDR2");
+bios.MEM.HWISEG = prog.get("DDR2");
+bios.MEM.HWIVECSEG = prog.get("DDR2");
+bios.MEM.RTDXTEXTSEG = prog.get("DDR2");
+bios.MEM.TEXTSEG = prog.get("DDR2");
+bios.MEM.SWITCHSEG = prog.get("DDR2");
+bios.MEM.BSSSEG = prog.get("DDR2");
+bios.MEM.FARSEG = prog.get("DDR2");
+bios.MEM.CINITSEG = prog.get("DDR2");
+bios.MEM.PINITSEG = prog.get("DDR2");
+bios.MEM.CONSTSEG = prog.get("DDR2");
+bios.MEM.DATASEG = prog.get("DDR2");
+bios.MEM.CIOSEG = prog.get("DDR2");
+bios.MEM.STACKSIZE = 0x4000;
+bios.TSK.STACKSEG = prog.get("DDR2");
+bios.GBL.C64PLUSL2CFG = "64k";
+bios.GBL.C64PLUSMAR128to159 = 0x0000ffff;
+bios.MEM.instance("IRAM").len = 0x00008000;
+bios.TSK.instance("TSK_idle").order = 1;
+bios.TSK.create("TskMain");
+bios.TSK.instance("TskMain").order = 3;
+bios.TSK.instance("TskMain").fxn = prog.extern("MainTask");
+bios.TSK.instance("TskMain").stackSize = 3145728;
+bios.TSK.instance("TskMain").stackMemSeg = prog.get("DDR2");
+// !GRAPHICAL_CONFIG_TOOL_SCRIPT_INSERT_POINT!
+
+prog.gen();
+

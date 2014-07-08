@@ -1,0 +1,19 @@
+Queue output samples
+ The objective of the queue is to reduce frame drops.
+ It is effective when CPU load is high and dropping a few frames/sec.
+ It deposits the time when CPU has finished work early and  use the time
+ when delayed.
+ Because video renderer is executed on another thead, the effect is
+ greater if you have Pentium4HT or dual core CPU.
+
+ Use queue only in:
+  Queue is disabled by default because of stability problem outside Media
+  Player Classic. If you want to try, uncheck or add the execute file name
+  of the video applications, separated by semicolons.
+
+ Enable queue in VMR9-YV12
+  With some intel's on board video chip, queue does not work in VMR9-YV12.
+
+Other controls
+ video delay:
+  If your speaker is far from listening point, you may want to try this.

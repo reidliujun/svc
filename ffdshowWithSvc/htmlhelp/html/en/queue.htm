@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ffdshow tryouts | Queue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="Queue" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+  
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../de/queue.htm" title="German queue"><img src="../images/germany.png" alt="German queue" width="27" height="17" />&nbsp;German</a>
+    &nbsp;<a class="links" href="../jp/queue.htm" title="Japanese queue"><img src="../images/japan.png" alt="Japanese queue" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">Queue</a>
+  </h1>
+
+  <img src="images/queue.png" title="Queue dialog" alt="Queue dialog" width="558" height="473" />
+
+  <h2>Overview</h2>
+
+  <p>
+    The objective of ffdshow's Queue feature is to reduce frame drops and delay of video. It is effective if CPU load is high and ffdshow is dropping a few frames/sec or delaying a little. Because the video renderer is executed in another thread, the effect is greater if you have a Pentium 4 HT or a dual core CPU. It is confirmed to work with Media Player Classic's VMR7 and VMR9 mode (both including renderless mode). As this is an advanced option, it may require some testing and configuring.
+  </p>
+
+  <h2>
+    Settings
+  </h2>
+  
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    Queue output samples
+  </h3>
+  
+  <p>
+    This option enables ffdshow's Queue feature. Disabling it though doesn't affect the other options that are available further below. 
+  </p>
+  
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    Use queue only in:
+  </h3>
+
+  <p>
+    Queue is disabled by default because of stability problems using other video applications than Media Player Classic.<br />
+    If you want to try it with another application, uncheck or add the name of the main executable. Make sure to separate each entry with a semicolon.
+  </p>
+
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    Enable queue in VMR9-YV12
+  </h3>
+
+  <p>
+    This option enables the Queue feature when using the VMR9 video renderer and YV12 colorspace.<br />
+    Please note: With some Intel onboard video chips, Queue does not work in VMR9-YV12 mode.
+  </p>
+
+  <h2>
+    Additional information
+  </h2>
+  
+  <h3>
+    When is the Queue feature likely to be effective?
+  </h3>
+
+  <ul>
+    <li>When you use VMR9 renderless mode of Media Player Classic.</li>
+    <li>If you are using an older video card like the Matrox G400 series.</li>
+    <li>If you have sporadic frame drops or delay in "heavier" scenes. Note: May require a <em>queueCount</em> &gt; 10 (see below).</li>
+    <li>Queue may be effective on single CPU setups too.</li>
+  </ul>
+
+  <h3>
+    When will the Queue have no effect?
+  </h3>
+
+  <ul>
+    <li>The video delay is observed all through the video.</li>
+  </ul>
+
+  <h3>
+    How does the Queue feature actually work?
+  </h3>
+
+  <p>
+    ffdshow gets samples from the upper stream filter (usually the splitter), processes and writes them to the buffer that it got allocated by the downstream filter.<br />
+    If Queue is <strong>disabled</strong>, the video renderer has only one buffer.
+    Even if ffdshow has finished the work early, it has to wait because the buffer is occupied until the video renderer displays the current frame at the time specified by its time stamp.
+    The CPU wastes time without doing anything during this period. And this is where the Queue feature kicks in:<br />
+    If Queue is <strong>enabled</strong>, the downstream filter has multiple buffers.
+    After ffdshow finishes the work, it gets a buffer allocated immediately, writes to it and puts it into the queue.
+    Then ffdshow begins to process the very next frame without waiting and wasting precious CPU cycles.
+    This way ffdshow can get out of a pinch by sending buffers into the queue if it has received several heavy frames.<br />
+    An example should make things more clear:<br />
+    In a 30fps movie, every frame must be processed within 33ms.
+    Assuming the time required to process 10 consecutive frames is 20, 20, 20, 20, 20, 20, 50, 50, 50, and 50ms respectively.
+    The first 6 frames are displayed without problems. The total processing time is (20ms + 13ms) * 6 = 198ms.
+    With Queue disabled, ffdshow spends 13ms (33ms - 20ms) after each of the first 6 frames doing nothing. When the 7th frame finally arrives, chances are it will be delayed or even dropped.<br /> 
+    With Queue enabled on the other hand, ffdshow processes the first 6 frames in 20ms * 6 = 120ms and can begin working immediately on the following, more intensive frames.  
+    This way ffdshow can deliver all the frames in time.<br />
+    Inside the actual implementation, a thread is needed to dispatch buffers in the queue to the video renderer.
+    This thread is implemented inside ffdshow for VMR7 and inside the video renderer for VMR9.
+    The main body of the video renderer is executed inside that thread, which is different from ffdshow's main thread.
+  </p>
+
+  <h3>
+    How do I know if Queue is really working?
+  </h3>
+
+  <p>
+    Since it is difficult to measure the effect empirically, it is best to believe your eyes and ears. Watch out for frame drops and/or delay.<br />
+    If you are not certain enough, it may help to enable both OSD items "Queued samples" and "Video delay".
+    However, don't forget the OSD itself consumes a few CPU cycles.<br />
+    Queue is not designed to use multiple cores equally. You won't see CPU graphs inside your performance monitoring tool balancing each other.<br />
+    Benchmarking the Queue feature with <em>timeCodec.exe</em> is futile because it skips the waiting time that is described above.
+  </p>
+
+  <h3>
+    Registry settings (for advanced users)
+  </h3>
+
+  <p>
+    The number of buffers can be changed inside the registry with the <em>queueCount</em> key. It is located at:
+  </p>
+  
+  <pre>HKEY_CURRENT_USER\Software\GNU\ffdshow\default</pre>
+  
+  <p>
+    If you are using presets, then replace <em>default</em> by the preset name. The default value is 10. By increasing the number, the "Queue effect" is increased.
+    If your video playback suffers from sporadic frame drops and/or delays, then 10 is a good value to begin with, but if you want to cover a whole high-bitrate scene, 50 is required.
+    As it uses video memory, a too large value can make the video card unstable. For a video card with 256MB memory, 50 would be the maximum, if you want to play full HD videos.
+  </p>
+
+  <h3>
+    Compatibility issues
+  </h3>
+
+  <p>
+    Depending on the video card, the video driver and the application settings, Queue may cause problems.<br />
+    Compatibility issues have been reported with some video cards from ATI's X1300 and X1600 series.
+    There are no known issues with Nvidia video cards.<br />
+    If problems with the Queue feature appear, disable it. Working around individual issues is too difficult.
+  </p>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

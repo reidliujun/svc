@@ -1,0 +1,10 @@
+EXPORTS
+  x264_encoder_open
+  x264_encoder_headers
+  x264_encoder_encode
+  x264_encoder_close
+  x264_param_default
+  x264_picture_alloc
+  x264_picture_clean
+  x264_nal_encode
+  getVersion

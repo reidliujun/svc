@@ -1,0 +1,37 @@
+<html><head><title>Masking</title><link rel='StyleSheet' href='styles/geo-light.css' type='text/css'></head><body><a class='wiki' href='HomePage.html'>home</a><br/><h1>Masking</h1><div class='wikitext'><b>Libavcodec</b>
+<br/>
+<br/><span style="text-decoration:underline;">luminance masking</span> (0.0-1.0)
+<br/>
+<br/>0.0 disabled
+<br/>0.0-0.3 should be a sane range
+<br/>
+<br/>warning: be carefull, too large values can cause disasterous things
+<br/>
+<br/>warning2: large values might look good on some monitors but may look horrible on other monitors
+<br/>
+<br/><span style="text-decoration:underline;">darkness masking</span> (0.0-1.0)
+<br/>
+<br/>0.0 disabled
+<br/>0.0-0.3 should be a sane range
+<br/>
+<br/>warning: be carefull, too large values can cause disasterous things
+<br/>
+<br/>warning2: large values might look good on some monitors but may look horrible on other monitors / TV / TFT
+<br/>
+<br/><span style="text-decoration:underline;">temporal complexity masking</span> (0.0-1.0)
+<br/>
+<br/>0.0 disabled (default)
+<br/>
+<br/><span style="text-decoration:underline;">spatial complexity masking</span> (0.0-1.0)
+<br/>
+<br/>0.0 disabled (default)
+<br/>0.0-0.5 should be a sane range
+<br/>
+<br/>larger values help against blockiness, if no deblocking filter is used for decoding
+<br/>
+<br/>Tip: crop any black borders completly away as they will reduce the quality of the MBs there
+<br/>
+<br/><span style="text-decoration:underline;">normalize adaptive quantization</span> (experimental)
+<br/>
+<br/>When using adaptive quantization, the average per-MB quantizer may no longer match the requested frame-level quantizer. Using this option will attempt to adjust the per-MB quantizers to maintain the proper average.
+<br/><br/></div></body></html>

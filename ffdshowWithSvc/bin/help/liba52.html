@@ -1,0 +1,11 @@
+<html><head><title>liba52</title><link rel='StyleSheet' href='styles/geo-light.css' type='text/css'></head><body><a class='wiki' href='HomePage.html'>home</a><br/><h1>liba52</h1><div class='wikitext'>liba52 is a free library for decoding ATSC A/52 streams. It is released under the terms of the GPL license. The A/52 standard is used in a variety of applications, including digital television and DVD. It is also known as AC-3.
+<br/>
+<br/>The main goals in liba52 development are:
+<br/>
+<br/><ul><li>Portability - Currently all of the code is written in C, and when we write platform-specific optimizations we will always keep a generic C routine to fall back on.
+</li><li>Reuseability - we do not want liba52 to include any project-specific code, but it should still include enough features to be used by very diverse projects.
+</li><li>Precision - We are trying to implement all of the A/52 standard, and to have a very precise output by doing all the calculations in floating point. We have a test suite that detects any deviation in the output when compared to previous versions. We do not have access to official A/52 test vectors though, so we have to use our judgement to ensure that such deviations are only intruduced when we fix bugs !
+</li><li>Speed - liba52 is really fast, on any modern PC it should take only a few percent of CPU time.
+</li></ul>
+<br/>The project homepage is at <a class='wiki'  href='http://liba52.sourceforge.net/'>http://liba52.sourceforge.net/</a>.
+<br/><br/></div></body></html>

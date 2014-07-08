@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ffdshow tryouts | FAQ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+  <meta name="description" content="ffdshow tryouts FAQ" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../en/faq.htm" title="English FAQ"><img src="../images/england.png" alt="English FAQ" width="27" height="17" />&nbsp;English</a>
+    &nbsp;<a class="links" href="../de/faq.htm" title="German FAQ"><img src="../images/germany.png" alt="German FAQ" width="27" height="17" />&nbsp;German</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">FAQ</a>
+  </h1>
+
+  <ul class="links">
+    <li><a class="nav" href="#difference">generic buildsとICL10 buildsの違いは？</a></li>
+    <li><a class="nav" href="#performance">デコーダが一番早いビルドはどれですか？</a></li>
+    <li><a class="nav" href="#perf_filters">画像処理フィルターを使用したときに一番早いビルドはどれですか？</a></li>
+    <li><a class="nav" href="#stable">どのビルドが一番安定していますか？</a></li>
+    <li><a class="nav" href="#multithreaded">ffdshowはマルチスレッドに対応していますか？</a></li>
+  </ul>
+
+  <h2>
+    <a name="difference" id="difference">generic buildsとICL10 buildsの違いは？</a>
+  </h2>
+
+  <p>
+    主な違いは<em>ffdshow.ax</em> をコンパイルするのに使用されたコンパイラです。現在4つのコンパイラが使用されています。<em>MSVC71(Microsoft Visual C++ 7.1)</em>, <em>MSVC80</em>, <em>GCC</em> と <em>ICL10</em>です。<br />
+    それぞれに対して必要なCPUは以下のとおりです｡
+  </p>
+
+  <ul>
+    <li>generic buildsはPentium-MMX/AMD K6以降で使用可能です。</li>
+    <li>ICL10 buildsはPentium III/Athlon XP以降のCPU（SSE対応）が必要です。</li>
+    <li>experimental x64は64bit CPUとWindows XP/Vistaのx64 Editionが必要です。低速ですしまだ不具合もあると思います。なおこれらの64bit OSに32bit版をインストールすることも出来ます。</li>
+  </ul>
+
+  <h2>
+    <a name="performance" id="performance">デコーダが一番早いビルドはどれですか？</a>
+  </h2>
+
+  <p>
+    どのビルダーもffdshowの主力デコーダである<em>libavcodec</em> はGCCを使ってコンパイルしています。<em>libavcodec</em> はCPUのサポートする命令セット(SSE/SSE2など)を自動検出し利用できるアセンブラで書かれたコードをたくさん持っています｡コンパイラによる最適化の余地はほとんどないと言えます｡したがって純粋なデコーダとしての性能を比較した場合ビルドによる<strong>違いはありません</strong>。
+  </p>
+
+  <h2>
+    <a name="perf_filters" id="perf_filters">画像処理フィルタを使用したときに一番早いビルドはどれですか？</a>
+  </h2>
+
+  <p>
+    <em>ffdshow.ax</em> を最適化したビルドはある種のフィルタを使用する場合パフォーマンスに違いが見られます。<br />
+    下のリストは最適化によってメリットが得られるフィルタです。
+  </p>
+
+  <ul>
+    <li>xsharpen</li>
+    <li>denoise3d</li>
+  </ul>
+
+  <p>
+    次のグラフは画像処理フィルタを使用したときに最適化されたビルドでパフォーマンスの改善が見られることを示します｡<br /><br />
+    <img src="images/benchmark.png" width="498" height="600" title="ffdshow build 802 benchmark" alt="ffdshow build 802 benchmark" /><br />
+    <span style="font-size:0.8em">
+      Test setup: Pentium 4 2.8GHz (Northwood), Windows XP SP2, null renderer使用<br />
+      Test sample: <a class="links" href="http://trailers.divx.com/Dreamworks/Madagascar_HD.zip">Madagascar.avi</a> (DX50)
+    </span>
+  </p>
+
+  <p>
+    <strong>まとめ</strong>
+  </p>
+
+  <ul>
+    <li>画像処理フィルタを使用しない場合、ほとんど<strong>差がありません</strong>｡</li>
+    <li>ICL9 (SSE) ビルドは<em>xsharpen</em>使用時には最速であることが証明されました｡MSVCビルドと比較して88％の高速化がなされています。</li>
+    <li>SSE2ビルドはSSEビルドに対する優位性を証明できませんでした｡</li>
+    <li>グラフには示していませんが、GCCによるSSEビルドもまた良好な性能を示しました｡</li>
+    <li>改善の程度はPCによって異なりますので理想的には御自身のシステムでテストされると良いでしょう。<br />
+      ベンチマークにはHaaliの<a class="links" href="http://haali.cs.msu.ru/mkv/timeCodec.exe">timeCodec.exe</a>[96KB] を使用します。timeCodec.exeが動作するためには <a class="links" href="http://haali.cs.msu.ru/mkv/">Haali Media Splitter</a> が必要です。</li>
+  </ul>
+
+  <h2>
+    <a name="stable" id="stable">どのビルドが一番安定していますか？</a>
+  </h2>
+
+  <p>
+    多分generic buildsが最も安定しています｡しかしGCC,ICLによるビルドに既知の問題はありません。したがって安定性の面ではどのビルドを使ってもよいと言えるでしょう｡
+  </p>
+
+  <h2>
+    <a name="multithreaded" id="multithreaded">ffdshowはマルチスレッドに対応していますか？</a>
+  </h2>
+
+  <ul>
+    <li>リサイズは完全にマルチスレッド化されておりデュアルコアCPUなどでより高速に処理されます（設定不要）。ただしPentium4 HTでは効果がありません。</li>
+    <li>xvidエンコーダはマルチスレッドに対応しています。</li>
+    <li>x264エンコーダはマルチスレッドに対応しています。</li>
+    <li>「キュー、その他」の「出力サンプルをキューに入れる」をチェックするとマルチスレッド処理を使った高速化がなされます。シングルCPUでも効果が得られる場合があります。</li>
+    <li>libavcodecのmpeg1/2デコーダはマルチスレッド対応しており、「デコーダーオプション」のスレッド数を設定することで高速化されます。Pentium4 HTでは効果が見られません。</li>
+    <li>libavcodecのMPEG4/MPEG2/MPEG1エンコーダはマルチスレッドに対応しています 。</li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

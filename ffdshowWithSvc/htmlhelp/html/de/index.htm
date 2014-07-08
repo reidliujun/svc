@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Please update the revision number when changes to the markup code
+have been made, which were ported to this translation (even if nothing
+was changed here). This is to know which revisions are not ported yet.
+If you skip to port a revision please note that revision for later porting. -->
+
+<!-- In sync with revision 1725 except for revision(s) -none-. -->
+
+<head>
+  <title>ffdshow tryouts | Changelog</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="ffdshow tryouts changelog" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../en/index.htm" title="English changelog"><img src="../images/england.png" alt="English changelog" width="27" height="17" />&nbsp;English</a>
+    &nbsp;<a class="links" href="../jp/index.htm" title="Japanese changelog"><img src="../images/japan.png" alt="Japanese changelog" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">Changelog</a>
+  </h1>
+
+  <p>
+    Diese Liste basiert - mit Ausnahme des Multithreading-Patches - auf der neuesten Revision des originalen Projekts.<br />
+    Navigieren nach:
+  </p>
+
+  <ul class="links">
+    <li><a class="nav" href="#fixes">Fehlerkorrekturen</a></li>
+    <li><a class="nav" href="#features">Neue Features</a></li>
+    <li><a class="nav" href="#download">Download</a></li>
+    <li><a class="nav" href="faq.htm">FAQ</a></li>
+  </ul>
+
+  <!-- old table navigation version -->
+  <!--
+  <table summary="Links to different sections of changelog">
+    <tr><td>Navigate to:</td><td><a class="nav" href="#fixes">Bug fixes</a></td></tr>
+    <tr><td></td><td><a class="nav" href="#features">New features</a></td></tr>
+    <tr><td></td><td><a class="nav" href="#download">Download</a></td></tr>
+    <tr><td></td><td><a class="nav" href="faq.htm">FAQ</a></td></tr>
+  </table>
+  -->
+
+  <h2>
+    <a name="fixes" id="fixes">Fehlerkorrekturen</a><br />
+  </h2>  
+  
+  <h3>Nach Beta4 korrigiert</h3>
+
+  <ul class="fixed">
+    <li>Im Vista Windows Media Center konnten AVI-Dateien, die ein nicht-quadratisches Seitenverh&auml;ltnis besitzen, aufgrund eines Windows Media Center-Bugs nicht richtig abgespielt werden. Sind nun die Optionen "Ausgabeformat-Wechsel w&auml;hrend Wiedergabe erlauben" sowie "Nur zu kompatiblen Filtern verbinden" aktiviert, so werden diese Dateien im korrekten Seitenverh&auml;ltnis abgespielt.</li>
+    <li>Falls RAW-Video im NV12/NV21-Farbraum als Eingabe diente und "Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis" aktiviert war, st&uuml;rzte ffdshow ab.</li>
+    <li>"Bitmap overlay" st&uuml;rzte ab.</li>
+    <li>Der DCT Bildfilter funktionierte bei der Wiedergabe nicht.</li>
+    <li>Falls "Untertitel mit gleichem Zeitstempel &uuml;berlappen" aktiviert war, st&uuml;rzte ffdshow manchmal ab.</li>
+    <li>Die Untertitel-Letterbox-Funktion wendete f&auml;lschlicherweise "Beschneiden" anstatt "Letterbox" an, falls das angegebene Seitenverh&auml;ltnis breiter war als das des Videos.</li>
+    <li>Windows Media Center st&uuml;rzte beim Erstellen von Miniaturansichten ab.</li>
+  </ul>
+  
+  <h3>Vor Beta4 korrigiert</h3>
+
+  <ul class="fixed">
+    <li>In FLAC und TTA ging die A/V-Synchronisation verloren.</li>
+    <li>Der "Closed caption"-Dekoder produzierte verst&uuml;mmelte Zeichen.</li>
+    <li>Fehler, die zu Abst&uuml;rzen im Windows Movie Maker f&uuml;hrten, wurden behoben.</li>
+    <li>Untertitel, die ein "&amp;" im Dateinamen enthalten, wurden falsch im ffdshows Kontextmen&uuml; angezeigt.</li>
+    <li>MakeAVIS.exe produzierte im "Store uncompressed audio"-Modus rauschendes Audio, falls der Audioeingang nicht auf 16-bit Integer gestellt war.</li>
+    <li>Mehrzeilige AviSynth-Skripte wurden nicht abgespeichert, wenn im Profildialog auf "Einstellungen exportieren" oder "In Datei speichern..." geklickt wurde.</li>
+    <li>"DTS S/PDIF pass-through" produzierte manchmal St&ouml;rger&auml;usche.</li>
+    <li>Kompatibilit&auml;tsproblem mit VFW-Enkoderanwendungen wie z.B. HyperCam wurde behoben.</li>
+    <li>Falls "ConvertToRGB" in einem AviSynth-Skript verwendet wurde, wurde das Video umgedreht dargestellt.</li>
+    <li>Falls "Kan&auml;le tauschen" verwendet wurde, ging das Audiosignal verloren, wenn sich die Anzahl der eingehenden Audiokan&auml;le &auml;nderte.</li>
+    <li>DVD Men&uuml;s wurden manchmal nicht hervorgehoben.</li>
+    <li>"Bedingungen f&uuml;r automatisches Laden" -> "on movie file name match (with wildcards)" funktionierte nicht.</li>
+    <li>War der Eingabefarbraum NV12 oder NV21, konnte ffdshow nicht richtig rendern.</li>
+    <li>Wurde "Beschneiden" nach gerahmten Untertiteln verwendet, wurde die Unterkante des Bildes zu stark beschnitten.</li>
+  </ul>
+
+  <h3>Vor Beta3 korrigiert</h3>
+
+  <ul class="fixed">
+    <li>Schwarze R&auml;nder wurden im AviSynthfilter und Deinterlacern nicht schwarz dargestellt.</li>
+    <li>libavcodec-Enkoder akzeptierten keine Bildfrequenzen au&szlig;er 25fps. Andere Enkoder hatten manchmal falsche Bildfrequenzen.</li>
+    <li>Falls "ffdshowaudio()" im AviSynth-Skript verwendet wurde, trat ein Fehler auf.</li>
+    <li>Falls eine Unicode-Untertiteldatei 0x1a enthielt, schlug das Rendering fehl.</li>
+    <li>Das Bild wurde gespiegelt, falls der AviSynthfilter im RGB-Farbraum ausgab.</li>
+    <li>Falls "RAW video" -> "YV12" im VFW-Dekoder aktiviert war, wurde das Bild gespiegelt, wenn der VFW-Codec via DirectShow verwendet wurde.</li>
+    <li>Verbesserte Stabilit&auml;t der Handhabung von Winamp-Plugins.</li>
+    <li>Gr&ouml;&szlig;en&auml;nderung w&auml;hrend des Abspielens: Wurde 8 (als erste Ziffer von 800) f&uuml;r die vertikale Gr&ouml;&szlig;e eingegeben, gab es je nach angewandter Methode einen Absturz (Lanczos tap>=4, spline, usw.).</li>
+    <li>Falls Gr&ouml;&szlig;en&auml;nderung verwendet wurde, wurden &Auml;nderungen des Pixelseitenverh&auml;ltnisses (SAR) ignoriert.</li>
+    <li>Falls "Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis" -> "Borders" -> "Inside" verwendet wurde, kalkulierte "Benutze SV des Originals" eine falsche Gr&ouml;&szlig;e.</li>
+    <li>AviSynth-Skript konnte nicht gespeichert werden (nur Unicode-Builds).</li>
+  </ul>
+
+  <h3>Vor Beta2 korrigiert</h3>
+
+  <ul class="fixed">
+    <li>Falls Overlaymixer und YUY2 verwendet wurden, wurde nach einer &Auml;nderung des Seitenverh&auml;ltnisses die H&ouml;he des Bildes halbiert. Dies war h&auml;ufig bei Wiedergabe von DVDs der Fall.</li>
+    <li>FFV1-Dekoder st&uuml;rzte beim Spulen oder bei Verz&ouml;gerung ab.</li>
+    <li>FFV1-Enkoder: Die Standardentfernung zwischen Keyframes betrug 250, was zu hoch war und nicht unabh&auml;ngig konfiguriert werden konnte. Neuer Standard ist 10.</li>
+    <li>Wenn NV12 der einzig verf&uuml;gbare Ausgabefarbraum f&uuml;r DirectShow-Dekoder war und "Unkomprimierte Videodaten" f&uuml;r den VFW-Dekoder aktiviert war, st&uuml;rzte der Thumbnailer des Windows Media Player 11 ab.</li>
+    <li>Untertitel waren grau, selbst wenn wei&szlig; ausgew&auml;hlt war.</li>
+    <li>L&ouml;schen der Standardvoreinstellung w&auml;hrend sie aktiv war, l&ouml;ste einen Absturz aus.</li>
+    <li>Umgedrehtes NV12 verursachte entweder einen Absturz oder ein defektes Bild.</li>
+    <li>Wurde der interne Matroska-Splitter des Media Player Classic verwendet, war das Seitenverh&auml;ltnis immer 1.</li>
+    <li>Wenn der Audiokonfigurationsdialog w&auml;hrend der Wiedergabe ge&ouml;ffnet wurde, war die Prozessorauslastung ungew&ouml;hnlich hoch und er ist manchmal - besonders bei ADPCM-Wiedergabe - eingefroren.</li>
+    <li>Wenn sich ffdshow mit VobSub (VSFilter) verband, versuchte es YV12 mit einer Breite, die kein Vielfaches von 8 war, zu verwenden und st&uuml;rzte ab.</li>
+    <li>Wenn "Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis" -> "R&auml;nder" -> "Innen" -> "100%" konfiguriert wurde, st&uuml;rzte ffdshow ab.</li>
+    <li>Wiederverbinden zu VMR9 (nach Gr&ouml;&szlig;en&auml;nderung) schlug manchmal fehl.</li>
+    <li>PowerDVD7 verursachte einen schwarzen Bildschirm, wegen eines Fehlers im Verbindungscode des DirectShow-Filters (bitte entfernen Sie PowerDVD.exe aus "DirectShow-Optionen" -> "ffdshow nicht verwenden in:").</li>
+    <li>Falls eine Untertiteleinheit zu viele Zeilen f&uuml;r den angegebenen Platz enthielt, wurden Zeilen nicht dargestellt.</li>
+    <li>Die rechten Ecken von kursiven Untertiteln waren abgeschnitten. Falls "schnelles Rendering" aktiviert war, wurde kursiver Text manchmal als nicht-kursiv dargestellt und umgekehrt.</li>
+    <li>Einig SVQ3-Videos verursachten ein Einfrieren.</li>
+    <li>Wechseln eines Matroska-Untertiteltracks endete in einem Absturz.</li>
+    <li>Mehrbyte Zeichen in Untertiteln, welche in Matroska eingebettet waren, wurden entstellt.</li>
+    <li>Falls Rausch- und Gr&ouml;&szlig;en&auml;nderungsfilter angewandt wurden, wurde die Chrominanz gr&uuml;n.</li>
+    <li>Explorer.exe st&uuml;rzte unter Windows Vista ab, wenn auf einen Ordner zugegriffen wurde, der AVI-Dateien enthielt.</li>
+    <li>Wurden MPEG1/2-Videos mit libmpeg2 abgespielt oder in ihnen gespult, erschienen manchmal h&auml;ssliche gr&uuml;ne Artefakte oder es erfolgte ein Absturz (libmpeg2).</li>
+    <li>OGG &amp; OGM-Muxer wurden fehlerbereinigt. FLV &amp; MPEG-Muxer wurden entfernt.</li>
+    <li>Wurde ein Video, dessen H&ouml;he kein Vielfaches von vier war, abgespielt, waren je nach verwendetem Ausgabefarbraum Artefakte sichtbar oder ein Absturz die Folge.</li>
+    <li>Wurde ein Video, dessen Breite &uuml;ber 1024 lag, abgespielt, war ein Absturz die Folge, wenn RGB nach YUY2 konvertiert wurde.</li>
+    <li>Wurde ein Video, dessen H&ouml;he ungerade war, abgespielt und YV12 war aktiviert, wurde das Video verzerrt.</li>
+    <li>Spulen schlug manchmal fehl, wenn ffdshow mit Haalis Videorenderer verbunden war.</li>
+    <li>Der n&auml;chste interne Filter nach Kernel deinterlace wurde nur auf jedes zweite Bild angewandt. Falls dieser Filter "Gr&ouml;&szlig;en&auml;nderung" war, wechselte die Bildgr&ouml;&szlig;e bei jedem Bild.</li>
+  </ul>
+
+  <h3>Vor Beta1 korrigiert</h3>
+
+  <ul class="fixed">
+    <li>Wurde versucht mittels Windows Media Encoder zu rekodieren, l&ouml;ste der ffdshow-Audiodekoder einen Absturz des WME aus.</li>
+    <li>Wurde mittels libmpeg2 dekodiert, funktionierte das Hardware-Deinterlacing nicht.</li>
+    <li>AAC wurde zu schnell abgespielt, sodass man nichts verstehen konnte. A/V-Synchronit&auml;t ging verloren.</li>
+    <li>Wurde ein Video mit einer ungeraden H&ouml;he abgespielt, fror es h&auml;ufig ein.</li>
+    <li>War "Mixer" -> "headphone virtual spatialization" aktiviert, st&uuml;rzte ffdshow bei Wiedergabe von Monoquellen ab.</li>
+    <li>Wurde ein Xvid-Stream mit vielen konsekutiven N-VOPs abgespielt, wurden keine Untertitel angezeigt solange keine neuen Bilder angezeigt wurden. War eine lange Reihe konsekutiver N-VOPs am Ende der Datei, schloss sie sich zu fr&uuml;h.</li>
+    <li>"Videodekoder-Konfiguration" -> "Ausgabe" -> "DV" konnte nicht deaktiviert werden.</li>
+    <li>War eine der zu aktualisierenden Dateien gesperrt, stoppte der Installer mit einer Fehlermeldung.</li>
+    <li>Didees YlevelsG/S/C waren nicht korrekt implementiert. Gamma wirkte am st&auml;rksten auf die hellen Bereiche des Bildes.</li>
+    <li>ffdshow konnte sich nicht mit unkomprimiertem Audioeingangsmaterial verbinden.</li>
+    <li>LPCM-Ausgabe war defekt.</li>
+    <li>AC3-Ausgabe war defekt.</li>
+    <li>DTS produzierte viel Rauschen.</li>
+    <li>Perspektivenkorrektur mit kubischer Interpolation st&uuml;rzte ab, wenn die Breite des Videos 768 &uuml;berschritt.</li>
+    <li>5.1 Vorbis (libavcodec) war defekt.</li>
+    <li>Das Videobild war schwarz, wenn versucht wurde den ffdshow-DirectShow-Dekoder in PowerDVD zu verwenden.</li>
+    <li>Falls ffdshow das Ausgabematerial eines DVD-Dekoders als unkomprimiertes Videomaterial eingespeist bekam, die Untertiteldatei g&uuml;ltig und MPEG2 deaktiviert war, wurden Untertitel, die nicht zur DVD geh&ouml;rten, angezeigt.</li>
+    <li>Falls videobildenthaltende Untertitel wie IDX+SUB (Vobsub) aktiviert waren, gab es an Stellen, an denen die H&ouml;he der Untertitel ungerade war, einen Absturz.</li>
+    <li>Convolver, einer der Audiofilter, st&uuml;rze ab wenn versucht wurde eine Impuls-Datei zu laden.</li>
+    <li>Wurde Gr&ouml;&szlig;en&auml;nderung verwendet, waren manchmal horizontale Linien sichtbar ("Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis" -> "Einstellungen" -> "Accurate rounding").</li>
+    <li>Falls Gr&ouml;&szlig;en&auml;nderung nach xsharpen verwendet wurde, war das Video gr&uuml;n.</li>
+    <li>Stereoskopische Untertitel st&uuml;rzten ab.</li>
+    <li>Das OSD-Element "Prozessorauslastung" zeigte auf Multiprozessorsystemen nicht den korrekten Wert an.</li>
+    <li>Die automatische Nachbearbeitungsqualit&auml;tskontrolle funktionierte nicht auf Multiprozessorsystemen.</li>
+    <li>Die Lautst&auml;rkeregelung funktionierte nicht korrekt.</li>
+    <li>DScaler: Das Video (TomsMoComp) st&uuml;rzte je nach zum Kompilieren verwendetem Compiler ab.</li>
+    <li>Die Overlaykontrolle konnte den Startwert nicht richtig laden.</li>
+    <li>Oblivion und Morrowind (beides Spiele) st&uuml;rzten ab.</li>
+    <li>Der Codec-Konfigurationsdialog funktionierte unter Windows Vista nicht.</li>
+    <li>War ein Fehler im AviSynth-Skript in ffdshow, wurde die Fehlermeldung auf dem Video angezeigt. Sie verblieb dort selbst nachdem die komplette AviSynth-Seite deaktiviert worden war.</li>
+    <li>Der Dialog war entstellt, falls "Tray, Dialog &amp; Pfade" -> "Japanese (Unicode)" ausgew&auml;hlt war (ANSI-Builds). Das Problem war, dass der Installer die Option standardm&auml;&szlig;ig f&uuml;r die japanische Windowsversion setzte.</li>
+    <li>ANSI/MBCS wurde nicht korrekt verarbeitet. Das OSD-Element "Quelldatei", zum Beispiel, konnte die letzten paar Zeichen nicht anzeigen, falls MBCS im Pfad verwendet wurde. Es war eine Sicherheitsangelegenheit.</li>
+    <li>Falls eine lokalisierte Fassung des ffdshow-Dialogs verwendet wurde, skalierte der Inhalt des Dialogs auf ca. 130%, die Fenstergr&ouml;&szlig;e &auml;nderte sich jedoch nicht. Infolgedessen waren Teile der rechten Dialogseite nicht mehr sichtbar (abh&auml;ngig davon wie der Dialog ge&ouml;ffnet wurde).</li>
+    <li>Untertitel waren entstellt falls "Untertitel" -> "Schriftart" -> "Schnelles Rendering" aktiviert war und MBCS in ANSI-Builds verwendet wurde.</li>
+  </ul>
+
+  <h2>
+    <a name="features" id="features">Neue Features</a>
+  </h2>
+  
+  <h3>Nach Beta4 hinzugef&uuml;gt</h3>
+
+  <ul class="added">
+    <li>Unterst&uuml;tzung f&uuml;r FourCC "SP51" bis "SP57" hinzugef&uuml;gt.</li>
+    <li>Die Option "Untertitel" -> "Schriftart" -> "Correct aspect ratio automatically" ist jetzt auch f&uuml;r SSA/ASS-Untertitel g&uuml;ltig, da VSFilter und MPCs "VMR9 renderless" sich anders verhalten.</li>
+  </ul>
+
+  <h3>Nach Beta3 hinzugef&uuml;gt</h3>
+
+  <ul class="added">
+    <li>Nellymoser Audio Dekoder wurde hinzugef&uuml;gt. Der neueste FLV-Splitter wird ben&ouml;tigt.</li>
+    <li>Seb's BTB&amp;WTW-Stufenfilter: Kontrast einstellen nur wenn "dimmer than dimmest" (Y &lt; 16) und/oder "brighter than brightest" (Y &gt; 235) Teil existiert (abh&auml;ngig von der Konfiguration).</li>
+    <li>H.264-PAFF Interlacing wird unterst&uuml;tzt.</li>
+    <li>Der H.264-Dekoder ist jetzt multithreaded. Dies ist jedoch nur effektiv, wenn das Video mit mehreren Slices enkodiert wurde.</li>
+    <li>Reset-Button wurde zu der Overlaykontrolle hinzugef&uuml;gt.</li>
+    <li>LoadCPlugin / Load_Stdcall_Plugin m&uuml;ssen nicht mehr verwendet werden, um ffavisynth.dll zu laden (ffdshow()- und ffdshowAudio()-Funktion). Dies geschieht nun automatisch beim AviSynth-Start.</li>
+    <li>Zur "YCbCr &lt;-&gt; RGB-Konvertierung" wurden ITU-R B.601/709-Standardauswahl sowie Kontrasteinstellungen (Standard, kompletter Wertebereich, benutzerdefiniert) hinzugef&uuml;gt.</li>
+    <li>7.1-Kanal Audioverarbeitung wurde hinzugef&uuml;gt.</li>
+    <li>In "Beschneiden/Vergr&ouml;&szlig;ern" wurde die Funktion "Autocrop" hinzugef&uuml;gt. Schwarze R&auml;nder k&ouml;nnen jetzt automatsch entfernt werden.</li>
+    <li>Profilautoladefunktion: Es kann nun zwischen "On one of the conditions match (OR)" oder "On all conditions match (AND)" gew&auml;hlt werden.</li>
+    <li>Die neue Bedingung "on FOURCC from previous filter match" wurde der Profilautoladefunktion hinzugef&uuml;gt. Dieses ist n&uuml;tzlich, wenn ffdshow im RAW-Modus verwendet wird, um den originalen Video-FOURCC als Bedingung zu verwenden.</li>
+    <li>F&uuml;r Vistas Windows Media Player 11 und Windows Media Center wurde eine neue Option f&uuml;r die Verarbeitung unkomprimierter Videodaten hinzugef&uuml;gt.</li>
+    <li>In "Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis" wurde die Option "Resize to screen resolution" hinzugef&uuml;gt.</li>
+    <li>In "Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis" -> "Pixelseitenverh&auml;ltnis intern verarbeiten" kann das Pixelseitenverh&auml;ltnis des Ausgabeger&auml;tes konfiguriert werden.</li>
+    <li>In "Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis" -> "R&auml;nder" kann die Aufteilung der R&auml;nder eingestellt werden. Dies ist bei Verwendung von Untertiteln n&uuml;tzlich.</li>
+    <li>Vertikales Skalieren von textbasierten Untertiteln wurde hinzugef&uuml;gt. Auch ASS-Untertitel k&ouml;nnen mit der neuen Option "Override ASS/ASS2 scaling" skaliert werden.</li>
+    <li>Blur-Effekt f&uuml;r textbasierte Untertitel wurde hinzugef&uuml;gt. Dies erlaubt ein besseres &Uuml;berblenden mit dem Video.</li>
+    <li>Neues OSD-Element: "Active preset name".</li>
+    <li>Untertitelumbruch: Drei Modi sind verf&uuml;gbar. "Intelligentes Umbrechen, Zeilen werden gleichm&auml;&szlig;ig umgebrochen", "Wort am Zeilenende umbrechen" und "Intelligentes Umbrechen, untere Zeile wird breiter".</li>
+    <li>Experimentelle x64-Builds sind <a class="links" href="http://sourceforge.net/project/showfiles.php?group_id=173941&amp;package_id=214245&amp;release_id=523000">verf&uuml;gbar</a>.</li>
+    <li>Schnellere RGB&lt;-&gt;YV12-Konvertierung f&uuml;r x64.</li>
+    <li>Verbessertes Textuntertitel- und OSD-Rendering. Hauptteil, Umriss und Schattenoptionen besitzen separat justierbare Farb- und Alphaeinstellungen. Falls der Ausgabefarbraum RGB ist und nachfolgend kein anderer Bildfilter (au&szlig;er Gr&ouml;&szlig;en&auml;nderung) verwendet wird, werden Untertitel und OSD im RGB-Modus gerendert und die Qualit&auml;t weiter verbessert.</li>
+    <li>Unterst&uuml;tzung mehrerer Sprachen: Ein horizontales Skalierungsverh&auml;ltnis f&uuml;r die Konfigurationsdialoge kann durch die Sprachdatei angegeben werden. Um sie auf 125% des horizontalen Wertes zu skalieren, f&uuml;gen Sie die zwei Zeilen "horizontalScale9x=125" und "horizontalScaleNT=125" in der "[Font]"-Sektion der Sprachdatei ein.</li>
+    <li>Verbesserte deutsche &Uuml;bersetzung (Verwendung des zus&auml;tzlichen Platzes, der durch horizontale Skalierung erhalten wurde).</li>
+  </ul>
+
+  <h3>Vor Beta3 hinzugef&uuml;gt</h3>
+
+  <ul class="added">
+    <li>Deinterlacing-Unterst&uuml;tzung (setzten des Interlace-Flags) f&uuml;r MPEG4-ASP durch den Xvidcore-Dekoder.</li>
+    <li>Ein Dialog wird gezeigt, wenn eine unbekannte Anwendung (welche weder in der Black- noch in der Whitelist gef&uuml;hrt ist) versucht ffdshow zu laden.</li>
+    <li>libavcodec-Enkoder lie&szlig;en Fehlermeldungen erscheinen.</li>
+    <li>Der AviSynthfilter wurde aktualisiert, um Skripten Zugang zu mehr Bildern, als nur dem aktuellen, zu geben. Zusammen mit den hinzugef&uuml;gten "3:2 pulldown"-Einstellungen erlaubt dies vielen der IVTC-, Deinterlacing- und temporalen Filtern f&uuml;r AviSynth korrekt in ffdshow zu arbeiten.</li>
+    <li>Symbole wurden aktualisiert ( <img style="vertical-align:middle" src="../images/modern_icon_xp.png" width="60" height="23" title="Neue ffdshow-Symbole" alt="Neue ffdshow-Symbole" /> ). Klassische Symbole stehen weiterhin zur Verf&uuml;gung.</li>
+    <li>ATRAC3 (Adaptive TRansform Acoustic Coding, komprimiertes Audioformat) wurde hinzugef&uuml;gt.</li>
+    <li>Xvid-Enkoder wurde multithreaded.</li>
+    <li>Unterst&uuml;tzung f&uuml;r SPDIF unter Windows Vista wurde hinzugef&uuml;gt ("Audiodekoder-Konfiguration" -> "Ausgabe" -> "Verbinde mit:").</li>
+    <li>Mehrkanalaudio-Verarbeitung durch Winamp-Plugins wurde hinzugef&uuml;gt.</li>
+    <li>Unter "Gr&ouml;&szlig;e &amp; Seitenverh&auml;ltnis" wurde eine neue Checkbox "Pixelseitenverh&auml;ltnis intern verarbeiten" hinzugef&uuml;gt.</li>
+    <li>Gr&ouml;&szlig;en&auml;nderung: "Horizontale Gr&ouml;&szlig;e definieren" statt "Vertikale Gr&ouml;&szlig;e 0 f&uuml;r Automatik definieren".</li>
+    <li>Audiodekoder-AC3-Output: Die neue Checkbox "Nur Mehrkanal-Streams kodieren" erlaubt Senden von Mehrkanalaudio (welches andernfalls nicht digital gesendet werden kann) &uuml;ber AC3-SPDIF zum AV-Verst&auml;rker.</li>
+  </ul>
+
+  <h3>Vor Beta2 hinzugef&uuml;gt</h3>
+
+  <ul class="added">
+    <li>Verbesserte Untertitelschatten. 3 Schattenmodi sind verf&uuml;gbar: klassisch, glimmend und geneigt.</li>
+    <li>Verwaltung von Kompatibilit&auml;tsproblemen: "ffdshow nur verwenden in"-Option stellt sicher, dass ffdshow nur in unterst&uuml;tzten Anwendungen verwendet wird.</li>
+    <li>Unterst&uuml;tzung f&uuml;r Hardware-Deinterlacing von unkomprimierten Videodaten (interlacingbezogene Informationen, welche als unkomprimierte Videodaten eingespeist wurden, werden zu nachgeordneten Filtern gesandt).</li>
+    <li>Das neue OSD-Element "IDCT(libavcodec)" zeigt welche IDCT-Methode verwendet wird.</li>
+    <li>Unter "Untertitel" -> "Suchen in", kann die Priorit&auml;t von Erweiterungen angegeben werden.</li>
+    <li>Unterst&uuml;tzung f&uuml;r das erweiterte Profil von VC-1 (libavcodec funktioniert ohne externe Codecs).</li>
+    <li>Verschiedene WMV und VC-1 Inhalte k&ouml;nnen mit Hilfe des Microsoft Codecs abgespielt werden (VC-1 ben&ouml;tigt einen installierten WMP11 oder externen Codec).</li>
+    <li>x264-Enkoder wieder hinzugef&uuml;gt und aktualisiert.</li>
+    <li>Deinterlacing-Unterst&uuml;tzung (setzen des Interlace-Flags) von H.264 MBAFF.</li>
+    <li>Korrekturen und einige neue Features f&uuml;r die Remote-API: Voreinstellungen, Untertitel, schnelles vor/zur&uuml;ck etc.</li>
+    <li>Polnische Inno-Setup-&Uuml;bersetzung.</li>
+    <li>Queue: ffdshow verwendet nun VMR9s internen Queue.</li>
+  </ul>
+
+  <h3>Vor Beta1 hinzugef&uuml;gt</h3>
+
+  <ul class="added">
+    <li>Unterst&uuml;tzung f&uuml;r H.264 MBAFF (interlactes Format).</li>
+    <li>VP6 und etliche andere Codecs wurden hinzugef&uuml;gt.</li>
+    <li>Unterst&uuml;tzung f&uuml;r das erweiterte Profil von VC-1 zu wmv9lib hinzugef&uuml;gt. Es wird der WMP11 oder Microsofts VC-1-Codec ben&ouml;tigt.</li>
+    <li>Der Installer kann die Lautsprecherkonfiguration einstellen. Er l&auml;dt standardm&auml;&szlig;ig die Einstellungen des Betriebssystems (Systemsteuerung).</li>
+    <li>Queue: Beschleuniger. Es verwendet freie CPU-Zeit, um Bilder zu dekodieren, welche angezeigt werden k&ouml;nnen, wenn die CPU hinterher hinkt.</li>
+    <li>Multithreaded Resizing: Schnelleres Resizing auf Multicore-CPUs.</li>
+    <li>Kalkuliert die vertikale H&ouml;he automatisch, wenn 0 als vertikale H&ouml;he eingegeben wird ("Gr&ouml;&szlig;e" -> "Gr&ouml;&szlig;e angeben" -> "Neue Gr&ouml;&szlig;e").</li>
+    <li>Vorbis: Hochakkurater Modus wurde f&uuml;r tremor aktiviert.</li>
+    <li>Qualit&auml;tskontrolle ist nun konfigurierbar ("Dekoderoptionen" -> "Qualit&auml;tskontrolle").</li>
+    <li>Eine Fehlermeldung wird angezeigt, falls der Splitter keine zur Dekodierung von SVQ3 ben&ouml;tigten Informationen liefern konnte.</li>
+    <li>&Uuml;bersetzungen wurden verbessert.</li>
+  </ul>
+
+  <h2>
+    <a name="download" id="download">Download</a>
+  </h2>
+
+  <ul class="download">
+    <li><a class="nav" href="http://downloads.sourceforge.net/ffdshow-tryout/ffdshow_beta4_rev1685_20071206_clsid.exe">Download von Beta4 (stabil)</a></li>
+    <li><a class="nav" href="http://downloads.sourceforge.net/ffdshow-tryout/ffdshow_beta3_rev1324_20070701_clsid.exe">Download von Beta3</a></li>
+    <li><a class="nav" href="http://downloads.sourceforge.net/ffdshow-tryout/ffdshow_beta2a_20070322_clsid.exe">Download von Beta2</a></li>
+    <li><a class="nav" href="http://downloads.sourceforge.net/ffdshow-tryout/ffdshow_beta1_20061211_clsid.exe">Download von Beta1</a></li>
+    <li><a class="nav" href="http://sourceforge.net/project/showfiles.php?group_id=173941">Download von nightly Builds (neueste)</a></li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Zum Anfang&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

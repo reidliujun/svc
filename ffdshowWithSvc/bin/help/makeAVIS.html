@@ -1,0 +1,25 @@
+<html><head><title>makeAVIS</title><link rel='StyleSheet' href='styles/geo-light.css' type='text/css'></head><body><a class='wiki' href='HomePage.html'>home</a><br/><h1>makeAVIS</h1><div class='wikitext'>Simple utility to create &quot;fake&quot; <a title="no description" href='AVIS.html' class='wiki'>AVIS</a> files for Avisynth script.
+<br/>
+<br/><b>GUI</b>
+<br/>
+<br/>When launched without any commandline options, following dialog will appear:
+<br/>
+<br/><b>Commandline interface</b>
+<br/>
+<br/>Kurosu<a href='' class='wiki'>?</a> added commandline interface support to makeAVIS. Now audio output from makeAVIS could be used as an input for <a class='wiki'  href='http://dspguru.doom9.org/'>BeSweet</a> or other commandline audio tools.
+<br/>
+<br/>The most typical use is:
+<br/><pre>MakeAVIS2.exe -i E:\1.avs -p -a - | oggenc -o a.ogg -</pre>
+<br/>where &quot;-&quot; stands for stdout in the first part and for stdin in the second.
+<br/>
+<br/>List of all makeAVIS commandline options:
+<br/><pre>-i &lt;file&gt;   Input avisynth script
+  -v &lt;file&gt;   Output video file (- = stdout)
+  -a &lt;file&gt;   Output audio file (- = stdout)
+  -c &lt;int&gt;    Colorspace (0:YV12/1:YUY2/2:YVYU/3:I420)
+      Default: original  (4:RGB555/6:RGB565/7:RGB24/8:RGB32)
+  -f &lt;int&gt;    Interlacing (0:Interlaced/1:Progressive), default: original
+  -p          Store PCM uncompressed audio
+  -s &lt;int&gt;    Store script: 1:by filename inside script/2: in output file
+  -V          Write progress info
+</pre><br/></div></body></html>

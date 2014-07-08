@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ffdshow tryouts 出力 - ビデオの設定 -</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+  <meta name="description" content="ffdshow tryouts output video configuration" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../en/outputv.htm" title="English output video documentation"><img src="../images/england.png" alt="English output video documentation" width="27" height="17" />&nbsp;English</a>
+    &nbsp;<a class="links" href="../de/outputv.htm" title="German output video documentation"><img src="../images/germany.png" alt="German output video documentation" width="27" height="17" />&nbsp;German</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">出力 - ビデオの設定 -</a>
+  </h1>
+
+  <img src="images/outputv.png" title="Output video dialog" alt="Output video dialog" width="650" height="384" />
+
+  <p>
+    出力のページではffdshowの出力形式に関する設定を行います｡上半分では許可する出力色空間について、下半分ではその他の高度な設定を行います｡
+  </p>
+
+  <h2>
+    色空間
+  </h2>
+
+  <p>
+    ここではffdshowが使用する出力色空間について設定します。大きく分けて2つの色空間があり、それぞれに幾つかの色空間があります｡複数の色空間を許可しておき、「最も近い色空間を選択する」にチェックを入れておくと適当な色空間をffdshowが自動的に選択します｡
+  </p>
+
+  <h3>YUV 色空間</h3>
+  <p>
+    デフォルトの出力色空間です。YUVについてより詳しくは<a class="links" href="http://ja.wikipedia.org/wiki/%E8%89%B2%E7%A9%BA%E9%96%93#YCbCr_.2F_YPbPr">ここ</a>と <a class="links" href="http://en.wikipedia.org/wiki/Chroma_subsampling">ここ</a> の Wikipedia の記事をお読みください｡圧縮ビデオフォーマットのほとんどは伸張時にYV12を出力するため、ffdshowにYV12の出力をさせることはデコード後の色空間変換を省き再生を加速します。<br />
+    ffdshowがサポートするYUV出力形式は以下の通りです｡
+  </p>
+  <ul style="list-style-type:circle">
+    <li><b>I420/IYUV</b>: 下記のYV12と似ていますが、サポートしているビデオカードは少数です｡もしビデオカードがサポートしていたとしてもYV12の方が高速であり推奨されません｡12bit/ピクセルです。</li>
+    <li><b>YV12</b>: ほとんどの場合最もCPU負荷の軽い出力色空間です。ほとんどのシステムに推奨される設定ですが、オンボードの、または古いビデオカードはYV12のサポートが中途半端な場合があります（例えばＤＶＤそのままではＯＫだが、リサイズすると画面が乱れるなど）｡この場合にはYUY2をお試しください｡Windows Media PlayerではYV12を有効にしておくと一部の環境で画面が白黒になるなどの不具合が報告されています｡12bit/ピクセルです。</li>
+    <li><b>YUY2</b>: MJPEGと一部のMPEG2などで使用されている色空間です｡YV12より少し色に関する情報量が多くいくらか高画質です｡YV12より若干CPU負荷が高くなりますが大差ではありません。入力ビデオがYUY2の場合、ビデオカードがYV12をサポートしていない場合などに推奨される形式です｡16bit/ピクセルです。</li>
+    <li><b>YVYU &amp; UYVY</b>: 滅多に使いません。避けて下さい｡12bit/ピクセルです。</li>
+    <li><b>NV12</b>: Radeonのハードウエア・デインターレーシングを使いたいときに相性が良いようです｡12bit/ピクセルです。</li>
+  </ul>
+
+  <h3>RGB 色空間</h3>
+  <p>
+    これらの形式は以前からなじみの深いRGB形式を使用します｡RGBについては<a class="links" href="http://ja.wikipedia.org/wiki/%E8%89%B2%E7%A9%BA%E9%96%93#RGB">wikipedia</a>をお読みください｡RGBはCPU負荷が高く、YUV出力よりも正確です｡<br />
+    またITU-R BT.601、標準レンジ(16-235)以外のビデオも<a class="links" href="cspOptions.htm">高度なオプション</a>を指定することにより正しく再生できます。<br />
+    ffdshowがサポートするRGB出力形式は以下の通りです｡
+  </p>
+  <ul style="list-style-type:circle">
+    <li><b>RGB32 &amp; RGB24</b>: この2つのモードは同じ絵を出力します。唯一の違いはRGB32が1ピクセルあたり32bitを使用し通常そのほうがCPUにとって操作しやすくて高速であるという点です｡</li>
+    <li><b>RGB16 &amp; RGB15</b>: 1ピクセルあたり16/15bitのRGB情報で表現します｡RGB15は特別理由がない限り利点がありません｡</li>
+    <li><b>YV12からRBGへの高品質変換</b>: 時間はかかりますがその分高品質の変換モードを使用します｡CPUパワーに十分余裕がある場合のみチェックしてください｡</li>
+  </ul>
+
+  <h3>
+    <img src="../images/check.png" title="Checkbox image (checked)" alt="Checkbox image (checked)" width="13" height="13" />
+    最も近い色空間を選択する
+  </h3>
+  <ul>
+    <li>チェックあり: 許可されている出力色空間のうち、入力色空間に最も近い色空間が自動的に選択されます｡</li>
+    <li>チェックなし: 許可されている出力色空間をダイアログに並んでいる順番で試し、最初の見つかった使用可能な色空間を選択します｡</li>
+  </ul>
+
+  <h2>
+    高度な設定
+  </h2>
+
+  <h3>
+    <img src="../images/checkI.png" title="Checkbox image (greyed out)" alt="Checkbox image (greyed out)" width="13" height="13" />
+    ピクセルのアスペクト比を出力メディアタイプに設定する / オーバーレイミキサーを使用する
+  </h3>
+  <ul>
+    <li>チェックなし: 旧式の接続を行います。</li>
+    <li>チェックあり：次のフィルタ（通常ビデオレンダラ）との接続にピクセルのアスペクト比率（SAR）やインターレース関連情報を含む高度な接続形式を使用します。</li>
+    <li>半チェック時：まず高度な接続形式を試し、失敗したときには従来形式の接続を試みます。</li>
+  </ul>
+
+  <h3>
+    <img src="../images/check0.png" title="Checkbox image (unchecked)" alt="Checkbox image (unchecked)" width="13" height="13" />
+    インターレース関連情報を出力メディアタイプに設定する / ハードウェアインターレース解除
+  </h3>
+  <ul>
+    <li>入力ストリームやffdshow内部のデコーダから得られたインターレース関連情報を次のフィルタに伝えます。</li>
+    <li>ビデオレンダラなどフィルタによっては必要に応じてこの情報を使ってインターレース解除を行います。</li>
+    <li>あくまで次のフィルタに情報を伝えるだけで、<b>実際の動作は下流側フィルタの実装に依存します</b>。</li>
+    <li>デフォルトはチェックなしです｡DVDはインターレースですが、ほとんどの場合もともとはフィルム（プログレッシブ）で単にテレシネ変換されているだけです。そのような素材に対してはチェックしない方が無難です｡</li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          このページは <a class="links" href="http://mewiki.project357.com/wiki/Main_Page">MeGUI wiki</a> から <em>checkers</em>氏のご好意により提供されました｡
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>

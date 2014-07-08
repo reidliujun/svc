@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ffdshow tryouts | 高度な色空間の設定</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+  <meta name="description" content="高度な色空間の設定" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../en/cspOptions.htm" title="English advanced color space options documentation"><img src="../images/england.png" alt="English advanced color space options documentation" width="27" height="17" />&nbsp;English</a>
+    &nbsp;<a class="links" href="../de/cspOptions.htm" title="German advanced color space options documentation"><img src="../images/germany.png" alt="German advanced color space options documentation" width="27" height="17" />&nbsp;German</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">高度な色空間の設定</a>
+  </h1>
+
+  <img src="images/cspOptions.png" title="Advanced color space options dialog" alt="Advanced color space options dialog" width="650" height="441" />
+
+  <p>
+    この高度な色空間のページでは YCbCr と RGB の変換に関する設定を行います。
+    上半分では<em>ITU-R BT.601</em> と <em>ITU-R BT.709</em> の選択を行い、下半分はコントラストを規定する白と黒の上限、下限の設定を行います。<br />
+    この設定は ffdshow が YCbC と RGB の変換を行う場合にのみ適応されます。言い換えれば MPEG のビデオを再生していて出力色空間が YV12 か YUY2 であれば無視されます。
+  </p>
+
+  <h2>YCbCr specification</h2>
+
+  <p>
+    ITU-R BT.601 と BT.709 はいずれも ITU-R のコンポーネント デジタル ビデオに関する標準規格で、YCbCr&lt;-&gt;RGB 変換の方法を定めています。<br />
+  </p>
+  <ul class="radio">
+    <li><em>ITU-R BT.601</em>: ほとんど全ての SDTV と DVD。</li>
+    <li><em>ITU-R BT.709</em>: ほとんど全ての HDTV、HD-DVD と Blu-Ray。HDのサンプルでもコンピューターでの再生用に作られたものはITU-R BT.601色空間を使うものがあります。</li>
+  </ul>
+
+  <h2>コントラスト</h2>
+
+  <p>
+    ほとんど全てのビデオは輝度(luma) 16-235 の範囲でエンコードされています。YCbCr(16,128,128) は通常 RGB(0,0,0)に変換されます。<br />
+    なかには輝度16以下を使って「黒より黒い」を表現しようとするものがあります。もしこの階調をコントラストを犠牲にして生かしたい場合、フルレンジかカスタムモードを使ってください。
+  </p>
+
+  <h2>付加的な情報</h2>
+
+  <h3>MJPEG</h3>
+
+  <p>
+    MJPEG と取り込みフィルタで使用されるJPEGでは、ほとんどの場合いわゆる<em>PC.601</em>規格が使用されます。この場合、PC.601規格が使われダイアログでの設定は無視されます。
+  </p>
+
+  <h3>既知の制限事項</h3>
+
+  <ul style="list-style-type:disc">
+    <li>変換前の色空間がNV12、インターレースのYV12、planar YUV 4:2:2の場合、再生中の設定の変更がすぐには反映されません。その場合ビデオアプリケーションを再起動してください。</li>
+    <li>ffdshow はMJPEGの場合を除いて適切な色空間の選択を自動で行いません。画像フィルタのレベル-Seb's BTB&amp;WTW は自動的に輝度16以下や235以上を検出しますので試してみるのも良いでしょう。</li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

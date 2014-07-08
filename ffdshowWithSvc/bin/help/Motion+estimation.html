@@ -1,0 +1,34 @@
+<html><head><title>Motion estimation</title><link rel='StyleSheet' href='styles/geo-light.css' type='text/css'></head><body><a class='wiki' href='HomePage.html'>home</a><br/><h1>Motion estimation</h1><div class='wikitext'><b>Libavcodec</b>
+<br/>
+<br/><span style="text-decoration:underline;">Comparison functions:</span>
+<br/>
+<br/><ul><li>SAD - sum of absolute differences (default)
+</li><li>SSE  -sum of squared errors
+</li><li>SATD - sum of absolute hadamard transformed differences
+</li><li>DCT - sum of absolute dct transformed differences
+</li><li>PSNR - sum of the squared quantization errors
+</li><li>ZERO
+</li></ul>Warning: chroma doesn't work with b frames currently
+<br/>
+<br/>Tip: SAD is fast, SATD is good
+<br/>
+<br/>Tip2: when using SATD for full pel search you should use a larger diamond something like dia=2 or dia=4
+<br/>
+<br/><span style="text-decoration:underline;">EPZS diamond sizes:</span>
+<br/>
+<br/>-3 shape adaptive diamond with size 3
+<br/>-2 shape adaptive diamond with size 2
+<br/>-1 experimental
+<br/>1 normal size=1 diamond (default) =EPZS type diamond
+<br/>2 normal size=2 diamond
+<br/>...
+<br/>Tip: the shape adaptive stuff seems to be faster at the same quality
+<br/>
+<br/>Note: the sizes of the normal diamonds and shape adaptive ones dont have the same meaning
+<br/>
+<br/><span style="text-decoration:underline;">Last predictor count:</span>
+<br/>
+<br/>Amount of motion predictors from the previous frame
+<br/>
+<br/>0 (default)
+<br/>a -&gt; will use 2a+1 x 2a+1 MB square of MV predictors from the previous frame, a should be &lt;99<br/></div></body></html>

@@ -1,0 +1,16 @@
+Quantizer compression
+If the value is set to 100%, the quantizer will stay nearly constant (high motion scenes will look bad). If it's 0%, the quantizer will be changed to make all frames approximately equally sized (low motion scenes will look bad).
+
+Quantizer blur
+Blurs the quantizer graph over time: 0% - no blur, 100% -  average all past quantizers.
+
+Max quantizer difference
+Limits the maximum quantizer difference between frames.
+
+Minimum/Maximum bitrate
+Unlimited if set to zero.
+
+Decoder bitstream buffer size
+For MPEG1/2 this also sets the vbv buffer size.
+
+Descriptions by Michael Niedermayer

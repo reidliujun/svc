@@ -1,0 +1,63 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="D:\Projets\SVC\opensvcdecoder\Libs\AVC\h264_main_decoder\lib_main\"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Debug_davinci"
+Config="Release"
+Config="Release_davinci"
+
+[Source Files]
+Source="BitstreamSkipB.c"
+Source="cabac.c"
+Source="CabacMbPred.c"
+Source="CabacMvAndRef.c"
+Source="cavlc_main.c"
+Source="Direct_prediction.c"
+Source="Fill_caches_cabac.c"
+Source="FinishFrameMain.c"
+Source="interpolation_main.c"
+Source="interpolation_main_8x8.c"
+Source="Loop_Filter_B.c"
+Source="macroblock_cabac.c"
+Source="macroblock_layer_main.c"
+Source="mb_cabac_partionning.c"
+Source="mb_pred_main.c"
+Source="residual_cabac.c"
+Source="SetImage4x4.c"
+Source="SetImage8x8.C"
+Source="slice_cabac.c"
+Source="slice_data_B.c"
+Source="slice_data_cabac.c"
+Source="vlc_cabac.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o".\lib_main_d.lib"
+
+["Archiver" Settings: "Debug_davinci"]
+Options=-r -o".\Debug_davinci\lib_main_dv_d.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\lib_main.lib"
+
+["Archiver" Settings: "Release_davinci"]
+Options=-r -o".\Release_davinci\lib_main_dv.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"../..\h264_baseline_decoder\lib_baseline\" -d"_DEBUG" -d"TI_OPTIM" -mv6400
+
+["Compiler" Settings: "Debug_davinci"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"../..\h264_baseline_decoder\lib_baseline\" -d"_DEBUG" -d"TI_OPTIM" -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"../..\h264_baseline_decoder\lib_baseline\" -d"TI_OPTIM" -mv6400
+
+["Compiler" Settings: "Release_davinci"]
+Options=-o3 -fr"$(Proj_dir)\Release" -i"../..\h264_baseline_decoder\lib_baseline\" -d"TI_OPTIM" -mv6400+
+

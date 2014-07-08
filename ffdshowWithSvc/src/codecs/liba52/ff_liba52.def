@@ -1,0 +1,10 @@
+EXPORTS
+  a52_init
+  a52_samples
+  a52_syncinfo
+  a52_dynrng
+  a52_dynrngsetlevel
+  a52_frame
+  a52_block
+  a52_free
+  getVersion

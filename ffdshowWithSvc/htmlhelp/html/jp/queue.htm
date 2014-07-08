@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ffdshow tryouts | Queue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+  <meta name="description" content="Queue" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../en/queue.htm" title="English queue documentation"><img src="../images/england.png" alt="English queue documentation" width="27" height="17" />&nbsp;English</a>
+    &nbsp;<a class="links" href="../de/queue.htm" title="German queue documentation"><img src="../images/germany.png" alt="German queue documentation" width="27" height="17" />&nbsp;German</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">Queue （キュー）</a>
+  </h1>
+
+  <img src="images/queue.png" title="Queue dialog" alt="Queue dialog" width="650" height="441" />
+
+  <h2>概要</h2>
+
+  <p>
+    キューの目的はコマ落ち、映像の遅延を減らすことです。CPUの負荷が高く時々コマ落ちや遅延が発生するような状況で効果があります。
+    ビデオレンダラを別スレッドで実行するためPentium4HTやデュアルコアCPUでは効果がより大きくなります。
+    Media Player ClassicのVMR7, VMR9（renderlessモードを含む）での動作を確認しています。
+    高度なオプションですので、多少の試行錯誤に耐えられる方にお勧めします。
+    なおキュー (queue)とは待ち行列の意味でビデオレンダラへの入場を待つバッファの行列を指しています。
+  </p>
+
+  <h2>
+    設定
+  </h2>
+  
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    出力サンプルをキューに入れる
+  </h3>
+  
+  <p>
+    このオプションはffdshowのキュー機能を有効にします。チェックを外した場合も「その他の制御」以下の項目には影響ありません。
+  </p>
+
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    右のアプリでのみキューを使用
+  </h3>
+
+  <p>
+    安定性の問題からMedia Player Classic以外ではキューをオフにしています（デフォルト）。
+    他のアプリケーションで試してみたい場合はチェックを外すか、アプリケーションの実行ファイル名をセミコロン;で区切って記載してください。
+    ビデオレンダラに対して特別な処理を行っているアプリケーションではキューは安定しないかもしれません。
+  </p>
+
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    VMR9のYV12でキューを有効にする
+  </h3>
+
+  <p>
+    このオプションはVMR9でYV12色空間を使用した場合にもキューを有効にするかを指定します。
+    一部のインテル製のオンボードビデオチップ(82865Gなど)ではVMR9のYV12でキューを使用できません。
+  </p>
+
+  <h3>
+    キューの効果が期待できる例
+  </h3>
+
+  <ul>
+    <li>Media Player ClassicでVMR9 renderlessモードを使用する場合。</li>
+    <li>古いビデオカード（Matrox G400シリーズなど）を使用している場合。</li>
+    <li>重いシーンで時々コマ落ちしたり遅延したりする場合 (queueCount &gt; 10(下記)が必要かもしれません)。</li>
+    <li>シングルCPUでも効果が得られる場合があります。</li>
+  </ul>
+
+  <h3>
+    キューの効果が期待できない例
+  </h3>
+
+  <ul>
+    <li>ビデオの遅延が全体にわたって見られる状況。</li>
+  </ul>
+
+  <h3>
+    動作原理
+  </h3>
+
+  <p>
+    ffdshowは上流のフィルタ（通常スプリッタ）からサンプルをもらって処理をした後、下流のフィルタ（通常ビデオレンダラ）から得たバッファ（メモリ）に書き込みます。<br />
+    キューが<b>オフ</b>の場合、ビデオレンダラはバッファを1つしか持ちません。
+    処理が早く済んでもビデオレンダラが現在のフレームを表示（タイムスタンプで定刻が決まっている）してしまうまでバッファが空かないので待たされます。
+    この間CPUは何もせずに時間を浪費してしまいます。<br />
+    キューが<b>オン</b>の場合、ビデオレンダラは複数のバッファを持ちます。
+    処理が終わるとすぐにバッファをもらって書き込み、それをキューに入れます。
+    そしてすぐに次のコマの処理を始めます。このようにしておけば重たいコマが幾つか続いてもキューに貯まったバッファを送り出してしのぐことが出来ます。
+    <br />
+    例えば30fpsの動画では1コマ33ミリ秒(以下ms)以内に処理する必要があります。
+    連続した10コマの処理にかかる時間が各々20,20,20,20,20,20,50,50,50,50(ms)だったとします。
+    6コマ目まではなんら問題なさそうですがキューがオフの場合、20ms働いて13ms休むことを繰り返します。
+    最初の6コマの処理に(20 + 13) * 6 = 198msかかってしまいました。7コマ目で遅延またはコマ落ちを生じます。
+    キューがオンの場合最初の6コマを 20 * 6 = 120msで処理しますので10コマ目までちゃんと間に合います。<br />
+    実際のプログラムではキューに入れたバッファを下流側へ送り出すスレッドが必要です。
+    このスレッドはVMR7ではffdshow内部に、VMR9ではビデオレンダラ側に実装されています。
+    そしてビデオレンダラ本体もそのままffdshow本体とは別スレッドで実行されます。
+  </p>
+
+  <h3>
+    キューの効果の評価方法
+  </h3>
+
+  <p>
+    ベンチマークテストでキューの効果を測ることは困難なため自分自身の目と耳を信じてコマ落ちや遅延を見極めるのが一番です。
+    自信がない時はOSDの「キュー済みサンプル数」と「映像の遅延」をオンにすると良いでしょう。
+    ただしOSDがCPUを消費することをお忘れなく。<br />
+    キューはマルチコアのCPUを均等に使うように設計されたものではありません。
+    従ってパフォーマンスモニタは役に立ちません。<br />
+    またtimeCodec.exeによるベンチマークは動作原理で書いた待ち時間を0にしてテストを実行するため意味がありません。
+  </p>
+
+  <h3>
+    レジストリの設定(上級者向け)
+  </h3>
+
+  <p>
+    バッファの数がレジストリから変更可能です。デフォルトは10です。<br />
+    <em>HKEY_CURRENT_USER\Software\GNU\ffdshow\default</em> (defaultはプリセット名で置換してください)の<em>queueCount</em>を適当に変更してみてください。
+    数字を増やすことで効果を増強できます。
+    散発的に重いフレームが混じるようなケースでは10で十分ですが、ハイビットレートの１シーンをまるごとカバーするには50程度必要です。
+    ビデオメモリを消費するため大きすぎる値を指定するとビデオカードの動作が不安定になることがあります。
+    ビデオカードのメモリが256MBの場合フルHDのビデオで50程度が限界です。
+  </p>
+
+  <h3>
+    相性問題
+  </h3>
+
+  <p>
+    ビデオカードの種類やビデオドライバ、アプリケーションの設定によってはキューがオンになっているとトラブルを起こすことがあります。<br />
+    既知の問題としては一部のATI製ビデオカード(X1300,X1600など)との相性問題が報告されたことがあります。<br />
+    nVidiaのビデオカードは問題ないようです。<br />
+    個別の事例に対処することは困難ですので、問題があればキューをオフにして御使用ください。
+  </p>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

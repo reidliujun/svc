@@ -1,0 +1,76 @@
+dialog normalisation
+--------------------
+
+dialnorm results in an nomalized output of -31 dbFS in Line Mode (see [1] 3.61.)
+For 2-channel output (A52_STEREO and A52_DOLBY) this is lowered by additional -3 db
+(see [1] 3.6.1)
+
+For more information about Line Mode see [1]
+
+
+downmixing adjustment
+---------------------
+
+the downmixing adjustment prevents clippings of the output samples. The value is based on
+worst-case calculations. This has been implemented in liba52 some time ago.
+
+Now this adjusment is compared to the attenuation provided by dialnorm. Since the dialnorm
+value attenuates the samples, it's possible that no additional adjustment is neeed.
+
+If not downmixing the signal, dynamic range compression can be applied to the signal.
+Bothe 'sides' of compression are allowed, meaning high-level cut compression and low-level
+boost compression.
+
+If the signal is downmixed to a 2 channel mode (A52_STEREO or A52_MONO) or to mono
+the situation changes.
+High-level cut compression isn't allowed, only low-level boost can be applied. (see [1] page 3.6.1
+to 3.6.3)
+
+Note: In [1] downmixing is only mentioned when downmixing to 2 channels or to mono. And therefor the
+current implementation only disables high-level cut in 2 channel mode or in mono-mode.
+
+This is the current source code portion of that feature (parse.c)
+
+if ((state->output == A52_MONO) || (state->output == A52_STEREO) || (state->output == A52_DOLBY))
+{
+    if (range > 1.0)
+        state->dynrng = state->level * range;
+}
+else
+    state->dynrng = state->level * range;
+
+
+/* some old notes .... ( by Simone)
+* If dynamic range compression is applied to the signal, there's no need to use the downmixing
+* adjustment, because the encdoding step takes this into account and calculates the dynanmic range compression
+* according to that and stores the resulting value in the ac3 stream.
+* ( see [1] downmixing and overload protection, page 4-9)
+
+* If no dynamic range compression is applied the downmixing adjustment has to be used. For more inforamtion
+* out this adjustment see [2] Downmixing, page 92-97.
+
+* Planned feature:
+
+* If a user specified fractional dynamcic range is used (as stated in [3]) a frctional adjustment
+*  used as well.
+
+* e.g.  0 < dyn_fract < 1    ->   adj_fract = 1 - dyn_fract
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+Reference documentation used:
+
+[1] Dolby Digital Professional Encoding Guidelines
+[2] ATSC A52/A
+[3] ../doc/liba52.txt

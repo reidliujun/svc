@@ -1,0 +1,10 @@
+EXPORTS
+  mad_synth_init
+  mad_stream_init
+  mad_frame_init
+  mad_stream_buffer
+  mad_frame_decode
+  mad_synth_frame
+  mad_frame_finish
+  mad_stream_finish
+  getVersion

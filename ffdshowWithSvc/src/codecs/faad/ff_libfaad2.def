@@ -1,0 +1,13 @@
+EXPORTS
+  NeAACDecGetErrorMessage
+  NeAACDecSetConfiguration
+  NeAACDecGetCurrentConfiguration
+  NeAACDecInit
+  NeAACDecInit2
+  ;NeAACDecInitDRM
+  NeAACDecPostSeekReset
+  NeAACDecOpen
+  NeAACDecClose
+  NeAACDecDecode
+  NeAACDecAudioSpecificConfig
+  getVersion

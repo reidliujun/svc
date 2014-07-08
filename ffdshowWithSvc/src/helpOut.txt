@@ -1,0 +1,1 @@
+You can save each frame to separate file (useful with MJPEG encoder): select raw frames storage and specify %i (or similar formatting mask) in the file name field.

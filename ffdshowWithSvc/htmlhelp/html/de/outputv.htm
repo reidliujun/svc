@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Please update the revision number when changes to the markup code
+have been made, which were ported to this translation (even if nothing
+was changed here). This is to know which revisions are not ported yet.
+If you skip to port a revision please note that revision for later porting. -->
+
+<!-- In sync with revision 1568 except for revision(s) -none-. -->
+
+<head>
+  <title>ffdshow tryouts | Videoausgabe-Konfiguration</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="ffdshow tryouts output video configuration" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../en/outputv.htm" title="English output video documentation"><img src="../images/england.png" alt="English output video documentation" width="27" height="17" />&nbsp;English</a>
+    &nbsp;<a class="links" href="../jp/outputv.htm" title="Japanese output video documentation"><img src="../images/japan.png" alt="Japanese output video documentation" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">Videoausgabe-Konfiguration</a>
+  </h1>
+
+  <img src="images/outputV.png" title="Videoausgabe-Dialog" alt="Videoausgabe-Dialog" width="695" height="473" />
+
+  <p>
+    Die Ausgabeseite gibt Ihnen Kontrolle &uuml;ber die von ffdshow verwendeten Ausgabeformate. Die obere H&auml;lfte erm&ouml;glicht die Angabe der erlaubten Ausgabefarbr&auml;ume, w&auml;hrend die untere f&uuml;r verschiedene Ausgabeeinstellungen genutzt wird.
+  </p>
+
+  <h2>Farbr&auml;ume</h2>
+
+  <p>
+    Diese Seite erlaubt Ihnen den standardm&auml;&szlig;igen Ausgabefarbraum und das Format, welche ffdshow verwendet, zu w&auml;hlen. Es gibt im Allgemeinen zwei Farbr&auml;ume, die verwendet werden k&ouml;nnen, und einige Formate in jedem Farbraum.
+  </p>
+
+  <h3>YUV-Farbraum</h3>
+
+  <p>
+    Der Standard-Farbraum. Lesen Sie mehr &uuml;ber YUV in <a class="links" href="http://en.wikipedia.org/wiki/YUV">diesem</a> und <a class="links" href="http://en.wikipedia.org/wiki/Chroma_subsampling">diesem</a> Wikipedia-Artikel. Da der YUV-Farbraum (und im Besonderen YV12) der Farbraum der Wahl f&uuml;r Videokompression ist, erspart es ffdshow jegliche Farbraumkonvertierung des dekodierten Bildes, wenn YV12 als Ausgabefarbraum gew&auml;hlt wird, was wiederum die Dekodierung beschleunigt.<br />
+    ffdshow unterst&uuml;tzt einige verschiedene YUV-Ausgabeformate:
+  </p>
+  <ul style="list-style-type:circle">
+    <li><em>I420/IYUV</em>: &Auml;hnlich zum unten beschriebenen YV12, aber geringere Hardwareunterst&uuml;tzung. Selbst wenn es von Ihrer Grafikkarte unterst&uuml;tzt wird, nicht empfohlen, da YV12 schneller ist. Verwendet 12 Bit pro Pixel (bpp).</li>
+    <li><em>YV12</em>: Nahezu immer der schnellste Ausgabemodus (Videocodecs speichern gew&ouml;hnlich in YV12). Das empfohlene Ausgabeformat f&uuml;r die meisten Systeme. Allerdings unterst&uuml;tzen es einige &auml;ltere/Onboard-Grafikkarten nicht - falls dies bei Ihnen der Fall ist, probieren Sie YUY2. Der Windows Media Player hat manchmal Probleme mit YV12. Verwendet 12bpp.</li>
+    <li><em>YUY2</em>: Verwendet von MJPEG und einigen MPEG2-Videostreams. Besitzt eine etwas gr&ouml;&szlig;ere Farbgenauigkeit als YV12. Etwas langsamere Ausgabe als YV12, jedoch f&uuml;r gew&ouml;hnlich nicht viel. Falls Ihr Eingangsvideo YUY2 ist, oder Ihre Grafikkarte YV12 nicht unterst&uuml;tzt, ist dies das empfohlene Format. Verwendet 16bpp.</li>
+    <li><em>YVYU &amp; UYVY</em>: Selten und ungenutzt. Vermeiden. Verwenden 12bpp.</li>
+    <li><em>NV12</em>: Ein anderes seltenes Ausgabeformat, das nur von wenigen Grafikkarten unterst&uuml;tzt wird. Verwendet 12bpp.</li>
+  </ul>
+
+  <h3>RGB-Farbraum</h3>
+
+  <p>
+    Diese Modi verwenden das traditionellere und gel&auml;ufigere RGB-Farbformat. Lesen Sie (wieder) in <a class="links" href="http://en.wikipedia.org/wiki/RGB">Wikipedia</a> &uuml;ber RGB. RGB-Ausgabe ist langsamer, aber m&ouml;glicherweise genauer als YUV-Ausgabe.<br />
+    F&uuml;r Videos, die nicht nach dem ITU-R BT.601-Standard und im Y-Wertebreich (16-235) encodiert wurden, l&auml;sst sich die Anzeige mit Hilfe der <a class="links" href="cspOptions.htm">Erweiterten Farbraumoptionen</a> korrigieren.<br />
+    Die folgenden RGB-Formate werden unterst&uuml;tzt:
+  </p>
+  <ul style="list-style-type:circle">
+    <li><em>RGB32 &amp; RGB24</em>: Diese Modi werden Ihnen das gleiche Bild ausgeben, der einzige Unterschied ist, dass RGB32 zu 32bits gepackt wird, was normalerweise schneller verarbeitet werden kann. Die Modi verwenden 32 bzw. 24bpp.</li>
+    <li><em>RGB16 &amp; RGB15</em>: Das gleiche wie oben, jedoch nur 16/15bit. RGB15 ist eine schlechte Idee solange Sie nicht wissen, dass es eine gute Idee ist. Sie verwenden 16 bzw. 15bpp.</li>
+    <li><em>Hochqualitative "YV12 nach RGB"-Konvertierung</em>: Da (fast) alle Videodateien in einem YUV-Format (meistens YV12) komprimiert wurden, muss ffdshow vom YUV-Farbsystem in das RGB-Farbsystem konvertieren, wenn in einem RGB-Modus ausgegeben wird. Diese Checkbox veranlasst ffdshow eine langsamere, aber qualitativ bessere Konvertierungsmethode zu verwenden. Wenn Sie planen Screenshots zu machen, oder <em>wirklich</em> jedes Qu&auml;ntchen kostbarer Qualit&auml;t ben&ouml;tigen, aktivieren Sie dies.</li>
+  </ul>
+
+  <h3>
+    <img src="../images/check.png" title="Checkbox image (checked)" alt="Checkbox image (checked)" width="13" height="13" />
+    Am ehesten passenden Farbraum w&auml;hlen
+  </h3>
+  <ul>
+    <li>Markiert: Der dem Eingangsstream &auml;hnlichste Farbraum wird automatisch ausgew&auml;hlt.</li>
+    <li>Unmarkiert: Die Farbr&auml;ume werden in der Reihenfolge ausprobiert, in der sie im Dialog stehen.</li>
+  </ul>
+
+  <h2>Erweiterte Einstellungen</h2>
+
+  <h3>
+    <img src="../images/checkI.png" title="Checkbox image (greyed out)" alt="Checkbox image (greyed out)" width="13" height="13" />
+    Pixelseitenverh&auml;ltnis in Ausgabe-Medientyp setzen / Overlaymixer verwenden
+  </h3>
+  <ul>
+    <li>Unmarkiert: Verwendet die klassische Verbindungsmethode.</li>
+    <li>Markiert: Verwendet, bei Verbindung mit dem n&auml;chsten Filter (gew&ouml;hnlich ein Videorenderer), eine erweiterte Verbindungsmethode, die Pixelseitenverh&auml;ltnis-(SAR) und Interlacinginformationen enth&auml;lt.</li>
+    <li>Unbestimmbar/grau: Probiert zuerst die erweiterte Verbindungsmethode und greift auf die klassische Verbindungsmethode zur&uuml;ck, falls dies fehlschl&auml;gt. Dies ist der Standard und sollte nicht ge&auml;ndert werden, sofern Sie kein spezielles Ziel haben.</li>
+  </ul>
+
+  <h3>
+    <img src="../images/check0.png" title="Checkbox image (unchecked)" alt="Checkbox image (unchecked)" width="13" height="13" />
+    Interlacing-Flag im Ausgabe-Medientyp setzen / HW-Deinterlacing
+  </h3>
+  <ul>
+    <li>Sendet Interlacing-bezogene Informationen, die vom Eingangsstream oder ffdshows internen Dekodern bezogen werden, zum n&auml;chsten Filter.</li>
+    <li>Einige Filter (wie Videorenderer) werden diese Informationen verwenden, um das Video, wenn n&ouml;tig, zu deinterlacen.</li>
+    <li>Dies ist nur dazu gedacht die nachfolgenden Filter zu informieren - das tats&auml;chliche Ergebnis h&auml;ngt allein von der Implementierung dieser Filter ab.</li>
+    <li>Standardm&auml;&szlig;ig unmarkiert. DVDs sind als interlaced markiert, aber in den meisten F&auml;llen waren sie urspr&uuml;nglich Film (progressiv) und wurden nur telecined. F&uuml;r solches Video, ist es empfohlen die Option unmarkiert zu lassen.</li>
+  </ul>
+
+  <h2>Tipps &amp; Tricks</h2>
+
+  <ul style="list-style-type:square">
+    <li>Sie k&ouml;nnen mehr als ein Ausgabeformat w&auml;hlen, ffdshow wird versuchen das zum Eingangsmaterial &auml;hnlichste Ausgabeformat zu verwenden. Generell hei&szlig;t das YV12, aber nicht immer.</li>
+    <li>Die anderen Einstellungen auf der Seite sollten nicht ge&auml;ndert werden ohne sie zu kennen. Der Autor empfiehlt die Standardeinstellungen zu verwenden (siehe Screenshot oben). Video drehen ist gelegentlich f&uuml;r defekte oder alte Streams n&uuml;tzlich.</li>
+  </ul>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          Diese Seite wurde freundlicher Weise von <em>checkers</em> aus der <a class="links" href="http://mewiki.project357.com/wiki/Main_Page">MeGUI-Wiki</a> zur Verf&uuml;gung gestellt.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Zu Anfang&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

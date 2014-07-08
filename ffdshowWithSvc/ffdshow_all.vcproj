@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="ffdshow_all"
+	ProjectGUID="{F49D9CEE-F57E-4283-945E-9F728BEBB21F}"
+	SccProjectName=""
+	SccLocalPath=""
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="release"
+			IntermediateDirectory="release"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\Release/ffdshow_all.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Rebasing dynamic libraries..."
+				CommandLine="bin\rebase.exe bin\rebase.txt"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="debug"
+			IntermediateDirectory="debug"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\Debug/ffdshow_all.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Rebasing dynamic libraries..."
+				CommandLine="bin\rebase.exe bin\rebase.txt"
+				ExcludedFromBuild="TRUE"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+	</Files>
+	<Globals>
+		<Global
+			Name="DevPartner_IsInstrumented"
+			Value="0"/>
+	</Globals>
+</VisualStudioProject>

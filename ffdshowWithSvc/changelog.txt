@@ -1,0 +1,108 @@
+﻿Bug fixes:
+Fixed after beta4
+
+    * In Windows Media Center on Vista, AVI files that have non-square aspect ratio could not be played properly due to a bug in Windows Media Center. Now, if you check both "Allow output format changes during playback" and "Connect to compatible filters only", these files play with correct aspect ratio.
+    * If ffdshow was inputting NV12/NV21 as raw video and resize was enabled, ffdshow crashed.
+    * "Bitmap overlay" crashed.
+    * DCT image filter for playback was not working.
+    * In subtitle filter, if "Overlap subtitles with same time" was checked, ffdshow sometimes crashed.
+    * The subtitles letterbox erroneously applied cropping instead of letterboxing if the specified AR was wider than the AR of the given video.
+    * Windows Media Center crashed on creating thumbnails.
+
+Fixed before beta4
+
+    * In FLAC and TTA, A/V synch was lost.
+    * Closed caption decoder produced garbled characters.
+    * Crashes in Windows Movie Maker have been fixed.
+    * Subtitles that contain an "&" as part of the filename were displayed incorrectly inside ffdshow's context menu.
+    * MakeAVIS.exe in "Store uncompressed audio" mode produced noisy audio if the input audio was not 16bit integer.
+    * If the AviSynth script had multiple lines, the script was not saved by using "Export all settings" or "Save to file..." in Presets page.
+    * DTS S/PDIF pass-through sometimes had terrible noise.
+    * Compatibility problem with VFW encoder applications such as HyperCam has been fixed.
+    * If ConvertToRGB was used in AviSynth script, the video was flipped.
+    * If "Swap channels" was used, audio was lost if the number of channels of the input stream changed.
+    * DVD menu was sometimes not highlighted.
+    * "Preset autoload conditions" -> "on movie file name match (with wildcards)" did not work.
+    * If the input color space was NV12 or NV21, ffdshow could not render properly.
+    * If crop was used after letterbox subtitling, the bottom of the image was cropped too much.
+
+Fixed before beta3
+
+    * Black borders were not painted black in AviSynth filter and deinterlacers.
+    * libavcodec encoders did not accept frame rates except 25fps. Other encoders sometimes had inaccurate frame rates.
+    * If ffdshowaudio() was used in AviSynth script, an error occurred.
+    * If a Unicode subtitle file contained 0x1a, the rendering failed.
+    * The image got mirrored if AviSynth filter output in RGB color space.
+    * If "RAW video" -> "YV12" in VFW decoder was enabled, the image got mirrored when VFW codec was used via DirectShow.
+    * Improved stability of Winamp plugin handling.
+    * On the fly resize: If you entered 8 (as the first digit of 800) for the vertical size, it crashed depending on the used method (lanczos tap>=4, spline, etc).
+    * If resize was being used, changes to the pixel aspect ratio (SAR) of the video were ignored.
+    * If "Resize & aspect" -> "Borders" -> "Inside" was used, "Keep original aspect ratio" calculated wrong size.
+    * AviSynth script could not be saved (Unicode builds only).
+
+Fixed before beta2
+
+    * After changing aspect ratio, the height of the picture halved, if you used overlay mixer and YUY2. It was common on DVD playback.
+    * FFV1 decoder crashed on seeks or delay.
+    * FFV1 encoder: default key frame distance value was 250, which was too high and could not be configured independently. New default is 10.
+    * When NV12 was the only available output color space for DirectShow decoder and "Raw video" was enabled for VFW decoder, Windows Media Player 11 thumbnailer crashed.
+    * Subtitle was gray, even if you selected white.
+    * Deleting the active and default preset settings caused a crash.
+    * Flipped NV12 caused either crash or corrupt image.
+    * Using Media Player Classic's internal Matroska splitter, the aspect ratio was always 1.
+    * When you opened audio configuration dialog during playback, the CPU usage was abnormally high and it sometimes freezed especially on ADPCM audio.
+    * When ffdshow connected to VobSub (VSFilter), ffdshow tried to use YV12 plus width of non-multiple of 8 and ended in crash.
+    * When you configured "Resize & aspect" -> "Borders" -> "Inside" -> "100%", ffdshow ended in crash.
+    * Reconnecting to VMR9 (after resizing) sometimes failed.
+    * PowerDVD7 produced a black screen because of a bug in DirectShow filter's connecting code (please remove PowerDVD.exe from "DirectShow control" -> "Don't use ffdshow in:").
+    * If a subtitle unit contained too many lines for the specified space, lines were being dropped.
+    * The right edges of italic subtitles were cut off. If "fast rendering" was enabled, italic text was sometimes shown as non-italic and vice versa.
+    * Some SVQ3 videos caused freeze.
+    * Changing Matroska subtitles track ended in a crash.
+    * Multibyte characters in Matroska-embedded subtitles were garbled.
+    * If noise and resize filters were applied, chroma became green.
+    * Explorer.exe crashed on Windows Vista when accessing a folder that contains AVI files.
+    * Playing or seeking in MPEG1/2 videos using libmpeg2, sometimes produced ugly green artifacts or ended with a crash (libmpeg2).
+    * Fixed OGG & OGM muxers. Removed FLV & MPEG muxers.
+    * When you played a video which height was not a multiple of four, it crashed or artifacts were seen depending on the output color space.
+    * When you played a video which width was over 1024, it crashed when using RGB to YUY2 conversion.
+    * When you played a video which height was an odd number and YV12 was enabled, the video became distorted.
+    * If ffdshow was connected to Haali's video renderer, seeking sometimes failed.
+    * The next internal filter of Kernel deinterlace was skipped on every other frame. If the next internal filter was "Resize", the video size changed on every frame.
+
+Fixed before beta1
+
+    * When you tried to re-encode using Windows Media Encoder, ffdshow audio decoder would cause WME to crash.
+    * Hardware deinterlacing did not work, when using libmpeg2.
+    * AAC was played back too fast so that it was not audible. A/V synch was lost.
+    * When you played a video which height was an odd number, it often freezed.
+    * If "Mixer" -> "headphone virtual spatialization" was enabled, it crashed on playback of mono sources.
+    * When you played an Xvid stream with many consecutive N-VOPs, subtitles were not shown when no new frames were actually being displayed. If there were long consecutive N-VOPs at the end of the file, it closed too early.
+    * "Video decoder configuration" -> "Output" -> "DV" couldn't be unchecked.
+    * If one of the files that needed updating was locked, the installer stopped with an error message.
+    * Didee's YlevelsG/S/C was not implemented correctly. It was the bright parts of the pictures that saw the most effect of the gamma.
+    * ffdshow could not connect to uncompressed audio input.
+    * LPCM output was broken.
+    * AC3 output was broken.
+    * DTS was broken with large noise.
+    * Perspective correction with cubic interpolation crashed if the width of the video was over 768.
+    * 5.1ch Vorbis (libavcodec) was broken.
+    * When you tried to use ffdshow DirectShow decoder in PowerDVD, the video was black.
+    * If ffdshow got DVD decoder's output input as RAW video, the subtitle file was valid and MPEG2 was disabled, subtitles that were not related to the DVD were shown.
+    * If subtitles including video image such as IDX+SUB (VobSub) format were enabled, it crashed where the height of the subtitles was an odd number.
+    * Convolver, one of the audio filters, crashed when you tried to load impulse file.
+    * When you used resize, horizontal lines were sometimes seen ("Resize" -> "Settings" -> "Accurate rounding").
+    * If you used resize after xsharpen, the video was green.
+    * Stereoscopic subtitle crashed.
+    * OSD item "CPU Load" did not show correct value in multiprocessor system.
+    * Postprocessing automatic quality control did not work in multiprocessor systems.
+    * Volume normalization did not work properly.
+    * DScaler: Video (TomsMoComp) crashed depending on the compiler used for building.
+    * Overlay control could not load initial value properly.
+    * Oblivion and Morrowind (both are games) crashed.
+    * On Windows Vista, codec configuration dialog was broken.
+    * If there was an error in AviSynth script in ffdshow, the error message was displayed on top of video. The error message still remained after the whole AviSynth page was unchecked.
+    * The dialog was garbled, if "Tray, dialog & paths" -> "Japanese (Unicode)" was selected (ANSI builds). The problem was that the installer set it by default for Japanese version of Windows.
+    * ANSI/MBCS was not processed properly. For example, OSD item "Source file" couldn't show last few characters if MBCS was used in the path. It was a security concern.
+    * If you used translation of the dialog, content of the dialog was scaled about 130% but the size of the window was not. As a result, you couldn't see the right, hidden part of the dialog (depending on the way to launch the dialog).
+    * Subtitles were garbled if "Subtitles" -> "Font" -> "Fast rendering" was enabled and you used MBCS on ANSI builds.

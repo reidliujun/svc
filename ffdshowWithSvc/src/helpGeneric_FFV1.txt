@@ -1,0 +1,1 @@
+A lossless high-compression alternative to huffyuv, with extra colorspace support, but much slower.

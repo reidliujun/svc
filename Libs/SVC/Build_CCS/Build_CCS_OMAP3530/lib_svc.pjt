@@ -1,0 +1,97 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\openSVC_07_09_10\SVC\Build_CCS\Build_CCS_OMAP3530\"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\lib_svc\B_BL.c"
+Source="..\..\lib_svc\BackEdge.c"
+Source="..\..\lib_svc\BL.c"
+Source="..\..\lib_svc\BL_residual.c"
+Source="..\..\lib_svc\cabac_svc.c"
+Source="..\..\lib_svc\CabacBMacroblock.c"
+Source="..\..\lib_svc\CabacPMacroblock.c"
+Source="..\..\lib_svc\cavlc_svc.c"
+Source="..\..\lib_svc\ChooseLayer.c"
+Source="..\..\lib_svc\CoeffLevelPrediction.c"
+Source="..\..\lib_svc\Coordonates.c"
+Source="..\..\lib_svc\egde_boundary.c"
+Source="..\..\lib_svc\Fill_caches_svc.c"
+Source="..\..\lib_svc\FinishFrameSVC.c"
+Source="..\..\lib_svc\I_BL.c"
+Source="..\..\lib_svc\InterLayerPrediction.c"
+Source="..\..\lib_svc\LayerManagement.c"
+Source="..\..\lib_svc\Loop_filter_ext.c"
+Source="..\..\lib_svc\macroblock_filter.c"
+Source="..\..\lib_svc\Mb_B_svc.c"
+Source="..\..\lib_svc\Mb_I_svc.c"
+Source="..\..\lib_svc\Mb_P_svc.c"
+Source="..\..\lib_svc\mb_padding.c"
+Source="..\..\lib_svc\mb_upsample_filter.c"
+Source="..\..\lib_svc\MemoryManagement.c"
+Source="..\..\lib_svc\MergeMvIdx.c"
+Source="..\..\lib_svc\motion_vector_svc.c"
+Source="..\..\lib_svc\nal_unit_header_svc_extension.c"
+Source="..\..\lib_svc\P_BL.c"
+Source="..\..\lib_svc\ParseAUDecoder.c"
+Source="..\..\lib_svc\PartitionType.c"
+Source="..\..\lib_svc\pic_list_svc.c"
+Source="..\..\lib_svc\residual_4x4.c"
+Source="..\..\lib_svc\residual_8x8.c"
+Source="..\..\lib_svc\residual_chroma.c"
+Source="..\..\lib_svc\ResidualProcessing.c"
+Source="..\..\lib_svc\seq_parameter_set_svc_extension.c"
+Source="..\..\lib_svc\set_layer.c"
+Source="..\..\lib_svc\Slice_data_B_avc.c"
+Source="..\..\lib_svc\Slice_data_B_svc.c"
+Source="..\..\lib_svc\slice_data_cabac.c"
+Source="..\..\lib_svc\slice_data_cavlc.c"
+Source="..\..\lib_svc\Slice_data_I_avc.c"
+Source="..\..\lib_svc\slice_data_I_svc.c"
+Source="..\..\lib_svc\Slice_data_P_avc.c"
+Source="..\..\lib_svc\slice_data_P_svc.c"
+Source="..\..\lib_svc\slice_data_svc.c"
+Source="..\..\lib_svc\slice_header_svc.c"
+Source="..\..\lib_svc\slice_layer_in_scalable_extension_rbsp.c"
+Source="..\..\lib_svc\SliceHeaderAnnex.c"
+Source="..\..\lib_svc\SliceHeaderExtension.c"
+Source="..\..\lib_svc\svc_neighbourhood.c"
+Source="..\..\lib_svc\SVCdisplay.c"
+Source="..\..\lib_svc\SwitchAdress.c"
+Source="..\..\lib_svc\upsample_residu.c"
+Source="..\..\lib_svc\VlcCabacSvc.c"
+Source="..\..\lib_svc\WriteBackSVC.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o".\lib_svc_d.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\lib_svc.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-o3 -fr"$(Proj_dir)\Debug\lib_svc" -i"../../AVC\h264_main_decoder\lib_main\" -i"../../AVC\h264_baseline_decoder\lib_baseline\" -d"_DEBUG" -d"_VERBOSE" -d"CHIP_OMAP3530" -d"TI_OPTIM" -mf5 -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-pi -oi0 -o3 -fr"$(Proj_dir)\Release" -i"../../AVC\h264_main_decoder\lib_main\" -i"../../AVC\h264_baseline_decoder\lib_baseline\" -d"TI_OPTIM" -d"CHIP_DM6437" -mf5 -mv6400+
+
+["..\..\lib_svc\ChooseLayer.c" Settings: "Release"]
+ExcludeFromBuild=true
+
+["..\..\lib_svc\Fill_caches_svc.c" Settings: "Debug"]
+Options="Compiler" +{-o0} -{-o3}
+
+["..\..\lib_svc\Fill_caches_svc.c" Settings: "Release"]
+Options="Compiler" +{-o0} -{-o3}
+
+["..\..\lib_svc\mb_upsample_filter.c" Settings: "Release"]
+ExcludeFromBuild=true
+

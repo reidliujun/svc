@@ -1,0 +1,5 @@
+Zoom
+Crop
+  width and height of cropped area are rounded to multiplies of eight
+  If you enter invalid value, edit line will have red background and that value won't be saved
+When using these filters, you will propably need to correct aspect ratio.

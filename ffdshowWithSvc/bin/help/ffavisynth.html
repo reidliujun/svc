@@ -1,0 +1,14 @@
+<html><head><title>ffavisynth</title><link rel='StyleSheet' href='styles/geo-light.css' type='text/css'></head><body><a class='wiki' href='HomePage.html'>home</a><br/><h1>ffavisynth</h1><div class='wikitext'>ffavisynth - Avisynth filter to directly use ffdshow image processing filters from Avisynth scripts
+<br/>
+<br/><b>Syntax</b>
+<br/>
+<br/>ffdshow(string &quot;preset&quot;, string &quot;options&quot;)
+<br/>
+<br/><ul><li><i>preset</i> - existing ffdshow preset to be used
+</li><li><i>options</i> - array of &quot;name=value&quot; pairs separated by commas
+</li></ul>
+<br/>Both parameters are optional. If <i>preset</i> is not specified, a new preset called <i>ffavisynth</i> is created temporarly. <i>Options</i> override <i>preset</i> settings. List of allowed options names and values is to be written, for now look at registry key HKEY_CURRENT_USER\Software\GNU\ffdshow\default to get the idea.
+<br/>
+<br/><b>Limitation</b>
+<br/>
+<br/>Input and output colorspaces are equal. Even if ffdshow image processing filter chain would produce image with different colorspace, it will be converted to match that on input.<br/></div></body></html>

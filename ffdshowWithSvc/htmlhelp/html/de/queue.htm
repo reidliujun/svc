@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Please update the revision number when changes to the markup code
+have been made, which were ported to this translation (even if nothing
+was changed here). This is to know which revisions are not ported yet.
+If you skip to port a revision please note that revision for later porting. -->
+
+<!-- In sync with revision 1576 except for revision(s) -none-. -->
+
+<head>
+  <title>ffdshow tryouts | Warteschlange</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="Queue" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+  <a href="http://ffdshow-tryout.sourceforge.net/">
+    <img src="../images/logo_phpBB.png" title="ffdshow tryouts" alt="ffdshow tryouts" width="200" height="91" />
+  </a>
+
+  <div class="translation">
+    Translations available in:
+    &nbsp;<a class="links" href="../en/queue.htm" title="English queue"><img src="../images/england.png" alt="English queue" width="27" height="17" />&nbsp;English</a>
+    &nbsp;<a class="links" href="../jp/queue.htm" title="Japanese queue"><img src="../images/japan.png" alt="Japanese queue" width="27" height="17" />&nbsp;Japanese</a>
+  </div>
+
+  <h1>
+    <a name="top" id="top">Warteschlange</a>
+  </h1>
+
+  <img src="images/queue.png" title="Warteschlangendialog" alt="Warteschlangendialog" width="695" height="473" />
+
+  <h2>&Uuml;berblick</h2>
+
+  <p>
+    Das Ziel von ffdshows Warteschlangenfunktion ist es Bildspr&uuml;nge und Videoverz&ouml;gerung zu reduzieren. Es ist effizient, wenn die Prozessorauslastung hoch ist und ffdshow einige Bilder/sek verliert oder hinterherhinkt. Da der Videorenderer in einem anderen Thread ausgef&uuml;hrt wird, ist der Effekt gr&ouml;&szlig;er, wenn Sie einen Pentium 4 HT oder einen Dual-Core-Prozessor besitzen. Es wurde best&auml;tigt, dass sie mit Media Player Classics VMR7- und VMR9-Modus (jeweils den Renderless-Modus eingeschlossen) funktioniert. Da dies eine erweiterte Funktion ist, werden Sie vielleicht etwas rumprobieren m&uuml;ssen.
+  </p>
+
+  <h2>
+    Einstellungen
+  </h2>
+
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    Ausgabebilder in Warteschlange stellen
+  </h3>
+
+  <p>
+    Diese Option aktiviert ffdshows Warteschlangenfunktion. Sie zu deaktivieren, beeinflusst die weiter unten auf dieser Seite verf&uuml;gbaren Funktionen nicht.
+  </p>
+
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    Warteschlange nur verwenden in:
+  </h3>
+
+  <p>
+    Die Warteschlange ist standardm&auml;&szlig;ig deaktiviert, da es au&szlig;erhalb des Media Player Classic Stabilit&auml;tsprobleme gibt. <br />
+    Wollen Sie sie in einer anderen Anwendung ausprobieren, deaktivieren Sie die Option oder f&uuml;gen Sie den Namen der ausf&uuml;hrbaren Datei der Videoanwendungen in das Feld ein. Trennen Sie zwei Namen durch Semikoli.
+  </p>
+
+  <h3>
+    <img src="../images/check.png" title="" alt="" width="13" height="13" />
+    Warteschlange in VMR9-YV12 aktivieren
+  </h3>
+
+  <p>
+    Diese Option aktiviert die Warteschlangenfunktion, wenn der VMR9-Videorenderer und YV12-Farbraum verwendet werden.<br />
+    Bitte beachten Sie: Mit einigen Intel On-board-Videochips, funktioniert die Warteschlange nicht im VMR9-YV12-Modus.
+  </p>
+
+  <h2>
+    Zus&auml;tzliche Informationen
+  </h2>
+
+  <h3>
+    Wann ist die Warteschlange wahrscheinlich effizient?
+  </h3>
+
+  <ul>
+    <li>Wenn Sie den VMR-Renderless-Modus des Media Player Classic verwenden.</li>
+    <li>Falls Sie eine &auml;ltere Grafikkarte wie die Matrox G400-Serie verwenden.</li>
+    <li>Falls Sie sporadische Bildspr&uuml;nge oder Videoverz&ouml;gerung in komplexeren Szenen erleben. Anmerkung: K&ouml;nnte <em>queueCount</em> &gt; 10 erfordern (siehe unten).</li>
+    <li>Die Warteschlange k&ouml;nnte auch auf Einkern-Prozessoren effizient sein.</li>
+  </ul>
+
+  <h3>
+    Wann hat die Warteschlange keinen Effekt?
+  </h3>
+
+  <ul>
+    <li>Videoverz&ouml;gerung ist w&auml;hrend des kompletten Videos zu beobachten.</li>
+  </ul>
+
+  <h3>
+    Wie funktioniert die Warteschlangenfunktion eigentlich?
+  </h3>
+
+  <p>
+    ffdshow bekommt Bilder vom vorgeschalteten Filter (meistens dem Splitter), verarbeitet sie und schreibt sie in den Zwischenspeicher, der ihm vom nachfolgenden Filter zugewiesen wurde.<br />
+    Falls die Warteschlange <strong>deaktiviert</strong> ist, hat der Videorenderer nur einen Zwischenspeicher.
+    Selbst wenn ffdshow fr&uuml;her fertig ist, muss es warten, weil der Zwischenspeicher solange belegt ist, bis der Videorenderer das Bild zur vom Zeitstempel angegeben Zeit dargestellt.
+    Der Prozessor verschwendet derweil Zeit ohne zu arbeiten. Hier schreitet die Warteschlange ein:<br />
+    Falls die Warteschlange <strong>aktiviert</strong> ist, hat der nachfolgende Filter mehrere Zwischenspeicher.
+    Nachdem ffdshow fertig ist, bekommt es sofort einen Zwischenspeicher zugewiesen, schreibt in ihn und stellt ihn in die Warteschlange.
+    Dann beginnt es ohne zu warten und wertvolle Prozessorzeit zu verschwenden das n&auml;chste Bild zu verarbeiten.
+    Hierdurch kann sich ffdshow aus einer Zwickm&uuml;hle befreien, indem es Zwischenspeicher aus der Warteschlange sendet, wenn es mehrere komplexe Bilder erhalten hat.
+    Es ist so als w&uuml;rde man sich aus einer Notlage befreien, indem man von seinem Gesparten zehrt.
+    Ein Beispiel sollte das Ganze klarer machen:<br />
+    In einem 30fps-Film muss jedes Bild innerhalb von 33ms verarbeitet werden.
+    Angenommen die Zeiten um zehn aufeinanderfolgende Bilder zu verarbeiten seien 20, 20, 20, 20, 20, 20, 50, 50, 50, bzw. 50ms.
+    Die ersten sechs Bilder werden problemlos dargestellt. Die komplette Verarbeitungszeit betr&auml;gt also (20ms + 13ms) * 6 = 198ms.
+    Ist die Warteschlange deaktiviert, tut ffdshow nach jedem der ersten sechs Bilder 13ms (33ms - 20ms) lang nichts. Das siebte Bild wird entweder verworfen oder versp&auml;tet dargestellt.
+    Mit aktivierter Warteschlange verarbeitet ffdshow die ersten sechs bilder hingegen in in 20ms * 6 = 120ms und kann sofort mit der Arbeit an den folgenden komplexeren Bildern beginnen.
+    So kann es alle Bilder rechtzeitig liefern.<br />
+    Im richtigen Programm wird ein Thread ben&ouml;tigt, um die Zwischenspeicher aus der Warteschlange zum Videorenderer zu senden.
+    Dieser Thread ist f&uuml;r VMR7 in ffdshow und f&uuml;r VMR9 im Videorenderer implementiert.
+    Der Hauptteil des Videorenderers wird in diesem Thread ausgef&uuml;hrt, welcher sich von ffdshows Hauptthread unterscheidet.
+  </p>
+
+  <h3>
+    Woher wei&szlig; ich, ob die Warteschlange wirklich funktioniert?
+  </h3>
+
+  <p>
+    Da es schwierig ist den Effekt empirisch einzusch&auml;tzen, ist es am besten seinen Augen und Ohren zu trauen. Suchen Sie nach Bildspr&uuml;ngen und/oder Verz&ouml;gerung.<br />
+    Wenn Sie sich nicht sicher sind, kann es helfen die OSD-Elemente "Bilder in Warteschlange" und "Videoverz&ouml;gerung" zu aktivieren.
+    Vergessen Sie aber nicht, dass OSD auch Prozessorzeit ben&ouml;tigt.<br />
+    Die Warteschlange wurde nicht entworfen, um mehrere Kerne gleichm&auml;&szlig;ig zu verwenden. Sie werden die CPU-Graphen Ihres Systemmonitors nicht ausgeglichen sehen.<br />
+    Ein Benchmark der Warteschlange mit <em>timeCodec.exe</em> hilft ebenso wenig, da es die Wartezeit, die oben beschrieben wurde, &uuml;berspringt.
+  </p>
+
+  <h3>
+    Registry-Einstellungen (f&uuml;r erfahrene Benutzer)
+  </h3>
+
+  <p>
+    Die Anzahl der Zwischenspeicher kann in der Registry im <em>queueCount</em> Schl&uuml;ssel eingestellt werden. Er kann gefunden werden unter:
+  </p>
+
+  <pre>HKEY_CURRENT_USER\Software\GNU\ffdshow\default</pre>
+
+  <p>
+    Falls Sie Voreinstellungen verwenden, ersetzen Sie <em>default</em> durch den Voreinstellungsnamen. Standardwert ist 10. Durch Erh&ouml;hung des Werts wird der Effekt erh&ouml;ht.
+    Falls Ihre Wiedergabe unter sporadischen Bildspr&uuml;ngen und/oder Verz&ouml;gerungen leidet, ist 10 ein guter Startwert, aber wenn Sie eine ganze Szene mit hoher Bitrate abdecken wollen, wird 50 ben&ouml;tigt.
+    Da dies Videospeicher belegt, k&ouml;nnen zu hohe Werte die Grafikkarte instabil werden lassen. F&uuml;r eine Grafikkarte mit 256MB Speicher ist 50 das Maximum, wenn Sie HD-Videos abspielen wollen.
+  </p>
+
+  <h3>
+    Kompatibilit&auml;tsprobleme
+  </h3>
+
+  <p>
+    Abh&auml;ngig von der Grafikkarte, dem Grafiktreiber und den Anwendungseinstellungen, kann die Warteschlange Schwierigkeiten verursachen.<br />
+    Kompatibilit&auml;tsprobleme mit einigen ATI-Grafikkarten der X1300- oder X1600-Serie wurden berichtet.
+    Mit Nvidia-Grafikkarten gibt es keine bekannten Probleme.<br />
+    Da es zu schwierig ist individuelle Probleme zu bearbeiten, deaktivieren Sie die Warteschlange bitte, wenn Sie Probleme haben.
+  </p>
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <a class="nav" href="#top">Top&nbsp;<img src="../images/arrow_up.png" width="12" height="9" alt="" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://sourceforge.net">
+            <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=173941&amp;type=2" width="125" height="37" alt="SourceForge.net Logo" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+This code is public domain.
+
+It extensively uses sample code provided by Microsoft and as far as I understand
+its license, derived work can't be distributed under the GPL.

@@ -1,0 +1,1 @@
+Warning: resize settings will be applied when the file will be reopened.

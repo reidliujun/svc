@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ffavisynth", "ffavisynth.vcproj", "{461EAE01-C683-4E4E-BE55-F313D43EE27A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{461EAE01-C683-4E4E-BE55-F313D43EE27A}.Debug.ActiveCfg = Debug|Win32
+		{461EAE01-C683-4E4E-BE55-F313D43EE27A}.Debug.Build.0 = Debug|Win32
+		{461EAE01-C683-4E4E-BE55-F313D43EE27A}.Release.ActiveCfg = Release|Win32
+		{461EAE01-C683-4E4E-BE55-F313D43EE27A}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,81 @@
+environment["ti.bios.oldMemoryNames"] = true;
+
+/* loading the generic platform */
+var params = {};
+params.clockRate = 600.000000;
+params.deviceName = "6416";
+params.catalogName = "ti.catalog.c6000";
+params.regs = {};
+params.regs.l2Mode = "4-way cache (0k)";
+utils.loadPlatform("ti.platforms.generic", params);
+
+
+/* enabling DSP/BIOS components */
+bios.GBL.ENABLEINST = true;
+bios.MEM.NOMEMORYHEAPS = false;
+bios.RTDX.ENABLERTDX = true;
+bios.HST.HOSTLINKTYPE = "RTDX";
+bios.TSK.ENABLETSK = true;
+bios.GBL.ENABLEALLTRC = true;
+
+bios.GBL.ENDIANMODE = "little";
+
+bios.GBL.C641XCONFIGUREL2 = true;
+bios.ISRAM.createHeap = true;
+bios.ISRAM.heapSize = 0x8000;
+
+bios.MEM.BIOSOBJSEG = prog.get("ISRAM");
+bios.MEM.MALLOCSEG = prog.get("ISRAM");
+bios.TSK.STACKSEG = prog.get("ISRAM");
+
+
+/* applying user changes */
+bios.SDRAM_CACHABLE = bios.MEM.create("SDRAM_CACHABLE");
+
+bios.SDRAM_CACHABLE.base = 0x80000000;
+
+bios.SDRAM_CACHABLE.len = 0x2000000;
+
+bios.SDRAM_CACHABLE.createHeap = 0;
+
+bios.SDRAM_CACHABLE.space = "code/data";
+
+bios.trace = bios.LOG.create("trace");
+
+bios.MEM.MALLOCSEG = prog.get("MEM_NULL");
+
+bios.ISRAM.len = 0xc0000;
+
+bios.ISRAM.heapSize = 0x4000;
+
+bios.LNK_dataPump.order = 1;
+
+bios.RTA_dispatcher.order = 0x2;
+
+bios.IDL_cpuLoad.order = 0x3;
+
+bios.trace.bufSeg = prog.get("ISRAM");
+
+bios.trace.bufLen = 0x100;
+
+bios.PRD_clock.order = 1;
+
+bios.HWI_INT5.useDispatcher = 1;
+
+bios.HWI_INT8.useDispatcher = 1;
+
+bios.MEM.MALLOCSEG = prog.get("ISRAM");
+
+bios.MEM.FARSEG = prog.get("SDRAM_CACHABLE");
+bios.MEM.instance("SDRAM_CACHABLE").createHeap = 1;
+bios.MEM.instance("SDRAM_CACHABLE").heapSize = 0x00080000;
+bios.MEM.MALLOCSEG = prog.get("SDRAM_CACHABLE");
+bios.MEM.BIOSOBJSEG = prog.get("ISRAM");
+bios.MEM.BIOSOBJSEG = prog.get("SDRAM_CACHABLE");
+bios.MEM.instance("SDRAM_CACHABLE").heapSize = 0x08000000;
+bios.MEM.instance("SDRAM_CACHABLE").heapSize = 0x00a00000;
+// !GRAPHICAL_CONFIG_TOOL_SCRIPT_INSERT_POINT!
+
+if (config.hasReportedError == false) {
+    prog.gen();
+}
