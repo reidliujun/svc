@@ -44,13 +44,15 @@ An example of server path is in "video" folder.
 
 ### Client Side ###
 
+To run the client.py, the "PyUserInput" library is needed for python (check out [here](https://github.com/SavinaRoja/PyUserInput)).
+
 To re-multiplex the SVC layers into a single SVC bitstream with correct NALU ordering: 
 
     python svc_mux.py out_file.264 file.264.seg0-L0.264 file.264.seg0-L1.264 file.264.seg0-L2.264
 
 To use the client.py to download the serverside files, re-multiplex with required layer and play the out file:
 
-    python client.py http://localhost/video/video_1.264.mpd -play 16
+    python client.py http://localhost/video/video_1.264.mpd -play
 
 The detail of the online svc file can be listed with the mpd file:
 
