@@ -42,6 +42,7 @@ cacheMatch = folderUrlPath.split("//")[-1]
 cacheMatch = cacheMatch.replace("/", ",")
 stepList = []
 stopDownload = []
+speed = 10000 #initiate the speed of the first segment
 
 def getXML(url):
 	file= urllib2.urlopen(url)
@@ -146,14 +147,6 @@ def switch_to_highlayer(outName, frameNumber, segNumber):
 				else:
 					break
 
-def step_map(input):
-	return {
-		16: 1,
-		32: 2,
-		-16: -1,
-		-32: -2,
-		}.get(input, 0)
-
 ''' Parse MPD file 
 '''
 def parse_mpd(url):
@@ -193,8 +186,9 @@ if(sys.argv[2]=="-play"):
 	print "========================================================"
 
 	'''Download each segment according to segCheckList'''
-	speed = 10000 #initiate the speed of the first segment
+	
 	layerID = parseResult["layerID"]
+	layerID = map(int, layerID)
 	layerBWList = parseResult["layerBW"]
 	segNumber = parseResult["numberofSeg"]
 
@@ -211,9 +205,9 @@ if(sys.argv[2]=="-play"):
 			threshold = threshold + layerBWList[j]
 			print "threshold of " + str(layerID[j]) + " is: " + str(threshold/1000/8) + "KB/s"
 			if speed >= threshold:
-				selectedLayer = int(layerID[j])
+				selectedLayer = layerID[j]
 			elif j == 0:
-				selectedLayer = int(layerID[j])
+				selectedLayer = layerID[j]
 				break 
 			else:
 				break
@@ -254,13 +248,13 @@ if(sys.argv[2]=="-play"):
 			for j in range(0,len(layerID)):
 				threshold1 = threshold1 + layerBWList[j]
 				if speed >= threshold1:
-					selectedLayer1 = int(layerID[j])
+					selectedLayer1 = layerID[j]
 				elif j == 0:
-					selectedLayer1 = int(layerID[j])
+					selectedLayer1 = layerID[j]
 					break 
 				else:
 					break
-			stepValue1 = step_map(selectedLayer1-selectedLayer)
+			stepValue1 = layerID.index(selectedLayer1) - layerID.index(selectedLayer)
 			stepList.append(stepValue1)
 			preSelectedLayer = selectedLayer1
 			thread1 = Thread(target = play_video, args = (outName, parseResult["width"], parseResult["height"]))
@@ -274,7 +268,7 @@ if(sys.argv[2]=="-play"):
 		elif i ==1:
 			continue
 		else:
-			stepValue = step_map(selectedLayer-preSelectedLayer)
+			stepValue = layerID.index(selectedLayer) - layerID.index(preSelectedLayer)
 			stepList.append(stepValue)
 			preSelectedLayer = selectedLayer
 
