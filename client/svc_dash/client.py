@@ -47,6 +47,7 @@ stopDownload = []
 speed = 10000 #initiate the speed of the first segment
 downloadMonitor = []
 
+
 def get_XML(url):
 	try:
 		file= urllib2.urlopen(url)
@@ -78,14 +79,14 @@ def download_seg(directory, layerID, dom, segID):
 				resp, content = h.request(segURL, "GET")
 				if resp.status ==200:
 					pass
-				if resp.status == 404:
-					# print "segment not found"
-					message = str(datetime.datetime.now()) + ": " + segURL + "not found"
+				else:
+					message = str(datetime.datetime.now()) + ": Error code is: " + str(resp.status)
 					logging.error(message)
 					break
-			except Exception:
-				message = str(datetime.datetime.now()) + ": Segment URL or server error."
+			except httplib2.HttpLib2Error, e:
+				message = str(datetime.datetime.now()) + ": Exception type: "+ str(e)
 				logging.error(message)
+				break
 				# print "Segment file not founded"
 			fileSize = float(resp['content-length'])
 			# print "file size:" + str(fileSize) + "bytes"
@@ -123,12 +124,13 @@ def parse_frame_idx(text):
 		message = (str(datetime.datetime.now()) + ": error in frame index parse\n" +
 					"last line in log text is:" + str(text))
 		logging.error(message)
+		return 1
 	else:
 		tmp1 = text.split("/")[-2]
 		tmp = tmp1.split(" ")
 		currentFrame = tmp[-1]
 	# print "currentFrame is: "+currentFrame+".\n"
-	return int(currentFrame)
+		return int(currentFrame)
 
 def mplayer_controler(outName, frameNumber, segNumber, totalSeg):
 	#totalIdx = len(inputList)
@@ -160,7 +162,7 @@ def mplayer_controler(outName, frameNumber, segNumber, totalSeg):
 			# print "stopDownload"
 			# print stopDownload
 			break 
-		elif "[vdpau]" in text:
+		elif "[vdpau]" in text or "no prescaling applied" in text:
 			continue
 		else:
 			print str(text) 
@@ -229,6 +231,7 @@ if(sys.argv[2]=="-play"):
 	'''
 	Read and parse information in mpd file 
 	'''
+	print str(datetime.datetime.now())
 	logPath = os.getcwd() +"/log"
 	if not os.path.exists("log"):
 		os.makedirs("log")
