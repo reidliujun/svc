@@ -5,6 +5,7 @@ Copyright (c) 2014 Jun Liu
 Email: jun.liu@aalto.fi
 
 Version2 info: download the segment according to the speed of the network, 
+				pause the video if next segment not finish download
 			   downloaded file saved in .cache folder
 
 '''
@@ -44,7 +45,7 @@ cacheMatch = cacheMatch.replace("/", ",")
 stepList = []
 stopDownload = []
 speed = 10000 #initiate the speed of the first segment
-
+downloadMonitor = []
 
 def get_XML(url):
 	try:
@@ -129,7 +130,7 @@ def parse_frame_idx(text):
 	# print "currentFrame is: "+currentFrame+".\n"
 	return int(currentFrame)
 
-def switch_to_highlayer(outName, frameNumber, segNumber):
+def mplayer_controler(outName, frameNumber, segNumber, totalSeg):
 	#totalIdx = len(inputList)
 	'''
 	timeInterval defines the print frequency of the frame number in the terminal. 
@@ -154,6 +155,7 @@ def switch_to_highlayer(outName, frameNumber, segNumber):
 			message = (str(datetime.datetime.now()) + ": Exit mplayer\n" + 
 						"==================================")
 			logging.info(message)
+			# stopDownload = True
 			stopDownload.append("stop")
 			# print "stopDownload"
 			# print stopDownload
@@ -164,11 +166,28 @@ def switch_to_highlayer(outName, frameNumber, segNumber):
 			print str(text) 
 			sleep(timeInterval)
 			frameIdx = parse_frame_idx(text) 
+			# print "!!!!"
+			# print downloadMonitor
+			'''Check if the next segment finish download, if not pause the video at the before the current segment end'''
+			if (frameIdx < frameNumber*tmpIdx-3*frameStep and frameIdx >= frameNumber*tmpIdx - (4*frameStep)):
+				# if len(downloadMonitor)==totalSeg:
+				# 	continue
+				if len(downloadMonitor)<(tmpIdx+1) and len(downloadMonitor)!=totalSeg:
+					print downloadMonitor
+					k.tap_key(' ') #pause the video
+					message = (str(datetime.datetime.now()) + ": Pause the video and wait for segment download.\n")
+					logging.info(message)
+					while True:
+						sleep(0.1)
+						if len(downloadMonitor)>=(tmpIdx+1):
+							k.tap_key(' ') #continue the video
+							print downloadMonitor
+							message = (str(datetime.datetime.now()) + ": Continue play the video.\n")
+							logging.info(message)
+							break
 			if frameIdx >= frameNumber*tmpIdx and frameIdx < frameNumber*tmpIdx + frameStep:
-				# print "======================================"
-				# print "currentFrame is: "+str(frameIdx)+".\n"
 				message = (str(datetime.datetime.now()) + ":\n" + "==================================\n" + 
-							"currentFrame is: "+str(frameIdx)+".")
+							"CurrentFrame is: "+str(frameIdx)+".")
 				logging.info(message)
 				if bool(stepList):
 					tmpIdx = tmpIdx +1
@@ -225,14 +244,6 @@ if(sys.argv[2]=="-play"):
 				"\nDuration of each segment is: " + parseResult["duration"] + " frames\n" + 
 				"========================================================")
 	logging.info(message)
-	# print "========================================================"
-	# print "video information:"
-	# print "video resolution is:" + parseResult["width"] + "x" + parseResult["height"]
-	# print "layerID is: " + parseResult["layerList"]
-	# print "bandwidth requirement for each layer is: " + str(parseResult["layerBW"])
-	# print "Segment number is: " + str(parseResult["numberofSeg"])
-	# print "Duration of each segment is: " + parseResult["duration"] + " frames"
-	# print "========================================================"
 
 	'''Download each segment according to segCheckList'''
 	
@@ -248,12 +259,9 @@ if(sys.argv[2]=="-play"):
 		command.append(outputSegName)
 		threshold = 0
 		message = (str(datetime.datetime.now()) + ":\n==================================================\n" +
-					"Start download segment " + str(i) + ", previous reference speed is: " + str(speed/1000/8) + 
+					"Start handling segment " + str(i) + ", previous reference speed is: " + str(speed/1000/8) + 
 					"KB/s")
 		logging.info(message)
-		# print "=================================================="
-		# print "start download segment " + str(i)
-		# print "previous reference speed is: " + str(speed/1000/8) + "KB/s"
 		for j in range(0,len(layerID)):
 			threshold = threshold + layerBWList[j]
 			# print "threshold of " + str(layerID[j]) + " is: " + str(threshold/1000/8) + "KB/s"
@@ -269,15 +277,18 @@ if(sys.argv[2]=="-play"):
 		# print "selectedLayer is: " + str(selectedLayer)
 		message = str(datetime.datetime.now()) + ": SelectedLayer is: " + str(selectedLayer)
 		logging.info(message)
-		if not bool(stopDownload):
-			fileList, speed = download_seg(videoName, selectedLayer, parseResult["data"], i)
-		else:
+		if bool(stopDownload):
 			message = str(datetime.datetime.now()) + ": Stop downloading"
 			logging.info(message)
 			# print "Stop downloading"
 			break
+		else:
+			fileList, speed = download_seg(videoName, selectedLayer, parseResult["data"], i)
+			downloadMonitor.append(str(i)+" finish download")
+			# print downloadMonitor
 		message = str(datetime.datetime.now()) + ": Finish download segment " + str(i)
 		logging.info(message)
+
 		# print "Finish download segment " + str(i)
 
 		'''Mux the downloaded files with differnt layers'''
@@ -313,11 +324,9 @@ if(sys.argv[2]=="-play"):
 			logging.error(message)
 		else:
 			f1.close()
-		message = (str(datetime.datetime.now()) + ": Finish handling segment" + str(i) + 
+		message = (str(datetime.datetime.now()) + ": Finish handling segment " + str(i) + 
 					"\n==================================================")
 		logging.info(message)
-		# print "Finish handling segment" + str(i) + "\n"
-		# print "=================================================="
 		if i == 0:
 			threshold1 = 0
 			for j in range(0,len(layerID)):
@@ -335,10 +344,7 @@ if(sys.argv[2]=="-play"):
 			thread1 = Thread(target = play_video, args = (outName, parseResult["width"], parseResult["height"]))
 			thread1.start()
 			sleep(0.1)
-			#start timer for the switch layer controler
-			# print "before thread2, stepList is equal to:"
-			# print stepList
-			thread2 = Thread(target = switch_to_highlayer, args = (outName, int(parseResult["duration"]), segNumber))
+			thread2 = Thread(target = mplayer_controler, args = (outName, int(parseResult["duration"]), segNumber, int(segNumber)))
 			thread2.start()
 		elif i ==1:
 			continue
@@ -352,16 +358,9 @@ if(sys.argv[2]=="-detail"):
 	Read and parse information in mpd file 
 	'''
 	parseResult = parse_mpd()
-	# print "video resolution is:" + parseResult["width"] + "x" + parseResult["height"]
-	# print "layerID is: " + parseResult["layerList"]
-	# print "bandwidth requirement for each layer is: " + str(parseResult["layerBW"])
-	# print "Segment number is: " + str(parseResult["numberofSeg"])
-	# print "Duration of each segment is: " + parseResult["duration"] + " frames"
 	message = (str(datetime.datetime.now()) + "Video resolution is:" + parseResult["width"] + "x" + parseResult["height"] +
 				"\nLayerID is: " + parseResult["layerList"] + "\nBandwidth requirement for each layer is: " + 
 				str(parseResult["layerBW"]) + " bits/s" + "\nSegment number is: " + str(parseResult["numberofSeg"]) +
 				"\nDuration of each segment is: " + parseResult["duration"] + " frames\n" + 
 				"========================================================")
 	logging.info(message)
-
-
