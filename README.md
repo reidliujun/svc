@@ -48,7 +48,8 @@ run:
 
 	./configure
 	./configure --enable-svc
-	make install
+	make
+	sudo make install
 
 ###Usage
 To play a source file, for example to play a video file named "a.y4m", run:
