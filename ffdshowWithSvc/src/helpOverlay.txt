@@ -1,3 +1,0 @@
-Works only when "Set pixel aspect ratio in output media type" on Output page is selected and when hardware supports it.
-
-Supports overlay mixer and VMR9 renderer in windowed mode.

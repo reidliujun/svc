@@ -1,7 +1,0 @@
-EXPORTS
-  RAROpenArchiveEx
-  RARCloseArchive
-  RARReadHeaderEx
-  RARProcessFile
-  RARSetCallback
-  getVersion

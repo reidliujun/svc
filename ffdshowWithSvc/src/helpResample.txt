@@ -1,1 +1,0 @@
-Press Apply or OK to change resampling frequency.

@@ -1,8 +1,0 @@
-EXPORTS
-  AACInitDecoder
-  AACFreeDecoder
-  AACSetRawBlockParams
-  AACDecode
-  AACGetLastFrameInfo
-  AACFlushCodec
-  getVersion
