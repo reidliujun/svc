@@ -1,1 +1,0 @@
-Use this codec only for exporimental purposes! It's likely to be changed in an incompatible manner in the future.

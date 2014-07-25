@@ -1,6 +1,0 @@
-Tray icon
-  shows icon in system tray area
-  doubleclick shows configuration dialog
-  after right click on it menu with basic settings is displayed
-Restore dialog position
-  remembers position of configuration dialog (doesn't work in graphedt)
