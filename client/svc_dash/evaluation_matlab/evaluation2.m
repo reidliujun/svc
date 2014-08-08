@@ -155,18 +155,7 @@ legend(hAxes(1),'layer1','layer2','layer3');
 legend(hAxes(2),'Estimate Bandwidth','Switch threshold');
 %% plot figure3
 %Calculate the happiness level of algorithm1
-layerMultiple = 1;
-layerSum = 0;
-
-for idx=1:length(layer_600)
-    layerMultiple = layerMultiple * layer_600(idx);
-    if idx ~= length(layer_600)
-        layerSum = layerSum + (layer_600(idx+1)-layer_600(idx))^2;
-    end
-end
-happiness = layerMultiple^(1/length(layer_600))-(1/(length(layer_600)-1))*layerSum
-
-
+happy1 = happyDegree(layer_600)
 
 figure(3);
 subplot(1,2,1);
@@ -196,17 +185,8 @@ z_600=[l1' l2' (layer_600-l1-l2)'];
 
 
 %Calculate the happiness level of algorithm2
-layerMultiple = 1;
-layerSum = 0;
+happy2 = happyDegree(layer_600)
 
-for idx=1:length(layer_600)
-    layerMultiple = layerMultiple * layer_600(idx);
-    if idx ~= length(layer_600)
-        layerSum = layerSum + (layer_600(idx+1)-layer_600(idx))^2;
-    end
-end
-happiness = layerMultiple^(1/length(layer_600))-(1/(length(layer_600)-1))*layerSum
-    
 
 subplot(1,2,2);
 stackedbar = @(x, A) bar(x, A, 0.3,'stack');
