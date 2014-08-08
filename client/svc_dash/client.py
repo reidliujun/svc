@@ -1,13 +1,9 @@
 '''
-The Aalto License
-
 Copyright (c) 2014 Jun Liu
 Email: jun.liu@aalto.fi
 
-Version2 info: download the segment according to the speed of the network, 
-				pause the video if next segment not finish download
-			   downloaded file saved in .cache folder
-
+Version info: the normal switch algorithm which selected layer according
+		to the estimated bandwidth and switch threshold
 '''
 
 from xml.dom.minidom import parseString
