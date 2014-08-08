@@ -8,27 +8,27 @@ threshold1=[208.604 208.604 208.604 208.604 208.604];
 threshold2=[596.307 596.307 596.307 596.307 596.307];
 time_slot = 0:4:16;
 
-%% calculate the start delay for speed 200KB/s
+%% calculate the selected layer for speed 200KB/s
 bd_200 = [200 204.499 349.135 106.823 267.960];%
 layer_200=[1 1 2 1 2];%0:1 16:2 32:3
-z_200=[l1' (layer_200-l1)'];
-%% calculate the start delay for speed 300KB/s
+z_200=[l1' (layer_200-l1)']
+%% calculate the selected layer for speed 300KB/s
 bd_300=[300 301.092 153.704 332.857 250.057];
 layer_300=[2 2 1 2 2];
 z_300=[l1' (layer_300-l1)'];
-%% calculate the start delay for speed 400KB/s
+%% calculate the selected layer for speed 400KB/s
 bd_400=[400 318.211 255.856 314.513 410.008];
 layer_400=[2 2 2 2 2];
 z_400=[l1' (layer_400-l1)'];
-%% calculate the start delay for speed 600KB/s
+%% calculate the selected layer for speed 600KB/s
 bd_600=[600 594.819 588.823 537.340 604.023];
 layer_600=[3 2 2 2 3];
 z_600=[l1' l2' (layer_600-l1-l2)'];
-%% calculate the start delay for speed 700KB/s
+%% calculate the selected layer for speed 700KB/s
 bd_700=[700 716.516 547.513 678.9224 543.011];
 layer_700=[3 3 2 3 2];  
 z_700=[l1' l2' (layer_700-l1-l2)'];
-%% calculate the start delay for speed 800KB/s
+%% calculate the selected layer for speed 800KB/s
 bd_800=[800 821.573 739.973 603.314 792.06];
 layer_800=[3 3 3 3 3];
 z_800=[l1' l2' (layer_800-l1-l2)'];
@@ -148,6 +148,78 @@ axis(hAxes(2),[-2 18 0 1100]);
 axis(hAxes(1),[-2 18 0 6]);
 colormap summer;
 title('Layer selection, network speed 800KB/s');
+xlabel('Time (s)');
+ylabel(hAxes(1),'Layer ID');
+ylabel(hAxes(2), 'Bandwidth (KB/s)');
+legend(hAxes(1),'layer1','layer2','layer3');
+legend(hAxes(2),'Estimate Bandwidth','Switch threshold');
+%% plot figure3
+%Calculate the happiness level of algorithm1
+layerMultiple = 1;
+layerSum = 0;
+
+for idx=1:length(layer_600)
+    layerMultiple = layerMultiple * layer_600(idx);
+    if idx ~= length(layer_600)
+        layerSum = layerSum + (layer_600(idx+1)-layer_600(idx))^2;
+    end
+end
+happiness = layerMultiple^(1/length(layer_600))-(1/(length(layer_600)-1))*layerSum
+
+
+
+figure(3);
+subplot(1,2,1);
+stackedbar = @(x, A) bar(x, A, 0.3,'stack');
+prettyline = @(x, y) plot(x, y, 'k-o', 'LineWidth', 1);
+[hAxes,hBar,hLine] = plotyy(time_slot,z_600,time_slot,bd_600,stackedbar,prettyline);
+set(hAxes,'XTick',time_slot); % Change x-axis ticks
+set(hAxes,'XTickLabel',time_slot); % Change x-axis ticks labels to desired values.
+set(hAxes,'NextPlot','add');
+plot(hAxes(2),time_slot,threshold2,'b-.o');
+axis(hAxes(2),[-2 18 0 1100]);
+axis(hAxes(1),[-2 18 0 6]);
+colormap summer;
+title('Layer selection, network speed 600KB/s, algorithm1');
+xlabel('Time (s)');
+ylabel(hAxes(1),'Layer ID');
+ylabel(hAxes(2), 'Bandwidth (KB/s)');
+legend(hAxes(1),'layer1','layer2','layer3');
+legend(hAxes(2),'Estimate Bandwidth','Switch threshold');
+
+
+
+% calculate the selected layer for speed 600KB/s
+bd_600=[600 594.819 588.823 537.340 604.023];
+layer_600=[3 3 3 2 2];
+z_600=[l1' l2' (layer_600-l1-l2)'];
+
+
+%Calculate the happiness level of algorithm2
+layerMultiple = 1;
+layerSum = 0;
+
+for idx=1:length(layer_600)
+    layerMultiple = layerMultiple * layer_600(idx);
+    if idx ~= length(layer_600)
+        layerSum = layerSum + (layer_600(idx+1)-layer_600(idx))^2;
+    end
+end
+happiness = layerMultiple^(1/length(layer_600))-(1/(length(layer_600)-1))*layerSum
+    
+
+subplot(1,2,2);
+stackedbar = @(x, A) bar(x, A, 0.3,'stack');
+prettyline = @(x, y) plot(x, y, 'k-o', 'LineWidth', 1);
+[hAxes,hBar,hLine] = plotyy(time_slot,z_600,time_slot,bd_600,stackedbar,prettyline);
+set(hAxes,'XTick',time_slot); % Change x-axis ticks
+set(hAxes,'XTickLabel',time_slot); % Change x-axis ticks labels to desired values.
+set(hAxes,'NextPlot','add');
+plot(hAxes(2),time_slot,threshold2,'b-.o');
+axis(hAxes(2),[-2 18 0 1100]);
+axis(hAxes(1),[-2 18 0 6]);
+colormap summer;
+title('Layer selection, network speed 600KB/s, algorithm2');
 xlabel('Time (s)');
 ylabel(hAxes(1),'Layer ID');
 ylabel(hAxes(2), 'Bandwidth (KB/s)');
