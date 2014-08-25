@@ -356,10 +356,11 @@ if(sys.argv[2]=="-detail"):
 	'''
 	Read and parse information in mpd file 
 	'''
-	parseResult = parse_mpd()
-	message = (str(datetime.datetime.now()) + "Video resolution is:" + parseResult["width"] + "x" + parseResult["height"] +
+	parseResult = parse_mpd(mpdUrl)
+	message = (str(datetime.datetime.now()) + "\nVideo resolution is:" + parseResult["width"] + "x" + parseResult["height"] +
 				"\nLayerID is: " + parseResult["layerList"] + "\nBandwidth requirement for each layer is: " + 
 				str(parseResult["layerBW"]) + " bits/s" + "\nSegment number is: " + str(parseResult["numberofSeg"]) +
 				"\nDuration of each segment is: " + parseResult["duration"] + " frames\n" + 
 				"========================================================")
+	print message
 	logging.info(message)

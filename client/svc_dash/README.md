@@ -58,6 +58,9 @@ The detail of the online svc file can be listed with the mpd file:
 
     python client.py http://localhost/video/video_1.264.mpd -detail
 
+### Two versions of client with different adaption algorithm ###
+'client.py' is the normal hardswitch algorithm, which compares the estimated bandwidth with the layer thresholds.
+'client_v2.py' is the improved switch algorithm, whose basic idea is to descrease the layer switch possibility of the adjacent segment, also the happiness metric is calculated in the happyDegree.m file (check also the equation in the slide)
 
 ## Notes ##
 
@@ -73,26 +76,6 @@ Author: Jun Liu
 *This work was supported in part by the EC in the context of the ALICANTE project (FP7-ICT-248652). [http://www.ict-alicante.eu/](http://www.ict-alicante.eu/)*
 
 
-## License ##
+## Copyright ##
 
-The Aalto License
-
-Copyright (c) 2014 Jun Liu
-
-Permission is hereby granted, free of charge, to any person obtaining a copy 
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+Copyright (c) 2014 Jun Liu, Aalto University
